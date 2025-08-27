@@ -37,14 +37,14 @@ long hx711_read(void) {
     gpio_set_level(HX711_SCK, 0);
     vTaskDelay(pdMS_TO_TICKS(1));
 
-    // 부호 비트 처리 (24비트 signed 변환)
+    // 부호 처리
     if (value & 0x800000) {
         value |= ~0xFFFFFF;
     }
     
     value += 200000;
     value *= 0.0001;
-    value /= 2;
+    value /= 2;// 체중계와 아령을 이용한 보정치 탐색 결과
 
     return value;
 }
