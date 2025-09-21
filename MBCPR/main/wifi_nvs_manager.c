@@ -5,6 +5,7 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
+#include <inttypes.h>
 
 static const char* TAG = "WIFI_NVS_MANAGER";
 static int8_t s_search_index = -1; // 검색 순서 관리를 위한 정적 변수
@@ -54,9 +55,9 @@ static esp_err_t cleanup_oldest_data(nvs_handle_t handle, uint32_t current_count
             char old_ssid[32], old_password[64];
             int64_t old_ts;
             size_t ssid_len = sizeof(old_ssid), password_len = sizeof(old_password);
-            snprintf(key_ssid, sizeof(key_ssid), "ssid_%d", last_index);
-            snprintf(key_password, sizeof(key_password), "password_%d", last_index);
-            snprintf(key_ts, sizeof(key_ts), "ts_%d", last_index);
+            snprintf(key_ssid, sizeof(key_ssid), "ssid_%" PRIu32, last_index);
+            snprintf(key_password, sizeof(key_password), "password_%" PRIu32, last_index);
+            snprintf(key_ts, sizeof(key_ts), "ts_%" PRIu32, last_index);
             nvs_get_str(handle, key_ssid, old_ssid, &ssid_len);
             nvs_get_str(handle, key_password, old_password, &password_len);
             nvs_get_i64(handle, key_ts, &old_ts);
@@ -68,9 +69,9 @@ static esp_err_t cleanup_oldest_data(nvs_handle_t handle, uint32_t current_count
             snprintf(key_ts, sizeof(key_ts), "ts_%d", oldest_index);
             nvs_set_i64(handle, key_ts, old_ts);
 
-            snprintf(key_ssid, sizeof(key_ssid), "ssid_%d", last_index);
-            snprintf(key_password, sizeof(key_password), "password_%d", last_index);
-            snprintf(key_ts, sizeof(key_ts), "ts_%d", last_index);
+            snprintf(key_ssid, sizeof(key_ssid), "ssid_%" PRIu32, last_index);
+            snprintf(key_password, sizeof(key_password), "password_%" PRIu32, last_index);
+            snprintf(key_ts, sizeof(key_ts), "ts_%" PRIu32, last_index);
             nvs_erase_key(handle, key_ssid);
             nvs_erase_key(handle, key_password);
             nvs_erase_key(handle, key_ts);
@@ -129,7 +130,7 @@ esp_err_t wifi_nvs_save_config(const char* ssid, const char* password) {
         nvs_set_i64(handle, key_ts, time(NULL));
         wifi_count++;
         nvs_set_u32(handle, "wifi_count", wifi_count);
-        ESP_LOGI(TAG, "새로운 Wi-Fi 데이터(%s)를 저장했습니다. (총 %d개)", ssid, wifi_count);
+        ESP_LOGI(TAG, "새로운 Wi-Fi 데이터(%s)를 저장했습니다. (총 %" PRIu32 "개)", ssid, wifi_count);
     }
     err = nvs_commit(handle);
     nvs_close(handle);

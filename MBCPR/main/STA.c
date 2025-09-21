@@ -14,6 +14,7 @@
 static const char *TAG = "wifi_sta_core";
 static EventGroupHandle_t s_wifi_event_group;
 static int s_retry_num = 0;
+static esp_ip4_addr_t s_ip_addr;
 
 static void event_handler(void* arg, esp_event_base_t event_base,
                           int32_t event_id, void* event_data) {
@@ -114,4 +115,15 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
 esp_err_t wifi_is_connected(void) {
     wifi_ap_record_t ap_info;
     return esp_wifi_sta_get_ap_info(&ap_info);
+}
+
+esp_err_t wifi_get_ip_addr(esp_ip4_addr_t *ip_addr) {
+    wifi_ap_record_t ap_info;
+    if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK) {
+        if (ip_addr != NULL) {
+            *ip_addr = s_ip_addr;
+        }
+        return ESP_OK;
+    }
+    return ESP_FAIL;
 }

@@ -2,10 +2,15 @@
 #define STA_H
 
 #include "esp_err.h"
+#include "esp_wifi.h"
+
+#ifndef CONFIG_ESP_MAXIMUM_RETRY
+#define CONFIG_ESP_MAXIMUM_RETRY 5
+#endif
 
 /**
  * @brief Wi-Fi 스택을 STA 모드로 초기화합니다.
- * 이 함수는 다른 Wi-Fi 함수들을 호출하기 전에 반드시 한 번만 호출해야 합니다.
+ * STA 함수를 사용하기 전 실행 할 것
  * @return 성공 시 ESP_OK, 실패 시 에러 코드 반환.
  */
 esp_err_t wifi_sta_init(void);
@@ -24,5 +29,11 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *password);
  * @return 연결되어 있으면 ESP_OK, 그렇지 않으면 ESP_FAIL 반환.
  */
 esp_err_t wifi_is_connected(void);
+
+/**
+ * @brief 현재 기기의 Wi-Fi 액세스 ip 주소를 확인합니다.
+ * @return 주소 획득에 성공하면 ESP_OK, 그렇지 않으면 ESP_FAIL 반환.
+*/
+esp_err_t wifi_get_ip_addr(esp_ip4_addr_t *ip_addr);
 
 #endif // STA_H

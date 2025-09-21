@@ -69,31 +69,28 @@ static esp_err_t get_handler(httpd_req_t *req)
 }
 
 // HTTP 서버 시작 함수
-static esp_err_t start_webserver(void)
+static httpd_handle_t start_webserver(void)
 {
     httpd_handle_t server = NULL;
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
-    
-    // start_webserver() 함수 내에 추가
-	httpd_uri_t get_uri = {
-    	.uri      = "/connect",
-    	.method   = HTTP_GET,
-    	.handler  = get_handler,
-    	.user_ctx = NULL
-	};
 
-	// URI 핸들러 등록
-	httpd_register_uri_handler(server, &get_uri);
+    // URI 핸들러는 서버가 시작된 후에 등록해야 합니다.
+    httpd_uri_t get_uri = {
+        .uri      = "/connect",
+        .method   = HTTP_GET,
+        .handler  = get_handler,
+        .user_ctx = NULL
+    };
 
     ESP_LOGI(TAG, "Starting web server on port: '%d'", config.server_port);
     if (httpd_start(&server, &config) == ESP_OK) {
         ESP_LOGI(TAG, "Registering URI handlers");
         httpd_register_uri_handler(server, &get_uri);
-        return ESP_OK;
+        return server; // 성공 시 핸들 반환
     }
 
     ESP_LOGE(TAG, "Error starting server!");
-    return ESP_FAIL;
+    return NULL; // 실패 시 NULL 반환
 }
 
 // Wi-Fi 이벤트 핸들러 (연결/연결 해제 로깅)
@@ -149,6 +146,15 @@ void wifi_init_softap(void)
              EXAMPLE_ESP_WIFI_SSID, EXAMPLE_ESP_WIFI_PASS, 1);
 }
 
+static esp_err_t stop_webserver(httpd_handle_t server)
+{
+    if (server == NULL) {
+        return ESP_FAIL;
+    }
+    ESP_LOGI(TAG, "Stopping web server");
+    return httpd_stop(server);
+}
+
 // 사용 함수
 esp_err_t softap_get_config(char* ssid, char* password)
 {
@@ -157,6 +163,10 @@ esp_err_t softap_get_config(char* ssid, char* password)
     
     // 웹 서버 시작
     httpd_handle_t server = start_webserver();
+    if (server == NULL) {
+        ESP_LOGE(TAG, "Failed to start web server");
+        return ESP_FAIL;
+    }
     
     // 웹 요청 대기 루프
     while(!check_ssid || !check_password) {
