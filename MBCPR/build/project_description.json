@@ -1180,7 +1180,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "C:/Dogprojact/MBCPR/build/esp-idf/main/libmain.a",
-            "sources": [ "C:/Dogprojact/MBCPR/main/main.c", "C:/Dogprojact/MBCPR/main/softAP.c", "C:/Dogprojact/MBCPR/main/wifi_nvs_manager.c", "C:/Dogprojact/MBCPR/main/STA.c" ],
+            "sources": [ "C:/Dogprojact/MBCPR/main/main.c", "C:/Dogprojact/MBCPR/main/wifi_nvs_manager.c", "C:/Dogprojact/MBCPR/main/WIFI.c" ],
             "include_dirs": []
         },
         "mbedtls": {
