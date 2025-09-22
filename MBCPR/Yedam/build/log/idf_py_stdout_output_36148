@@ -1,0 +1,4221 @@
+Command: c:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe c:\Espressif\frameworks\esp-idf-v5.5\tools/idf_monitor.py -p COM10 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 C:\Users\user\Documents\mbcprSensor\build\mbcprSensor.elf C:\Users\user\Documents\mbcprSensor\build\bootloader\bootloader.elf --force-color -m 'c:\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'c:\Espressif\frameworks\esp-idf-v5.5\tools\idf.py' '-p' 'COM10'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Sep 13 2025 22:15:20[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b0e4h ( 45284) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001b10c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=0001b134 vaddr=3ffb0000 size=02418h (  9240) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=0001d554 vaddr=40080000 size=02ac4h ( 10948) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=15c74h ( 89204) map[0m
+[0;32mI (153) esp_image: segment 5: paddr=00035c9c vaddr=40082ac4 size=0baach ( 47788) load[0m
+[0;32mI (179) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (179) boot: Disabling RNG early entropy source...[0m
+[0;32mI (189) cpu_start: Multicore app[0m
+[0;32mI (197) cpu_start: Pro cpu start user code[0m
+[0;32mI (198) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (198) app_init: Application information:[0m
+[0;32mI (198) app_init: Project name:     mbcprSensor[0m
+[0;32mI (202) app_init: App version:      1[0m
+[0;32mI (205) app_init: Compile time:     Sep 13 2025 22:12:57[0m
+[0;32mI (210) app_init: ELF file SHA256:  e11c09729...[0m
+[0;32mI (215) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (218) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (222) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (226) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (230) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (241) heap_init: At 3FFB2CF0 len 0002D310 (180 KiB): DRAM[0m
+[0;32mI (247) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (252) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (257) heap_init: At 4008E570 len 00011A90 (70 KiB): IRAM[0m
+[0;33mW (264) spi_flash: boya detected but related driver is not linked, please check option `SPI_FLASH_SUPPORT_BOYA_CHIP`[0m
+[0;32mI (273) spi_flash: detected chip: generic[0m
+[0;32mI (277) spi_flash: flash io: dio[0m
+[0;33mW (280) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (292) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (302) main_task: Started on CPU0[0m
+[0;32mI (312) main_task: Calling app_main()[0m
+[0;32mI (312) main_task: Returned from app_main()[0m
+[0;32mI (1312) CAP1188: Sensor 3 touched[0m
+[0;32mI (1312) CAP1188: Sensor 4 touched[0m
+[0;32mI (1312) CAP1188: Sensor 7 touched[0m
+[0;32mI (1312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (1312) MPU6050: MPU6050 read error[0m
+[0;32mI (1812) CAP1188: Sensor 3 touched[0m
+[0;32mI (1812) CAP1188: Sensor 4 touched[0m
+[0;32mI (1812) CAP1188: Sensor 7 touched[0m
+[0;32mI (1812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (2812) MPU6050: MPU6050 read error[0m
+[0;32mI (2812) CAP1188: Sensor 3 touched[0m
+[0;32mI (2812) CAP1188: Sensor 4 touched[0m
+[0;32mI (2812) CAP1188: Sensor 7 touched[0m
+[0;32mI (2812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (4312) CAP1188: Sensor 3 touched[0m
+[0;32mI (4312) CAP1188: Sensor 4 touched[0m
+[0;32mI (4312) CAP1188: Sensor 7 touched[0m
+[0;32mI (4312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (4312) MPU6050: MPU6050 read error[0m
+[0;32mI (4812) CAP1188: Sensor 3 touched[0m
+[0;32mI (4812) CAP1188: Sensor 4 touched[0m
+[0;32mI (4812) CAP1188: Sensor 7 touched[0m
+[0;32mI (4812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (5812) MPU6050: MPU6050 read error[0m
+[0;32mI (5812) CAP1188: Sensor 3 touched[0m
+[0;32mI (5812) CAP1188: Sensor 4 touched[0m
+[0;32mI (5812) CAP1188: Sensor 7 touched[0m
+[0;32mI (5812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (7312) CAP1188: Sensor 3 touched[0m
+[0;32mI (7312) CAP1188: Sensor 4 touched[0m
+[0;32mI (7312) CAP1188: Sensor 7 touched[0m
+[0;32mI (7312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (7312) MPU6050: MPU6050 read error[0m
+[0;32mI (7812) CAP1188: Sensor 3 touched[0m
+[0;32mI (7812) CAP1188: Sensor 4 touched[0m
+[0;32mI (7812) CAP1188: Sensor 7 touched[0m
+[0;32mI (7812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (8812) MPU6050: MPU6050 read error[0m
+[0;32mI (8812) CAP1188: Sensor 3 touched[0m
+[0;32mI (8812) CAP1188: Sensor 4 touched[0m
+[0;32mI (8812) CAP1188: Sensor 7 touched[0m
+[0;32mI (8812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (10312) CAP1188: Sensor 3 touched[0m
+[0;32mI (10312) CAP1188: Sensor 4 touched[0m
+[0;32mI (10312) CAP1188: Sensor 7 touched[0m
+[0;32mI (10312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (10312) MPU6050: MPU6050 read error[0m
+[0;32mI (10812) CAP1188: Sensor 3 touched[0m
+[0;32mI (10812) CAP1188: Sensor 4 touched[0m
+[0;32mI (10812) CAP1188: Sensor 7 touched[0m
+[0;32mI (10812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (11812) MPU6050: MPU6050 read error[0m
+[0;32mI (11812) CAP1188: Sensor 3 touched[0m
+[0;32mI (11812) CAP1188: Sensor 4 touched[0m
+[0;32mI (11812) CAP1188: Sensor 7 touched[0m
+[0;32mI (11812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (13312) CAP1188: Sensor 3 touched[0m
+[0;32mI (13312) CAP1188: Sensor 4 touched[0m
+[0;32mI (13312) CAP1188: Sensor 7 touched[0m
+[0;32mI (13312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (13312) MPU6050: MPU6050 read error[0m
+[0;32mI (13812) CAP1188: Sensor 3 touched[0m
+[0;32mI (13812) CAP1188: Sensor 4 touched[0m
+[0;32mI (13812) CAP1188: Sensor 7 touched[0m
+[0;32mI (13812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (14812) MPU6050: MPU6050 read error[0m
+[0;32mI (14812) CAP1188: Sensor 3 touched[0m
+[0;32mI (14812) CAP1188: Sensor 4 touched[0m
+[0;32mI (14812) CAP1188: Sensor 7 touched[0m
+[0;32mI (14812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (16312) CAP1188: Sensor 3 touched[0m
+[0;32mI (16312) CAP1188: Sensor 4 touched[0m
+[0;32mI (16312) CAP1188: Sensor 7 touched[0m
+[0;32mI (16312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (16312) MPU6050: MPU6050 read error[0m
+[0;32mI (16812) CAP1188: Sensor 3 touched[0m
+[0;32mI (16812) CAP1188: Sensor 4 touched[0m
+[0;32mI (16812) CAP1188: Sensor 7 touched[0m
+[0;32mI (16812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (17812) MPU6050: MPU6050 read error[0m
+[0;32mI (17812) CAP1188: Sensor 3 touched[0m
+[0;32mI (17812) CAP1188: Sensor 4 touched[0m
+[0;32mI (17812) CAP1188: Sensor 7 touched[0m
+[0;32mI (17812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (19312) CAP1188: Sensor 3 touched[0m
+[0;32mI (19312) CAP1188: Sensor 4 touched[0m
+[0;32mI (19312) CAP1188: Sensor 7 touched[0m
+[0;32mI (19312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (19312) MPU6050: MPU6050 read error[0m
+[0;32mI (19812) CAP1188: Sensor 3 touched[0m
+[0;32mI (19812) CAP1188: Sensor 4 touched[0m
+[0;32mI (19812) CAP1188: Sensor 7 touched[0m
+[0;32mI (19812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (20812) MPU6050: MPU6050 read error[0m
+[0;32mI (20812) CAP1188: Sensor 3 touched[0m
+[0;32mI (20812) CAP1188: Sensor 4 touched[0m
+[0;32mI (20812) CAP1188: Sensor 7 touched[0m
+[0;32mI (20812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (22312) CAP1188: Sensor 3 touched[0m
+[0;32mI (22312) CAP1188: Sensor 4 touched[0m
+[0;32mI (22312) CAP1188: Sensor 7 touched[0m
+[0;32mI (22312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (22312) MPU6050: MPU6050 read error[0m
+[0;32mI (22812) CAP1188: Sensor 3 touched[0m
+[0;32mI (22812) CAP1188: Sensor 4 touched[0m
+[0;32mI (22812) CAP1188: Sensor 7 touched[0m
+[0;32mI (22812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (23812) MPU6050: MPU6050 read error[0m
+[0;32mI (23812) CAP1188: Sensor 3 touched[0m
+[0;32mI (23812) CAP1188: Sensor 4 touched[0m
+[0;32mI (23812) CAP1188: Sensor 7 touched[0m
+[0;32mI (23812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (25312) CAP1188: Sensor 3 touched[0m
+[0;32mI (25312) CAP1188: Sensor 4 touched[0m
+[0;32mI (25312) CAP1188: Sensor 7 touched[0m
+[0;32mI (25312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (25312) MPU6050: MPU6050 read error[0m
+[0;32mI (25812) CAP1188: Sensor 3 touched[0m
+[0;32mI (25812) CAP1188: Sensor 4 touched[0m
+[0;32mI (25812) CAP1188: Sensor 7 touched[0m
+[0;32mI (25812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (26812) MPU6050: MPU6050 read error[0m
+[0;32mI (26812) CAP1188: Sensor 3 touched[0m
+[0;32mI (26812) CAP1188: Sensor 4 touched[0m
+[0;32mI (26812) CAP1188: Sensor 7 touched[0m
+[0;32mI (26812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (28312) CAP1188: Sensor 3 touched[0m
+[0;32mI (28312) CAP1188: Sensor 4 touched[0m
+[0;32mI (28312) CAP1188: Sensor 7 touched[0m
+[0;32mI (28312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (28312) MPU6050: MPU6050 read error[0m
+[0;32mI (28812) CAP1188: Sensor 3 touched[0m
+[0;32mI (28812) CAP1188: Sensor 4 touched[0m
+[0;32mI (28812) CAP1188: Sensor 7 touched[0m
+[0;32mI (28812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (29812) MPU6050: MPU6050 read error[0m
+[0;32mI (29812) CAP1188: Sensor 3 touched[0m
+[0;32mI (29812) CAP1188: Sensor 4 touched[0m
+[0;32mI (29812) CAP1188: Sensor 7 touched[0m
+[0;32mI (29812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (31312) CAP1188: Sensor 3 touched[0m
+[0;32mI (31312) CAP1188: Sensor 4 touched[0m
+[0;32mI (31312) CAP1188: Sensor 7 touched[0m
+[0;32mI (31312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (31312) MPU6050: MPU6050 read error[0m
+[0;32mI (31812) CAP1188: Sensor 3 touched[0m
+[0;32mI (31812) CAP1188: Sensor 4 touched[0m
+[0;32mI (31812) CAP1188: Sensor 7 touched[0m
+[0;32mI (31812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (32812) MPU6050: MPU6050 read error[0m
+[0;32mI (32812) CAP1188: Sensor 3 touched[0m
+[0;32mI (32812) CAP1188: Sensor 4 touched[0m
+[0;32mI (32812) CAP1188: Sensor 7 touched[0m
+[0;32mI (32812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (34312) CAP1188: Sensor 3 touched[0m
+[0;32mI (34312) CAP1188: Sensor 4 touched[0m
+[0;32mI (34312) CAP1188: Sensor 7 touched[0m
+[0;32mI (34312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (34312) MPU6050: MPU6050 read error[0m
+[0;32mI (34812) CAP1188: Sensor 3 touched[0m
+[0;32mI (34812) CAP1188: Sensor 4 touched[0m
+[0;32mI (34812) CAP1188: Sensor 7 touched[0m
+[0;32mI (34812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (35812) MPU6050: MPU6050 read error[0m
+[0;32mI (35812) CAP1188: Sensor 3 touched[0m
+[0;32mI (35812) CAP1188: Sensor 4 touched[0m
+[0;32mI (35812) CAP1188: Sensor 7 touched[0m
+[0;32mI (35812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (37312) CAP1188: Sensor 3 touched[0m
+[0;32mI (37312) CAP1188: Sensor 4 touched[0m
+[0;32mI (37312) CAP1188: Sensor 7 touched[0m
+[0;32mI (37312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (37312) MPU6050: MPU6050 read error[0m
+[0;32mI (37812) CAP1188: Sensor 3 touched[0m
+[0;32mI (37812) CAP1188: Sensor 4 touched[0m
+[0;32mI (37812) CAP1188: Sensor 7 touched[0m
+[0;32mI (37812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (38812) MPU6050: MPU6050 read error[0m
+[0;32mI (38812) CAP1188: Sensor 3 touched[0m
+[0;32mI (38812) CAP1188: Sensor 4 touched[0m
+[0;32mI (38812) CAP1188: Sensor 7 touched[0m
+[0;32mI (38812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (40312) CAP1188: Sensor 3 touched[0m
+[0;32mI (40312) CAP1188: Sensor 4 touched[0m
+[0;32mI (40312) CAP1188: Sensor 7 touched[0m
+[0;32mI (40312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (40312) MPU6050: MPU6050 read error[0m
+[0;32mI (40812) CAP1188: Sensor 3 touched[0m
+[0;32mI (40812) CAP1188: Sensor 4 touched[0m
+[0;32mI (40812) CAP1188: Sensor 7 touched[0m
+[0;32mI (40812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (41812) MPU6050: MPU6050 read error[0m
+[0;32mI (41812) CAP1188: Sensor 3 touched[0m
+[0;32mI (41812) CAP1188: Sensor 4 touched[0m
+[0;32mI (41812) CAP1188: Sensor 7 touched[0m
+[0;32mI (41812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (43312) CAP1188: Sensor 3 touched[0m
+[0;32mI (43312) CAP1188: Sensor 4 touched[0m
+[0;32mI (43312) CAP1188: Sensor 7 touched[0m
+[0;32mI (43312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (43312) MPU6050: MPU6050 read error[0m
+[0;32mI (43812) CAP1188: Sensor 3 touched[0m
+[0;32mI (43812) CAP1188: Sensor 4 touched[0m
+[0;32mI (43812) CAP1188: Sensor 7 touched[0m
+[0;32mI (43812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (44812) MPU6050: MPU6050 read error[0m
+[0;32mI (44812) CAP1188: Sensor 3 touched[0m
+[0;32mI (44812) CAP1188: Sensor 4 touched[0m
+[0;32mI (44812) CAP1188: Sensor 7 touched[0m
+[0;32mI (44812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (46312) CAP1188: Sensor 3 touched[0m
+[0;32mI (46312) CAP1188: Sensor 4 touched[0m
+[0;32mI (46312) CAP1188: Sensor 7 touched[0m
+[0;32mI (46312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (46312) MPU6050: MPU6050 read error[0m
+[0;32mI (46812) CAP1188: Sensor 3 touched[0m
+[0;32mI (46812) CAP1188: Sensor 4 touched[0m
+[0;32mI (46812) CAP1188: Sensor 7 touched[0m
+[0;32mI (46812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (47812) MPU6050: MPU6050 read error[0m
+[0;32mI (47812) CAP1188: Sensor 3 touched[0m
+[0;32mI (47812) CAP1188: Sensor 4 touched[0m
+[0;32mI (47812) CAP1188: Sensor 7 touched[0m
+[0;32mI (47812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (49312) CAP1188: Sensor 3 touched[0m
+[0;32mI (49312) CAP1188: Sensor 4 touched[0m
+[0;32mI (49312) CAP1188: Sensor 7 touched[0m
+[0;32mI (49312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (49312) MPU6050: MPU6050 read error[0m
+[0;32mI (49812) CAP1188: Sensor 3 touched[0m
+[0;32mI (49812) CAP1188: Sensor 4 touched[0m
+[0;32mI (49812) CAP1188: Sensor 7 touched[0m
+[0;32mI (49812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (50812) MPU6050: MPU6050 read error[0m
+[0;32mI (50812) CAP1188: Sensor 3 touched[0m
+[0;32mI (50812) CAP1188: Sensor 4 touched[0m
+[0;32mI (50812) CAP1188: Sensor 7 touched[0m
+[0;32mI (50812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (52312) CAP1188: Sensor 3 touched[0m
+[0;32mI (52312) CAP1188: Sensor 4 touched[0m
+[0;32mI (52312) CAP1188: Sensor 7 touched[0m
+[0;32mI (52312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (52312) MPU6050: MPU6050 read error[0m
+[0;32mI (52812) CAP1188: Sensor 3 touched[0m
+[0;32mI (52812) CAP1188: Sensor 4 touched[0m
+[0;32mI (52812) CAP1188: Sensor 7 touched[0m
+[0;32mI (52812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (53812) MPU6050: MPU6050 read error[0m
+[0;32mI (53812) CAP1188: Sensor 3 touched[0m
+[0;32mI (53812) CAP1188: Sensor 4 touched[0m
+[0;32mI (53812) CAP1188: Sensor 7 touched[0m
+[0;32mI (53812) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (55312) CAP1188: Sensor 3 touched[0m
+[0;32mI (55312) CAP1188: Sensor 4 touched[0m
+[0;32mI (55312) CAP1188: Sensor 7 touched[0m
+[0;32mI (55312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (55312) MPU6050: MPU6050 read error[0m
+[0;32mI (55812) CAP1188: Sensor 3 touched[0m
+[0;32mI (55812) CAP1188: Sensor 4 touched[0m
+[0;32mI (55812) CAP1188: Sensor 7 touched[0m
+[0;32mI (55812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (56812) MPU6050: MPU6050 read error[0m
+[0;32mI (56812) CAP1188: Sensor 3 touched[0m
+[0;32mI (56812) CAP1188: Sensor 4 touched[0m
+[0;32mI (56812) CAP1188: Sensor 7 touched[0m
+[0;32mI (56812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (58312) MPU6050: MPU6050 read error[0m
+[0;32mI (58312) CAP1188: Sensor 3 touched[0m
+[0;32mI (58312) CAP1188: Sensor 4 touched[0m
+[0;32mI (58312) CAP1188: Sensor 7 touched[0m
+[0;32mI (58312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (59812) CAP1188: Sensor 3 touched[0m
+[0;32mI (59812) CAP1188: Sensor 4 touched[0m
+[0;32mI (59812) CAP1188: Sensor 7 touched[0m
+[0;32mI (59812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (59812) MPU6050: MPU6050 read error[0m
+[0;32mI (60312) CAP1188: Sensor 3 touched[0m
+[0;32mI (60312) CAP1188: Sensor 4 touched[0m
+[0;32mI (60312) CAP1188: Sensor 7 touched[0m
+[0;32mI (60312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (61312) MPU6050: MPU6050 read error[0m
+[0;32mI (61312) CAP1188: Sensor 3 touched[0m
+[0;32mI (61312) CAP1188: Sensor 4 touched[0m
+[0;32mI (61312) CAP1188: Sensor 7 touched[0m
+[0;32mI (61312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (62812) CAP1188: Sensor 3 touched[0m
+[0;32mI (62812) CAP1188: Sensor 4 touched[0m
+[0;32mI (62812) CAP1188: Sensor 7 touched[0m
+[0;32mI (62812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (62812) MPU6050: MPU6050 read error[0m
+[0;32mI (63312) CAP1188: Sensor 3 touched[0m
+[0;32mI (63312) CAP1188: Sensor 4 touched[0m
+[0;32mI (63312) CAP1188: Sensor 7 touched[0m
+[0;32mI (63312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (64312) MPU6050: MPU6050 read error[0m
+[0;32mI (64312) CAP1188: Sensor 3 touched[0m
+[0;32mI (64312) CAP1188: Sensor 4 touched[0m
+[0;32mI (64312) CAP1188: Sensor 7 touched[0m
+[0;32mI (64312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (65812) CAP1188: Sensor 3 touched[0m
+[0;32mI (65812) CAP1188: Sensor 4 touched[0m
+[0;32mI (65812) CAP1188: Sensor 7 touched[0m
+[0;32mI (65812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (65812) MPU6050: MPU6050 read error[0m
+[0;32mI (66312) CAP1188: Sensor 3 touched[0m
+[0;32mI (66312) CAP1188: Sensor 4 touched[0m
+[0;32mI (66312) CAP1188: Sensor 7 touched[0m
+[0;32mI (66312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (67312) MPU6050: MPU6050 read error[0m
+[0;32mI (67312) CAP1188: Sensor 3 touched[0m
+[0;32mI (67312) CAP1188: Sensor 4 touched[0m
+[0;32mI (67312) CAP1188: Sensor 7 touched[0m
+[0;32mI (67312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (68812) CAP1188: Sensor 3 touched[0m
+[0;32mI (68812) CAP1188: Sensor 4 touched[0m
+[0;32mI (68812) CAP1188: Sensor 7 touched[0m
+[0;32mI (68812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (68812) MPU6050: MPU6050 read error[0m
+[0;32mI (70312) CAP1188: Sensor 3 touched[0m
+[0;32mI (70312) CAP1188: Sensor 4 touched[0m
+[0;32mI (70312) CAP1188: Sensor 7 touched[0m
+[0;32mI (70312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (70312) MPU6050: MPU6050 read error[0m
+[0;32mI (71812) CAP1188: Sensor 3 touched[0m
+[0;32mI (71812) CAP1188: Sensor 4 touched[0m
+[0;32mI (71812) CAP1188: Sensor 7 touched[0m
+[0;32mI (71812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (71812) MPU6050: MPU6050 read error[0m
+[0;32mI (73312) CAP1188: Sensor 3 touched[0m
+[0;32mI (73312) CAP1188: Sensor 4 touched[0m
+[0;32mI (73312) CAP1188: Sensor 7 touched[0m
+[0;32mI (73312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (73312) MPU6050: MPU6050 read error[0m
+[0;32mI (74812) CAP1188: Sensor 3 touched[0m
+[0;32mI (74812) CAP1188: Sensor 4 touched[0m
+[0;32mI (74812) CAP1188: Sensor 7 touched[0m
+[0;32mI (74812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (74812) MPU6050: MPU6050 read error[0m
+[0;32mI (75312) CAP1188: Sensor 3 touched[0m
+[0;32mI (75312) CAP1188: Sensor 4 touched[0m
+[0;32mI (75312) CAP1188: Sensor 7 touched[0m
+[0;32mI (75312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (76312) MPU6050: MPU6050 read error[0m
+[0;32mI (76312) CAP1188: Sensor 3 touched[0m
+[0;32mI (76312) CAP1188: Sensor 4 touched[0m
+[0;32mI (76312) CAP1188: Sensor 7 touched[0m
+[0;32mI (76312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (77812) CAP1188: Sensor 3 touched[0m
+[0;32mI (77812) CAP1188: Sensor 4 touched[0m
+[0;32mI (77812) CAP1188: Sensor 7 touched[0m
+[0;32mI (77812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (77812) MPU6050: MPU6050 read error[0m
+[0;32mI (78312) CAP1188: Sensor 3 touched[0m
+[0;32mI (78312) CAP1188: Sensor 4 touched[0m
+[0;32mI (78312) CAP1188: Sensor 7 touched[0m
+[0;32mI (78312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (79312) MPU6050: MPU6050 read error[0m
+[0;32mI (79312) CAP1188: Sensor 3 touched[0m
+[0;32mI (79312) CAP1188: Sensor 4 touched[0m
+[0;32mI (79312) CAP1188: Sensor 7 touched[0m
+[0;32mI (79312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (80812) CAP1188: Sensor 3 touched[0m
+[0;32mI (80812) CAP1188: Sensor 4 touched[0m
+[0;32mI (80812) CAP1188: Sensor 7 touched[0m
+[0;32mI (80812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (80812) MPU6050: MPU6050 read error[0m
+[0;32mI (81312) CAP1188: Sensor 3 touched[0m
+[0;32mI (81312) CAP1188: Sensor 4 touched[0m
+[0;32mI (81312) CAP1188: Sensor 7 touched[0m
+[0;32mI (81312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (82312) MPU6050: MPU6050 read error[0m
+[0;32mI (82312) CAP1188: Sensor 3 touched[0m
+[0;32mI (82312) CAP1188: Sensor 4 touched[0m
+[0;32mI (82312) CAP1188: Sensor 7 touched[0m
+[0;32mI (82312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (83812) CAP1188: Sensor 3 touched[0m
+[0;32mI (83812) CAP1188: Sensor 4 touched[0m
+[0;32mI (83812) CAP1188: Sensor 7 touched[0m
+[0;32mI (83812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (83812) MPU6050: MPU6050 read error[0m
+[0;32mI (84312) CAP1188: Sensor 3 touched[0m
+[0;32mI (84312) CAP1188: Sensor 4 touched[0m
+[0;32mI (84312) CAP1188: Sensor 7 touched[0m
+[0;32mI (84312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (85312) MPU6050: MPU6050 read error[0m
+[0;32mI (85312) CAP1188: Sensor 3 touched[0m
+[0;32mI (85312) CAP1188: Sensor 4 touched[0m
+[0;32mI (85312) CAP1188: Sensor 7 touched[0m
+[0;32mI (85312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (86812) CAP1188: Sensor 3 touched[0m
+[0;32mI (86812) CAP1188: Sensor 4 touched[0m
+[0;32mI (86812) CAP1188: Sensor 7 touched[0m
+[0;32mI (86812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (86812) MPU6050: MPU6050 read error[0m
+[0;32mI (87312) CAP1188: Sensor 3 touched[0m
+[0;32mI (87312) CAP1188: Sensor 4 touched[0m
+[0;32mI (87312) CAP1188: Sensor 7 touched[0m
+[0;32mI (87312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (88312) MPU6050: MPU6050 read error[0m
+[0;32mI (88312) CAP1188: Sensor 3 touched[0m
+[0;32mI (88312) CAP1188: Sensor 4 touched[0m
+[0;32mI (88312) CAP1188: Sensor 7 touched[0m
+[0;32mI (88312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (89812) CAP1188: Sensor 3 touched[0m
+[0;32mI (89812) CAP1188: Sensor 4 touched[0m
+[0;32mI (89812) CAP1188: Sensor 7 touched[0m
+[0;32mI (89812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (89812) MPU6050: MPU6050 read error[0m
+[0;32mI (90312) CAP1188: Sensor 3 touched[0m
+[0;32mI (90312) CAP1188: Sensor 4 touched[0m
+[0;32mI (90312) CAP1188: Sensor 7 touched[0m
+[0;32mI (90312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (91312) MPU6050: MPU6050 read error[0m
+[0;32mI (91312) CAP1188: Sensor 3 touched[0m
+[0;32mI (91312) CAP1188: Sensor 4 touched[0m
+[0;32mI (91312) CAP1188: Sensor 7 touched[0m
+[0;32mI (91312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (92812) CAP1188: Sensor 3 touched[0m
+[0;32mI (92812) CAP1188: Sensor 4 touched[0m
+[0;32mI (92812) CAP1188: Sensor 7 touched[0m
+[0;32mI (92812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (92812) MPU6050: MPU6050 read error[0m
+[0;32mI (93312) CAP1188: Sensor 3 touched[0m
+[0;32mI (93312) CAP1188: Sensor 4 touched[0m
+[0;32mI (93312) CAP1188: Sensor 7 touched[0m
+[0;32mI (93312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (94312) MPU6050: MPU6050 read error[0m
+[0;32mI (94312) CAP1188: Sensor 3 touched[0m
+[0;32mI (94312) CAP1188: Sensor 4 touched[0m
+[0;32mI (94312) CAP1188: Sensor 7 touched[0m
+[0;32mI (94312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (95812) CAP1188: Sensor 3 touched[0m
+[0;32mI (95812) CAP1188: Sensor 4 touched[0m
+[0;32mI (95812) CAP1188: Sensor 7 touched[0m
+[0;32mI (95812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (95812) MPU6050: MPU6050 read error[0m
+[0;32mI (96312) CAP1188: Sensor 3 touched[0m
+[0;32mI (96312) CAP1188: Sensor 4 touched[0m
+[0;32mI (96312) CAP1188: Sensor 7 touched[0m
+[0;32mI (96312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (97312) MPU6050: MPU6050 read error[0m
+[0;32mI (97312) CAP1188: Sensor 3 touched[0m
+[0;32mI (97312) CAP1188: Sensor 4 touched[0m
+[0;32mI (97312) CAP1188: Sensor 7 touched[0m
+[0;32mI (97312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (98812) CAP1188: Sensor 3 touched[0m
+[0;32mI (98812) CAP1188: Sensor 4 touched[0m
+[0;32mI (98812) CAP1188: Sensor 7 touched[0m
+[0;32mI (98812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (98812) MPU6050: MPU6050 read error[0m
+[0;32mI (99312) CAP1188: Sensor 3 touched[0m
+[0;32mI (99312) CAP1188: Sensor 4 touched[0m
+[0;32mI (99312) CAP1188: Sensor 7 touched[0m
+[0;32mI (99312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (100312) MPU6050: MPU6050 read error[0m
+[0;32mI (100312) CAP1188: Sensor 3 touched[0m
+[0;32mI (100312) CAP1188: Sensor 4 touched[0m
+[0;32mI (100312) CAP1188: Sensor 7 touched[0m
+[0;32mI (100312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (101812) CAP1188: Sensor 3 touched[0m
+[0;32mI (101812) CAP1188: Sensor 4 touched[0m
+[0;32mI (101812) CAP1188: Sensor 7 touched[0m
+[0;32mI (101812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (101812) MPU6050: MPU6050 read error[0m
+[0;32mI (102312) CAP1188: Sensor 3 touched[0m
+[0;32mI (102312) CAP1188: Sensor 4 touched[0m
+[0;32mI (102312) CAP1188: Sensor 7 touched[0m
+[0;32mI (102312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (103312) MPU6050: MPU6050 read error[0m
+[0;32mI (103312) CAP1188: Sensor 3 touched[0m
+[0;32mI (103312) CAP1188: Sensor 4 touched[0m
+[0;32mI (103312) CAP1188: Sensor 7 touched[0m
+[0;32mI (103312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (104812) CAP1188: Sensor 3 touched[0m
+[0;32mI (104812) CAP1188: Sensor 4 touched[0m
+[0;32mI (104812) CAP1188: Sensor 7 touched[0m
+[0;32mI (104812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (104812) MPU6050: MPU6050 read error[0m
+[0;32mI (105312) CAP1188: Sensor 3 touched[0m
+[0;32mI (105312) CAP1188: Sensor 4 touched[0m
+[0;32mI (105312) CAP1188: Sensor 7 touched[0m
+[0;32mI (105312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (106312) MPU6050: MPU6050 read error[0m
+[0;32mI (106312) CAP1188: Sensor 3 touched[0m
+[0;32mI (106312) CAP1188: Sensor 4 touched[0m
+[0;32mI (106312) CAP1188: Sensor 7 touched[0m
+[0;32mI (106312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (107812) CAP1188: Sensor 3 touched[0m
+[0;32mI (107812) CAP1188: Sensor 4 touched[0m
+[0;32mI (107812) CAP1188: Sensor 7 touched[0m
+[0;32mI (107812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (107812) MPU6050: MPU6050 read error[0m
+[0;32mI (108312) CAP1188: Sensor 3 touched[0m
+[0;32mI (108312) CAP1188: Sensor 4 touched[0m
+[0;32mI (108312) CAP1188: Sensor 7 touched[0m
+[0;32mI (108312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (109312) MPU6050: MPU6050 read error[0m
+[0;32mI (109312) CAP1188: Sensor 3 touched[0m
+[0;32mI (109312) CAP1188: Sensor 4 touched[0m
+[0;32mI (109312) CAP1188: Sensor 7 touched[0m
+[0;32mI (109312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (110812) CAP1188: Sensor 3 touched[0m
+[0;32mI (110812) CAP1188: Sensor 4 touched[0m
+[0;32mI (110812) CAP1188: Sensor 7 touched[0m
+[0;32mI (110812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (110812) MPU6050: MPU6050 read error[0m
+[0;32mI (111312) CAP1188: Sensor 3 touched[0m
+[0;32mI (111312) CAP1188: Sensor 4 touched[0m
+[0;32mI (111312) CAP1188: Sensor 7 touched[0m
+[0;32mI (111312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (112312) MPU6050: MPU6050 read error[0m
+[0;32mI (112312) CAP1188: Sensor 3 touched[0m
+[0;32mI (112312) CAP1188: Sensor 4 touched[0m
+[0;32mI (112312) CAP1188: Sensor 7 touched[0m
+[0;32mI (112312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (113812) CAP1188: Sensor 3 touched[0m
+[0;32mI (113812) CAP1188: Sensor 4 touched[0m
+[0;32mI (113812) CAP1188: Sensor 7 touched[0m
+[0;32mI (113812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (113812) MPU6050: MPU6050 read error[0m
+[0;32mI (114312) CAP1188: Sensor 3 touched[0m
+[0;32mI (114312) CAP1188: Sensor 4 touched[0m
+[0;32mI (114312) CAP1188: Sensor 7 touched[0m
+[0;32mI (114312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (115312) MPU6050: MPU6050 read error[0m
+[0;32mI (115312) CAP1188: Sensor 3 touched[0m
+[0;32mI (115312) CAP1188: Sensor 4 touched[0m
+[0;32mI (115312) CAP1188: Sensor 7 touched[0m
+[0;32mI (115312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (116812) CAP1188: Sensor 3 touched[0m
+[0;32mI (116812) CAP1188: Sensor 4 touched[0m
+[0;32mI (116812) CAP1188: Sensor 7 touched[0m
+[0;32mI (116812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (116812) MPU6050: MPU6050 read error[0m
+[0;32mI (117312) CAP1188: Sensor 3 touched[0m
+[0;32mI (117312) CAP1188: Sensor 4 touched[0m
+[0;32mI (117312) CAP1188: Sensor 7 touched[0m
+[0;32mI (117312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (118312) MPU6050: MPU6050 read error[0m
+[0;32mI (118312) CAP1188: Sensor 3 touched[0m
+[0;32mI (118312) CAP1188: Sensor 4 touched[0m
+[0;32mI (118312) CAP1188: Sensor 7 touched[0m
+[0;32mI (118312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (119812) CAP1188: Sensor 3 touched[0m
+[0;32mI (119812) CAP1188: Sensor 4 touched[0m
+[0;32mI (119812) CAP1188: Sensor 7 touched[0m
+[0;32mI (119812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (119812) MPU6050: MPU6050 read error[0m
+[0;32mI (120312) CAP1188: Sensor 3 touched[0m
+[0;32mI (120312) CAP1188: Sensor 4 touched[0m
+[0;32mI (120312) CAP1188: Sensor 7 touched[0m
+[0;32mI (120312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (121312) MPU6050: MPU6050 read error[0m
+[0;32mI (121312) CAP1188: Sensor 3 touched[0m
+[0;32mI (121312) CAP1188: Sensor 4 touched[0m
+[0;32mI (121312) CAP1188: Sensor 7 touched[0m
+[0;32mI (121312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (122812) CAP1188: Sensor 3 touched[0m
+[0;32mI (122812) CAP1188: Sensor 4 touched[0m
+[0;32mI (122812) CAP1188: Sensor 7 touched[0m
+[0;32mI (122812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (122812) MPU6050: MPU6050 read error[0m
+[0;32mI (123312) CAP1188: Sensor 3 touched[0m
+[0;32mI (123312) CAP1188: Sensor 4 touched[0m
+[0;32mI (123312) CAP1188: Sensor 7 touched[0m
+[0;32mI (123312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (124312) MPU6050: MPU6050 read error[0m
+[0;32mI (124312) CAP1188: Sensor 3 touched[0m
+[0;32mI (124312) CAP1188: Sensor 4 touched[0m
+[0;32mI (124312) CAP1188: Sensor 7 touched[0m
+[0;32mI (124312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (125812) CAP1188: Sensor 3 touched[0m
+[0;32mI (125812) CAP1188: Sensor 4 touched[0m
+[0;32mI (125812) CAP1188: Sensor 7 touched[0m
+[0;32mI (125812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (125812) MPU6050: MPU6050 read error[0m
+[0;32mI (126312) CAP1188: Sensor 3 touched[0m
+[0;32mI (126312) CAP1188: Sensor 4 touched[0m
+[0;32mI (126312) CAP1188: Sensor 7 touched[0m
+[0;32mI (126312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (127312) MPU6050: MPU6050 read error[0m
+[0;32mI (127312) CAP1188: Sensor 3 touched[0m
+[0;32mI (127312) CAP1188: Sensor 4 touched[0m
+[0;32mI (127312) CAP1188: Sensor 7 touched[0m
+[0;32mI (127312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (128812) CAP1188: Sensor 3 touched[0m
+[0;32mI (128812) CAP1188: Sensor 4 touched[0m
+[0;32mI (128812) CAP1188: Sensor 7 touched[0m
+[0;32mI (128812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (128812) MPU6050: MPU6050 read error[0m
+[0;32mI (129312) CAP1188: Sensor 3 touched[0m
+[0;32mI (129312) CAP1188: Sensor 4 touched[0m
+[0;32mI (129312) CAP1188: Sensor 7 touched[0m
+[0;32mI (129312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (130312) MPU6050: MPU6050 read error[0m
+[0;32mI (130312) CAP1188: Sensor 3 touched[0m
+[0;32mI (130312) CAP1188: Sensor 4 touched[0m
+[0;32mI (130312) CAP1188: Sensor 7 touched[0m
+[0;32mI (130312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (131812) CAP1188: Sensor 3 touched[0m
+[0;32mI (131812) CAP1188: Sensor 4 touched[0m
+[0;32mI (131812) CAP1188: Sensor 7 touched[0m
+[0;32mI (131812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (131812) MPU6050: MPU6050 read error[0m
+[0;32mI (132312) CAP1188: Sensor 3 touched[0m
+[0;32mI (132312) CAP1188: Sensor 4 touched[0m
+[0;32mI (132312) CAP1188: Sensor 7 touched[0m
+[0;32mI (132312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (133312) MPU6050: MPU6050 read error[0m
+[0;32mI (133312) CAP1188: Sensor 3 touched[0m
+[0;32mI (133312) CAP1188: Sensor 4 touched[0m
+[0;32mI (133312) CAP1188: Sensor 7 touched[0m
+[0;32mI (133312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (134812) CAP1188: Sensor 3 touched[0m
+[0;32mI (134812) CAP1188: Sensor 4 touched[0m
+[0;32mI (134812) CAP1188: Sensor 7 touched[0m
+[0;32mI (134812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (134812) MPU6050: MPU6050 read error[0m
+[0;32mI (135312) CAP1188: Sensor 3 touched[0m
+[0;32mI (135312) CAP1188: Sensor 4 touched[0m
+[0;32mI (135312) CAP1188: Sensor 7 touched[0m
+[0;32mI (135312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (136312) MPU6050: MPU6050 read error[0m
+[0;32mI (136312) CAP1188: Sensor 3 touched[0m
+[0;32mI (136312) CAP1188: Sensor 4 touched[0m
+[0;32mI (136312) CAP1188: Sensor 7 touched[0m
+[0;32mI (136312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (137812) CAP1188: Sensor 3 touched[0m
+[0;32mI (137812) CAP1188: Sensor 4 touched[0m
+[0;32mI (137812) CAP1188: Sensor 7 touched[0m
+[0;32mI (137812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (137812) MPU6050: MPU6050 read error[0m
+[0;32mI (138312) CAP1188: Sensor 3 touched[0m
+[0;32mI (138312) CAP1188: Sensor 4 touched[0m
+[0;32mI (138312) CAP1188: Sensor 7 touched[0m
+[0;32mI (138312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (139312) MPU6050: MPU6050 read error[0m
+[0;32mI (139312) CAP1188: Sensor 3 touched[0m
+[0;32mI (139312) CAP1188: Sensor 4 touched[0m
+[0;32mI (139312) CAP1188: Sensor 7 touched[0m
+[0;32mI (139312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (140812) CAP1188: Sensor 3 touched[0m
+[0;32mI (140812) CAP1188: Sensor 4 touched[0m
+[0;32mI (140812) CAP1188: Sensor 7 touched[0m
+[0;32mI (140812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (140812) MPU6050: MPU6050 read error[0m
+[0;32mI (141312) CAP1188: Sensor 3 touched[0m
+[0;32mI (141312) CAP1188: Sensor 4 touched[0m
+[0;32mI (141312) CAP1188: Sensor 7 touched[0m
+[0;32mI (141312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (142312) MPU6050: MPU6050 read error[0m
+[0;32mI (142312) CAP1188: Sensor 3 touched[0m
+[0;32mI (142312) CAP1188: Sensor 4 touched[0m
+[0;32mI (142312) CAP1188: Sensor 7 touched[0m
+[0;32mI (142312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (143812) CAP1188: Sensor 3 touched[0m
+[0;32mI (143812) CAP1188: Sensor 4 touched[0m
+[0;32mI (143812) CAP1188: Sensor 7 touched[0m
+[0;32mI (143812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (143812) MPU6050: MPU6050 read error[0m
+[0;32mI (144312) CAP1188: Sensor 3 touched[0m
+[0;32mI (144312) CAP1188: Sensor 4 touched[0m
+[0;32mI (144312) CAP1188: Sensor 7 touched[0m
+[0;32mI (144312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (145312) MPU6050: MPU6050 read error[0m
+[0;32mI (145312) CAP1188: Sensor 3 touched[0m
+[0;32mI (145312) CAP1188: Sensor 4 touched[0m
+[0;32mI (145312) CAP1188: Sensor 7 touched[0m
+[0;32mI (145312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (146812) CAP1188: Sensor 3 touched[0m
+[0;32mI (146812) CAP1188: Sensor 4 touched[0m
+[0;32mI (146812) CAP1188: Sensor 7 touched[0m
+[0;32mI (146812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (146812) MPU6050: MPU6050 read error[0m
+[0;32mI (147312) CAP1188: Sensor 3 touched[0m
+[0;32mI (147312) CAP1188: Sensor 4 touched[0m
+[0;32mI (147312) CAP1188: Sensor 7 touched[0m
+[0;32mI (147312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (148312) MPU6050: MPU6050 read error[0m
+[0;32mI (148312) CAP1188: Sensor 3 touched[0m
+[0;32mI (148312) CAP1188: Sensor 4 touched[0m
+[0;32mI (148312) CAP1188: Sensor 7 touched[0m
+[0;32mI (148312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (149812) CAP1188: Sensor 3 touched[0m
+[0;32mI (149812) CAP1188: Sensor 4 touched[0m
+[0;32mI (149812) CAP1188: Sensor 7 touched[0m
+[0;32mI (149812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (149812) MPU6050: MPU6050 read error[0m
+[0;32mI (150312) CAP1188: Sensor 3 touched[0m
+[0;32mI (150312) CAP1188: Sensor 4 touched[0m
+[0;32mI (150312) CAP1188: Sensor 7 touched[0m
+[0;32mI (150312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (151312) MPU6050: MPU6050 read error[0m
+[0;32mI (151312) CAP1188: Sensor 3 touched[0m
+[0;32mI (151312) CAP1188: Sensor 4 touched[0m
+[0;32mI (151312) CAP1188: Sensor 7 touched[0m
+[0;32mI (151312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (152812) CAP1188: Sensor 3 touched[0m
+[0;32mI (152812) CAP1188: Sensor 4 touched[0m
+[0;32mI (152812) CAP1188: Sensor 7 touched[0m
+[0;32mI (152812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (152812) MPU6050: MPU6050 read error[0m
+[0;32mI (153312) CAP1188: Sensor 3 touched[0m
+[0;32mI (153312) CAP1188: Sensor 4 touched[0m
+[0;32mI (153312) CAP1188: Sensor 7 touched[0m
+[0;32mI (153312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (154312) MPU6050: MPU6050 read error[0m
+[0;32mI (154312) CAP1188: Sensor 3 touched[0m
+[0;32mI (154312) CAP1188: Sensor 4 touched[0m
+[0;32mI (154312) CAP1188: Sensor 7 touched[0m
+[0;32mI (154312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (155812) CAP1188: Sensor 3 touched[0m
+[0;32mI (155812) CAP1188: Sensor 4 touched[0m
+[0;32mI (155812) CAP1188: Sensor 7 touched[0m
+[0;32mI (155812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (155812) MPU6050: MPU6050 read error[0m
+[0;32mI (156312) CAP1188: Sensor 3 touched[0m
+[0;32mI (156312) CAP1188: Sensor 4 touched[0m
+[0;32mI (156312) CAP1188: Sensor 7 touched[0m
+[0;32mI (156312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (157312) MPU6050: MPU6050 read error[0m
+[0;32mI (157312) CAP1188: Sensor 3 touched[0m
+[0;32mI (157312) CAP1188: Sensor 4 touched[0m
+[0;32mI (157312) CAP1188: Sensor 7 touched[0m
+[0;32mI (157312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (158812) CAP1188: Sensor 3 touched[0m
+[0;32mI (158812) CAP1188: Sensor 4 touched[0m
+[0;32mI (158812) CAP1188: Sensor 7 touched[0m
+[0;32mI (158812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (158812) MPU6050: MPU6050 read error[0m
+[0;32mI (159312) CAP1188: Sensor 3 touched[0m
+[0;32mI (159312) CAP1188: Sensor 4 touched[0m
+[0;32mI (159312) CAP1188: Sensor 7 touched[0m
+[0;32mI (159312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (160312) MPU6050: MPU6050 read error[0m
+[0;32mI (160312) CAP1188: Sensor 3 touched[0m
+[0;32mI (160312) CAP1188: Sensor 4 touched[0m
+[0;32mI (160312) CAP1188: Sensor 7 touched[0m
+[0;32mI (160312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (161812) CAP1188: Sensor 3 touched[0m
+[0;32mI (161812) CAP1188: Sensor 4 touched[0m
+[0;32mI (161812) CAP1188: Sensor 7 touched[0m
+[0;32mI (161812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (161812) MPU6050: MPU6050 read error[0m
+[0;32mI (162312) CAP1188: Sensor 3 touched[0m
+[0;32mI (162312) CAP1188: Sensor 4 touched[0m
+[0;32mI (162312) CAP1188: Sensor 7 touched[0m
+[0;32mI (162312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (163312) MPU6050: MPU6050 read error[0m
+[0;32mI (163312) CAP1188: Sensor 3 touched[0m
+[0;32mI (163312) CAP1188: Sensor 4 touched[0m
+[0;32mI (163312) CAP1188: Sensor 7 touched[0m
+[0;32mI (163312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (164812) CAP1188: Sensor 3 touched[0m
+[0;32mI (164812) CAP1188: Sensor 4 touched[0m
+[0;32mI (164812) CAP1188: Sensor 7 touched[0m
+[0;32mI (164812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (164812) MPU6050: MPU6050 read error[0m
+[0;32mI (165312) CAP1188: Sensor 3 touched[0m
+[0;32mI (165312) CAP1188: Sensor 4 touched[0m
+[0;32mI (165312) CAP1188: Sensor 7 touched[0m
+[0;32mI (165312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (166312) MPU6050: MPU6050 read error[0m
+[0;32mI (166312) CAP1188: Sensor 3 touched[0m
+[0;32mI (166312) CAP1188: Sensor 4 touched[0m
+[0;32mI (166312) CAP1188: Sensor 7 touched[0m
+[0;32mI (166312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (167812) CAP1188: Sensor 3 touched[0m
+[0;32mI (167812) CAP1188: Sensor 4 touched[0m
+[0;32mI (167812) CAP1188: Sensor 7 touched[0m
+[0;32mI (167812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (167812) MPU6050: MPU6050 read error[0m
+[0;32mI (168312) CAP1188: Sensor 3 touched[0m
+[0;32mI (168312) CAP1188: Sensor 4 touched[0m
+[0;32mI (168312) CAP1188: Sensor 7 touched[0m
+[0;32mI (168312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (169312) MPU6050: MPU6050 read error[0m
+[0;32mI (169312) CAP1188: Sensor 3 touched[0m
+[0;32mI (169312) CAP1188: Sensor 4 touched[0m
+[0;32mI (169312) CAP1188: Sensor 7 touched[0m
+[0;32mI (169312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (170812) CAP1188: Sensor 3 touched[0m
+[0;32mI (170812) CAP1188: Sensor 4 touched[0m
+[0;32mI (170812) CAP1188: Sensor 7 touched[0m
+[0;32mI (170812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (170812) MPU6050: MPU6050 read error[0m
+[0;32mI (171312) CAP1188: Sensor 3 touched[0m
+[0;32mI (171312) CAP1188: Sensor 4 touched[0m
+[0;32mI (171312) CAP1188: Sensor 7 touched[0m
+[0;32mI (171312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (172312) MPU6050: MPU6050 read error[0m
+[0;32mI (172312) CAP1188: Sensor 3 touched[0m
+[0;32mI (172312) CAP1188: Sensor 4 touched[0m
+[0;32mI (172312) CAP1188: Sensor 7 touched[0m
+[0;32mI (172312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (173812) CAP1188: Sensor 3 touched[0m
+[0;32mI (173812) CAP1188: Sensor 4 touched[0m
+[0;32mI (173812) CAP1188: Sensor 7 touched[0m
+[0;32mI (173812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (173812) MPU6050: MPU6050 read error[0m
+[0;32mI (174312) CAP1188: Sensor 3 touched[0m
+[0;32mI (174312) CAP1188: Sensor 4 touched[0m
+[0;32mI (174312) CAP1188: Sensor 7 touched[0m
+[0;32mI (174312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (175312) MPU6050: MPU6050 read error[0m
+[0;32mI (175312) CAP1188: Sensor 3 touched[0m
+[0;32mI (175312) CAP1188: Sensor 4 touched[0m
+[0;32mI (175312) CAP1188: Sensor 7 touched[0m
+[0;32mI (175312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (176812) CAP1188: Sensor 3 touched[0m
+[0;32mI (176812) CAP1188: Sensor 4 touched[0m
+[0;32mI (176812) CAP1188: Sensor 7 touched[0m
+[0;32mI (176812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (176812) MPU6050: MPU6050 read error[0m
+[0;32mI (177312) CAP1188: Sensor 3 touched[0m
+[0;32mI (177312) CAP1188: Sensor 4 touched[0m
+[0;32mI (177312) CAP1188: Sensor 7 touched[0m
+[0;32mI (177312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (178312) MPU6050: MPU6050 read error[0m
+[0;32mI (178312) CAP1188: Sensor 3 touched[0m
+[0;32mI (178312) CAP1188: Sensor 4 touched[0m
+[0;32mI (178312) CAP1188: Sensor 7 touched[0m
+[0;32mI (178312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (179812) CAP1188: Sensor 3 touched[0m
+[0;32mI (179812) CAP1188: Sensor 4 touched[0m
+[0;32mI (179812) CAP1188: Sensor 7 touched[0m
+[0;32mI (179812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (179812) MPU6050: MPU6050 read error[0m
+[0;32mI (180312) CAP1188: Sensor 3 touched[0m
+[0;32mI (180312) CAP1188: Sensor 4 touched[0m
+[0;32mI (180312) CAP1188: Sensor 7 touched[0m
+[0;32mI (180312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (181312) MPU6050: MPU6050 read error[0m
+[0;32mI (181312) CAP1188: Sensor 3 touched[0m
+[0;32mI (181312) CAP1188: Sensor 4 touched[0m
+[0;32mI (181312) CAP1188: Sensor 7 touched[0m
+[0;32mI (181312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (182812) CAP1188: Sensor 3 touched[0m
+[0;32mI (182812) CAP1188: Sensor 4 touched[0m
+[0;32mI (182812) CAP1188: Sensor 7 touched[0m
+[0;32mI (182812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (182812) MPU6050: MPU6050 read error[0m
+[0;32mI (183312) CAP1188: Sensor 3 touched[0m
+[0;32mI (183312) CAP1188: Sensor 4 touched[0m
+[0;32mI (183312) CAP1188: Sensor 7 touched[0m
+[0;32mI (183312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (184312) MPU6050: MPU6050 read error[0m
+[0;32mI (184312) CAP1188: Sensor 3 touched[0m
+[0;32mI (184312) CAP1188: Sensor 4 touched[0m
+[0;32mI (184312) CAP1188: Sensor 7 touched[0m
+[0;32mI (184312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (185812) CAP1188: Sensor 3 touched[0m
+[0;32mI (185812) CAP1188: Sensor 4 touched[0m
+[0;32mI (185812) CAP1188: Sensor 7 touched[0m
+[0;32mI (185812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (185812) MPU6050: MPU6050 read error[0m
+[0;32mI (186312) CAP1188: Sensor 3 touched[0m
+[0;32mI (186312) CAP1188: Sensor 4 touched[0m
+[0;32mI (186312) CAP1188: Sensor 7 touched[0m
+[0;32mI (186312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (187312) MPU6050: MPU6050 read error[0m
+[0;32mI (187312) CAP1188: Sensor 3 touched[0m
+[0;32mI (187312) CAP1188: Sensor 4 touched[0m
+[0;32mI (187312) CAP1188: Sensor 7 touched[0m
+[0;32mI (187312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (188812) CAP1188: Sensor 3 touched[0m
+[0;32mI (188812) CAP1188: Sensor 4 touched[0m
+[0;32mI (188812) CAP1188: Sensor 7 touched[0m
+[0;32mI (188812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (188812) MPU6050: MPU6050 read error[0m
+[0;32mI (189312) CAP1188: Sensor 3 touched[0m
+[0;32mI (189312) CAP1188: Sensor 4 touched[0m
+[0;32mI (189312) CAP1188: Sensor 7 touched[0m
+[0;32mI (189312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (190312) MPU6050: MPU6050 read error[0m
+[0;32mI (190312) CAP1188: Sensor 3 touched[0m
+[0;32mI (190312) CAP1188: Sensor 4 touched[0m
+[0;32mI (190312) CAP1188: Sensor 7 touched[0m
+[0;32mI (190312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (191812) CAP1188: Sensor 3 touched[0m
+[0;32mI (191812) CAP1188: Sensor 4 touched[0m
+[0;32mI (191812) CAP1188: Sensor 7 touched[0m
+[0;32mI (191812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (191812) MPU6050: MPU6050 read error[0m
+[0;32mI (192312) CAP1188: Sensor 3 touched[0m
+[0;32mI (192312) CAP1188: Sensor 4 touched[0m
+[0;32mI (192312) CAP1188: Sensor 7 touched[0m
+[0;32mI (192312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (193312) MPU6050: MPU6050 read error[0m
+[0;32mI (193312) CAP1188: Sensor 3 touched[0m
+[0;32mI (193312) CAP1188: Sensor 4 touched[0m
+[0;32mI (193312) CAP1188: Sensor 7 touched[0m
+[0;32mI (193312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (194812) CAP1188: Sensor 3 touched[0m
+[0;32mI (194812) CAP1188: Sensor 4 touched[0m
+[0;32mI (194812) CAP1188: Sensor 7 touched[0m
+[0;32mI (194812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (194812) MPU6050: MPU6050 read error[0m
+[0;32mI (195312) CAP1188: Sensor 3 touched[0m
+[0;32mI (195312) CAP1188: Sensor 4 touched[0m
+[0;32mI (195312) CAP1188: Sensor 7 touched[0m
+[0;32mI (195312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (196312) MPU6050: MPU6050 read error[0m
+[0;32mI (196312) CAP1188: Sensor 3 touched[0m
+[0;32mI (196312) CAP1188: Sensor 4 touched[0m
+[0;32mI (196312) CAP1188: Sensor 7 touched[0m
+[0;32mI (196312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (197812) CAP1188: Sensor 3 touched[0m
+[0;32mI (197812) CAP1188: Sensor 4 touched[0m
+[0;32mI (197812) CAP1188: Sensor 7 touched[0m
+[0;32mI (197812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (197812) MPU6050: MPU6050 read error[0m
+[0;32mI (198312) CAP1188: Sensor 3 touched[0m
+[0;32mI (198312) CAP1188: Sensor 4 touched[0m
+[0;32mI (198312) CAP1188: Sensor 7 touched[0m
+[0;32mI (198312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (199312) MPU6050: MPU6050 read error[0m
+[0;32mI (199312) CAP1188: Sensor 3 touched[0m
+[0;32mI (199312) CAP1188: Sensor 4 touched[0m
+[0;32mI (199312) CAP1188: Sensor 7 touched[0m
+[0;32mI (199312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (200812) CAP1188: Sensor 3 touched[0m
+[0;32mI (200812) CAP1188: Sensor 4 touched[0m
+[0;32mI (200812) CAP1188: Sensor 7 touched[0m
+[0;32mI (200812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (200812) MPU6050: MPU6050 read error[0m
+[0;32mI (201312) CAP1188: Sensor 3 touched[0m
+[0;32mI (201312) CAP1188: Sensor 4 touched[0m
+[0;32mI (201312) CAP1188: Sensor 7 touched[0m
+[0;32mI (201312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (202312) MPU6050: MPU6050 read error[0m
+[0;32mI (202312) CAP1188: Sensor 3 touched[0m
+[0;32mI (202312) CAP1188: Sensor 4 touched[0m
+[0;32mI (202312) CAP1188: Sensor 7 touched[0m
+[0;32mI (202312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (203812) CAP1188: Sensor 3 touched[0m
+[0;32mI (203812) CAP1188: Sensor 4 touched[0m
+[0;32mI (203812) CAP1188: Sensor 7 touched[0m
+[0;32mI (203812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (203812) MPU6050: MPU6050 read error[0m
+[0;32mI (204312) CAP1188: Sensor 3 touched[0m
+[0;32mI (204312) CAP1188: Sensor 4 touched[0m
+[0;32mI (204312) CAP1188: Sensor 7 touched[0m
+[0;32mI (204312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (205312) MPU6050: MPU6050 read error[0m
+[0;32mI (205312) CAP1188: Sensor 3 touched[0m
+[0;32mI (205312) CAP1188: Sensor 4 touched[0m
+[0;32mI (205312) CAP1188: Sensor 7 touched[0m
+[0;32mI (205312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (206812) CAP1188: Sensor 3 touched[0m
+[0;32mI (206812) CAP1188: Sensor 4 touched[0m
+[0;32mI (206812) CAP1188: Sensor 7 touched[0m
+[0;32mI (206812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (206812) MPU6050: MPU6050 read error[0m
+[0;32mI (207312) CAP1188: Sensor 3 touched[0m
+[0;32mI (207312) CAP1188: Sensor 4 touched[0m
+[0;32mI (207312) CAP1188: Sensor 7 touched[0m
+[0;32mI (207312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (208312) MPU6050: MPU6050 read error[0m
+[0;32mI (208312) CAP1188: Sensor 3 touched[0m
+[0;32mI (208312) CAP1188: Sensor 4 touched[0m
+[0;32mI (208312) CAP1188: Sensor 7 touched[0m
+[0;32mI (208312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (209812) CAP1188: Sensor 3 touched[0m
+[0;32mI (209812) CAP1188: Sensor 4 touched[0m
+[0;32mI (209812) CAP1188: Sensor 7 touched[0m
+[0;32mI (209812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (209812) MPU6050: MPU6050 read error[0m
+[0;32mI (210312) CAP1188: Sensor 3 touched[0m
+[0;32mI (210312) CAP1188: Sensor 4 touched[0m
+[0;32mI (210312) CAP1188: Sensor 7 touched[0m
+[0;32mI (210312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (211312) MPU6050: MPU6050 read error[0m
+[0;32mI (211312) CAP1188: Sensor 3 touched[0m
+[0;32mI (211312) CAP1188: Sensor 4 touched[0m
+[0;32mI (211312) CAP1188: Sensor 7 touched[0m
+[0;32mI (211312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (212812) CAP1188: Sensor 3 touched[0m
+[0;32mI (212812) CAP1188: Sensor 4 touched[0m
+[0;32mI (212812) CAP1188: Sensor 7 touched[0m
+[0;32mI (212812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (212812) MPU6050: MPU6050 read error[0m
+[0;32mI (213312) CAP1188: Sensor 3 touched[0m
+[0;32mI (213312) CAP1188: Sensor 4 touched[0m
+[0;32mI (213312) CAP1188: Sensor 7 touched[0m
+[0;32mI (213312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (214312) MPU6050: MPU6050 read error[0m
+[0;32mI (214312) CAP1188: Sensor 3 touched[0m
+[0;32mI (214312) CAP1188: Sensor 4 touched[0m
+[0;32mI (214312) CAP1188: Sensor 7 touched[0m
+[0;32mI (214312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (215812) CAP1188: Sensor 3 touched[0m
+[0;32mI (215812) CAP1188: Sensor 4 touched[0m
+[0;32mI (215812) CAP1188: Sensor 7 touched[0m
+[0;32mI (215812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (215812) MPU6050: MPU6050 read error[0m
+[0;32mI (216312) CAP1188: Sensor 3 touched[0m
+[0;32mI (216312) CAP1188: Sensor 4 touched[0m
+[0;32mI (216312) CAP1188: Sensor 7 touched[0m
+[0;32mI (216312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (217312) MPU6050: MPU6050 read error[0m
+[0;32mI (217312) CAP1188: Sensor 3 touched[0m
+[0;32mI (217312) CAP1188: Sensor 4 touched[0m
+[0;32mI (217312) CAP1188: Sensor 7 touched[0m
+[0;32mI (217312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (218812) CAP1188: Sensor 3 touched[0m
+[0;32mI (218812) CAP1188: Sensor 4 touched[0m
+[0;32mI (218812) CAP1188: Sensor 7 touched[0m
+[0;32mI (218812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (218812) MPU6050: MPU6050 read error[0m
+[0;32mI (219312) CAP1188: Sensor 3 touched[0m
+[0;32mI (219312) CAP1188: Sensor 4 touched[0m
+[0;32mI (219312) CAP1188: Sensor 7 touched[0m
+[0;32mI (219312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (220312) MPU6050: MPU6050 read error[0m
+[0;32mI (220312) CAP1188: Sensor 3 touched[0m
+[0;32mI (220312) CAP1188: Sensor 4 touched[0m
+[0;32mI (220312) CAP1188: Sensor 7 touched[0m
+[0;32mI (220312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (221812) CAP1188: Sensor 3 touched[0m
+[0;32mI (221812) CAP1188: Sensor 4 touched[0m
+[0;32mI (221812) CAP1188: Sensor 7 touched[0m
+[0;32mI (221812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (221812) MPU6050: MPU6050 read error[0m
+[0;32mI (222312) CAP1188: Sensor 3 touched[0m
+[0;32mI (222312) CAP1188: Sensor 4 touched[0m
+[0;32mI (222312) CAP1188: Sensor 7 touched[0m
+[0;32mI (222312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (223312) MPU6050: MPU6050 read error[0m
+[0;32mI (223312) CAP1188: Sensor 3 touched[0m
+[0;32mI (223312) CAP1188: Sensor 4 touched[0m
+[0;32mI (223312) CAP1188: Sensor 7 touched[0m
+[0;32mI (223312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (224812) CAP1188: Sensor 3 touched[0m
+[0;32mI (224812) CAP1188: Sensor 4 touched[0m
+[0;32mI (224812) CAP1188: Sensor 7 touched[0m
+[0;32mI (224812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (224812) MPU6050: MPU6050 read error[0m
+[0;32mI (225312) CAP1188: Sensor 3 touched[0m
+[0;32mI (225312) CAP1188: Sensor 4 touched[0m
+[0;32mI (225312) CAP1188: Sensor 7 touched[0m
+[0;32mI (225312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (226312) MPU6050: MPU6050 read error[0m
+[0;32mI (226312) CAP1188: Sensor 3 touched[0m
+[0;32mI (226312) CAP1188: Sensor 4 touched[0m
+[0;32mI (226312) CAP1188: Sensor 7 touched[0m
+[0;32mI (226312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (227812) CAP1188: Sensor 3 touched[0m
+[0;32mI (227812) CAP1188: Sensor 4 touched[0m
+[0;32mI (227812) CAP1188: Sensor 7 touched[0m
+[0;32mI (227812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (227812) MPU6050: MPU6050 read error[0m
+[0;32mI (228312) CAP1188: Sensor 3 touched[0m
+[0;32mI (228312) CAP1188: Sensor 4 touched[0m
+[0;32mI (228312) CAP1188: Sensor 7 touched[0m
+[0;32mI (228312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (229312) MPU6050: MPU6050 read error[0m
+[0;32mI (229312) CAP1188: Sensor 3 touched[0m
+[0;32mI (229312) CAP1188: Sensor 4 touched[0m
+[0;32mI (229312) CAP1188: Sensor 7 touched[0m
+[0;32mI (229312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (230812) CAP1188: Sensor 3 touched[0m
+[0;32mI (230812) CAP1188: Sensor 4 touched[0m
+[0;32mI (230812) CAP1188: Sensor 7 touched[0m
+[0;32mI (230812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (230812) MPU6050: MPU6050 read error[0m
+[0;32mI (231312) CAP1188: Sensor 3 touched[0m
+[0;32mI (231312) CAP1188: Sensor 4 touched[0m
+[0;32mI (231312) CAP1188: Sensor 7 touched[0m
+[0;32mI (231312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (232312) MPU6050: MPU6050 read error[0m
+[0;32mI (232312) CAP1188: Sensor 3 touched[0m
+[0;32mI (232312) CAP1188: Sensor 4 touched[0m
+[0;32mI (232312) CAP1188: Sensor 7 touched[0m
+[0;32mI (232312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (233812) CAP1188: Sensor 3 touched[0m
+[0;32mI (233812) CAP1188: Sensor 4 touched[0m
+[0;32mI (233812) CAP1188: Sensor 7 touched[0m
+[0;32mI (233812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (233812) MPU6050: MPU6050 read error[0m
+[0;32mI (234312) CAP1188: Sensor 3 touched[0m
+[0;32mI (234312) CAP1188: Sensor 4 touched[0m
+[0;32mI (234312) CAP1188: Sensor 7 touched[0m
+[0;32mI (234312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (235312) MPU6050: MPU6050 read error[0m
+[0;32mI (235312) CAP1188: Sensor 3 touched[0m
+[0;32mI (235312) CAP1188: Sensor 4 touched[0m
+[0;32mI (235312) CAP1188: Sensor 7 touched[0m
+[0;32mI (235312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (236812) CAP1188: Sensor 3 touched[0m
+[0;32mI (236812) CAP1188: Sensor 4 touched[0m
+[0;32mI (236812) CAP1188: Sensor 7 touched[0m
+[0;32mI (236812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (236812) MPU6050: MPU6050 read error[0m
+[0;32mI (237312) CAP1188: Sensor 3 touched[0m
+[0;32mI (237312) CAP1188: Sensor 4 touched[0m
+[0;32mI (237312) CAP1188: Sensor 7 touched[0m
+[0;32mI (237312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (238312) MPU6050: MPU6050 read error[0m
+[0;32mI (238312) CAP1188: Sensor 3 touched[0m
+[0;32mI (238312) CAP1188: Sensor 4 touched[0m
+[0;32mI (238312) CAP1188: Sensor 7 touched[0m
+[0;32mI (238312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (239812) CAP1188: Sensor 3 touched[0m
+[0;32mI (239812) CAP1188: Sensor 4 touched[0m
+[0;32mI (239812) CAP1188: Sensor 7 touched[0m
+[0;32mI (239812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (239812) MPU6050: MPU6050 read error[0m
+[0;32mI (240312) CAP1188: Sensor 3 touched[0m
+[0;32mI (240312) CAP1188: Sensor 4 touched[0m
+[0;32mI (240312) CAP1188: Sensor 7 touched[0m
+[0;32mI (240312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (241312) MPU6050: MPU6050 read error[0m
+[0;32mI (241312) CAP1188: Sensor 3 touched[0m
+[0;32mI (241312) CAP1188: Sensor 4 touched[0m
+[0;32mI (241312) CAP1188: Sensor 7 touched[0m
+[0;32mI (241312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (242812) CAP1188: Sensor 3 touched[0m
+[0;32mI (242812) CAP1188: Sensor 4 touched[0m
+[0;32mI (242812) CAP1188: Sensor 7 touched[0m
+[0;32mI (242812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (242812) MPU6050: MPU6050 read error[0m
+[0;32mI (243312) CAP1188: Sensor 3 touched[0m
+[0;32mI (243312) CAP1188: Sensor 4 touched[0m
+[0;32mI (243312) CAP1188: Sensor 7 touched[0m
+[0;32mI (243312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (244312) MPU6050: MPU6050 read error[0m
+[0;32mI (244312) CAP1188: Sensor 3 touched[0m
+[0;32mI (244312) CAP1188: Sensor 4 touched[0m
+[0;32mI (244312) CAP1188: Sensor 7 touched[0m
+[0;32mI (244312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (245812) CAP1188: Sensor 3 touched[0m
+[0;32mI (245812) CAP1188: Sensor 4 touched[0m
+[0;32mI (245812) CAP1188: Sensor 7 touched[0m
+[0;32mI (245812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (245812) MPU6050: MPU6050 read error[0m
+[0;32mI (246312) CAP1188: Sensor 3 touched[0m
+[0;32mI (246312) CAP1188: Sensor 4 touched[0m
+[0;32mI (246312) CAP1188: Sensor 7 touched[0m
+[0;32mI (246312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (247312) MPU6050: MPU6050 read error[0m
+[0;32mI (247312) CAP1188: Sensor 3 touched[0m
+[0;32mI (247312) CAP1188: Sensor 4 touched[0m
+[0;32mI (247312) CAP1188: Sensor 7 touched[0m
+[0;32mI (247312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (248812) CAP1188: Sensor 3 touched[0m
+[0;32mI (248812) CAP1188: Sensor 4 touched[0m
+[0;32mI (248812) CAP1188: Sensor 7 touched[0m
+[0;32mI (248812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (248812) MPU6050: MPU6050 read error[0m
+[0;32mI (249312) CAP1188: Sensor 3 touched[0m
+[0;32mI (249312) CAP1188: Sensor 4 touched[0m
+[0;32mI (249312) CAP1188: Sensor 7 touched[0m
+[0;32mI (249312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (250312) MPU6050: MPU6050 read error[0m
+[0;32mI (250312) CAP1188: Sensor 3 touched[0m
+[0;32mI (250312) CAP1188: Sensor 4 touched[0m
+[0;32mI (250312) CAP1188: Sensor 7 touched[0m
+[0;32mI (250312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (251812) CAP1188: Sensor 3 touched[0m
+[0;32mI (251812) CAP1188: Sensor 4 touched[0m
+[0;32mI (251812) CAP1188: Sensor 7 touched[0m
+[0;32mI (251812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (251812) MPU6050: MPU6050 read error[0m
+[0;32mI (252312) CAP1188: Sensor 3 touched[0m
+[0;32mI (252312) CAP1188: Sensor 4 touched[0m
+[0;32mI (252312) CAP1188: Sensor 7 touched[0m
+[0;32mI (252312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (253312) MPU6050: MPU6050 read error[0m
+[0;32mI (253312) CAP1188: Sensor 3 touched[0m
+[0;32mI (253312) CAP1188: Sensor 4 touched[0m
+[0;32mI (253312) CAP1188: Sensor 7 touched[0m
+[0;32mI (253312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (254812) CAP1188: Sensor 3 touched[0m
+[0;32mI (254812) CAP1188: Sensor 4 touched[0m
+[0;32mI (254812) CAP1188: Sensor 7 touched[0m
+[0;32mI (254812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (254812) MPU6050: MPU6050 read error[0m
+[0;32mI (255312) CAP1188: Sensor 3 touched[0m
+[0;32mI (255312) CAP1188: Sensor 4 touched[0m
+[0;32mI (255312) CAP1188: Sensor 7 touched[0m
+[0;32mI (255312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (256312) MPU6050: MPU6050 read error[0m
+[0;32mI (256312) CAP1188: Sensor 3 touched[0m
+[0;32mI (256312) CAP1188: Sensor 4 touched[0m
+[0;32mI (256312) CAP1188: Sensor 7 touched[0m
+[0;32mI (256312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (257812) CAP1188: Sensor 3 touched[0m
+[0;32mI (257812) CAP1188: Sensor 4 touched[0m
+[0;32mI (257812) CAP1188: Sensor 7 touched[0m
+[0;32mI (257812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (257812) MPU6050: MPU6050 read error[0m
+[0;32mI (258312) CAP1188: Sensor 3 touched[0m
+[0;32mI (258312) CAP1188: Sensor 4 touched[0m
+[0;32mI (258312) CAP1188: Sensor 7 touched[0m
+[0;32mI (258312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (259312) MPU6050: MPU6050 read error[0m
+[0;32mI (259312) CAP1188: Sensor 3 touched[0m
+[0;32mI (259312) CAP1188: Sensor 4 touched[0m
+[0;32mI (259312) CAP1188: Sensor 7 touched[0m
+[0;32mI (259312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (260812) CAP1188: Sensor 3 touched[0m
+[0;32mI (260812) CAP1188: Sensor 4 touched[0m
+[0;32mI (260812) CAP1188: Sensor 7 touched[0m
+[0;32mI (260812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (260812) MPU6050: MPU6050 read error[0m
+[0;32mI (261312) CAP1188: Sensor 3 touched[0m
+[0;32mI (261312) CAP1188: Sensor 4 touched[0m
+[0;32mI (261312) CAP1188: Sensor 7 touched[0m
+[0;32mI (261312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (262312) MPU6050: MPU6050 read error[0m
+[0;32mI (262312) CAP1188: Sensor 3 touched[0m
+[0;32mI (262312) CAP1188: Sensor 4 touched[0m
+[0;32mI (262312) CAP1188: Sensor 7 touched[0m
+[0;32mI (262312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (263812) CAP1188: Sensor 3 touched[0m
+[0;32mI (263812) CAP1188: Sensor 4 touched[0m
+[0;32mI (263812) CAP1188: Sensor 7 touched[0m
+[0;32mI (263812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (263812) MPU6050: MPU6050 read error[0m
+[0;32mI (264312) CAP1188: Sensor 3 touched[0m
+[0;32mI (264312) CAP1188: Sensor 4 touched[0m
+[0;32mI (264312) CAP1188: Sensor 7 touched[0m
+[0;32mI (264312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (265312) MPU6050: MPU6050 read error[0m
+[0;32mI (265312) CAP1188: Sensor 3 touched[0m
+[0;32mI (265312) CAP1188: Sensor 4 touched[0m
+[0;32mI (265312) CAP1188: Sensor 7 touched[0m
+[0;32mI (265312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (266812) CAP1188: Sensor 3 touched[0m
+[0;32mI (266812) CAP1188: Sensor 4 touched[0m
+[0;32mI (266812) CAP1188: Sensor 7 touched[0m
+[0;32mI (266812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (266812) MPU6050: MPU6050 read error[0m
+[0;32mI (267312) CAP1188: Sensor 3 touched[0m
+[0;32mI (267312) CAP1188: Sensor 4 touched[0m
+[0;32mI (267312) CAP1188: Sensor 7 touched[0m
+[0;32mI (267312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (268312) MPU6050: MPU6050 read error[0m
+[0;32mI (268312) CAP1188: Sensor 3 touched[0m
+[0;32mI (268312) CAP1188: Sensor 4 touched[0m
+[0;32mI (268312) CAP1188: Sensor 7 touched[0m
+[0;32mI (268312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (269812) CAP1188: Sensor 3 touched[0m
+[0;32mI (269812) CAP1188: Sensor 4 touched[0m
+[0;32mI (269812) CAP1188: Sensor 7 touched[0m
+[0;32mI (269812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (269812) MPU6050: MPU6050 read error[0m
+[0;32mI (270312) CAP1188: Sensor 3 touched[0m
+[0;32mI (270312) CAP1188: Sensor 4 touched[0m
+[0;32mI (270312) CAP1188: Sensor 7 touched[0m
+[0;32mI (270312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (271312) MPU6050: MPU6050 read error[0m
+[0;32mI (271312) CAP1188: Sensor 3 touched[0m
+[0;32mI (271312) CAP1188: Sensor 4 touched[0m
+[0;32mI (271312) CAP1188: Sensor 7 touched[0m
+[0;32mI (271312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (272812) CAP1188: Sensor 3 touched[0m
+[0;32mI (272812) CAP1188: Sensor 4 touched[0m
+[0;32mI (272812) CAP1188: Sensor 7 touched[0m
+[0;32mI (272812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (272812) MPU6050: MPU6050 read error[0m
+[0;32mI (273312) CAP1188: Sensor 3 touched[0m
+[0;32mI (273312) CAP1188: Sensor 4 touched[0m
+[0;32mI (273312) CAP1188: Sensor 7 touched[0m
+[0;32mI (273312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (274312) MPU6050: MPU6050 read error[0m
+[0;32mI (274312) CAP1188: Sensor 3 touched[0m
+[0;32mI (274312) CAP1188: Sensor 4 touched[0m
+[0;32mI (274312) CAP1188: Sensor 7 touched[0m
+[0;32mI (274312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (275812) CAP1188: Sensor 3 touched[0m
+[0;32mI (275812) CAP1188: Sensor 4 touched[0m
+[0;32mI (275812) CAP1188: Sensor 7 touched[0m
+[0;32mI (275812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (275812) MPU6050: MPU6050 read error[0m
+[0;32mI (276312) CAP1188: Sensor 3 touched[0m
+[0;32mI (276312) CAP1188: Sensor 4 touched[0m
+[0;32mI (276312) CAP1188: Sensor 7 touched[0m
+[0;32mI (276312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (277312) MPU6050: MPU6050 read error[0m
+[0;32mI (277312) CAP1188: Sensor 3 touched[0m
+[0;32mI (277312) CAP1188: Sensor 4 touched[0m
+[0;32mI (277312) CAP1188: Sensor 7 touched[0m
+[0;32mI (277312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (278812) CAP1188: Sensor 3 touched[0m
+[0;32mI (278812) CAP1188: Sensor 4 touched[0m
+[0;32mI (278812) CAP1188: Sensor 7 touched[0m
+[0;32mI (278812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (278812) MPU6050: MPU6050 read error[0m
+[0;32mI (279312) CAP1188: Sensor 3 touched[0m
+[0;32mI (279312) CAP1188: Sensor 4 touched[0m
+[0;32mI (279312) CAP1188: Sensor 7 touched[0m
+[0;32mI (279312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (280312) MPU6050: MPU6050 read error[0m
+[0;32mI (280312) CAP1188: Sensor 3 touched[0m
+[0;32mI (280312) CAP1188: Sensor 4 touched[0m
+[0;32mI (280312) CAP1188: Sensor 7 touched[0m
+[0;32mI (280312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (281812) CAP1188: Sensor 3 touched[0m
+[0;32mI (281812) CAP1188: Sensor 4 touched[0m
+[0;32mI (281812) CAP1188: Sensor 7 touched[0m
+[0;32mI (281812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (281812) MPU6050: MPU6050 read error[0m
+[0;32mI (282312) CAP1188: Sensor 3 touched[0m
+[0;32mI (282312) CAP1188: Sensor 4 touched[0m
+[0;32mI (282312) CAP1188: Sensor 7 touched[0m
+[0;32mI (282312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (283312) MPU6050: MPU6050 read error[0m
+[0;32mI (283312) CAP1188: Sensor 3 touched[0m
+[0;32mI (283312) CAP1188: Sensor 4 touched[0m
+[0;32mI (283312) CAP1188: Sensor 7 touched[0m
+[0;32mI (283312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (284812) CAP1188: Sensor 3 touched[0m
+[0;32mI (284812) CAP1188: Sensor 4 touched[0m
+[0;32mI (284812) CAP1188: Sensor 7 touched[0m
+[0;32mI (284812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (284812) MPU6050: MPU6050 read error[0m
+[0;32mI (285312) CAP1188: Sensor 3 touched[0m
+[0;32mI (285312) CAP1188: Sensor 4 touched[0m
+[0;32mI (285312) CAP1188: Sensor 7 touched[0m
+[0;32mI (285312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (286312) MPU6050: MPU6050 read error[0m
+[0;32mI (286312) CAP1188: Sensor 3 touched[0m
+[0;32mI (286312) CAP1188: Sensor 4 touched[0m
+[0;32mI (286312) CAP1188: Sensor 7 touched[0m
+[0;32mI (286312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (287812) CAP1188: Sensor 3 touched[0m
+[0;32mI (287812) CAP1188: Sensor 4 touched[0m
+[0;32mI (287812) CAP1188: Sensor 7 touched[0m
+[0;32mI (287812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (287812) MPU6050: MPU6050 read error[0m
+[0;32mI (288312) CAP1188: Sensor 3 touched[0m
+[0;32mI (288312) CAP1188: Sensor 4 touched[0m
+[0;32mI (288312) CAP1188: Sensor 7 touched[0m
+[0;32mI (288312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (289312) MPU6050: MPU6050 read error[0m
+[0;32mI (289312) CAP1188: Sensor 3 touched[0m
+[0;32mI (289312) CAP1188: Sensor 4 touched[0m
+[0;32mI (289312) CAP1188: Sensor 7 touched[0m
+[0;32mI (289312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (290812) CAP1188: Sensor 3 touched[0m
+[0;32mI (290812) CAP1188: Sensor 4 touched[0m
+[0;32mI (290812) CAP1188: Sensor 7 touched[0m
+[0;32mI (290812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (290812) MPU6050: MPU6050 read error[0m
+[0;32mI (291312) CAP1188: Sensor 3 touched[0m
+[0;32mI (291312) CAP1188: Sensor 4 touched[0m
+[0;32mI (291312) CAP1188: Sensor 7 touched[0m
+[0;32mI (291312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (292312) MPU6050: MPU6050 read error[0m
+[0;32mI (292312) CAP1188: Sensor 3 touched[0m
+[0;32mI (292312) CAP1188: Sensor 4 touched[0m
+[0;32mI (292312) CAP1188: Sensor 7 touched[0m
+[0;32mI (292312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (293812) CAP1188: Sensor 3 touched[0m
+[0;32mI (293812) CAP1188: Sensor 4 touched[0m
+[0;32mI (293812) CAP1188: Sensor 7 touched[0m
+[0;32mI (293812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (293812) MPU6050: MPU6050 read error[0m
+[0;32mI (294312) CAP1188: Sensor 3 touched[0m
+[0;32mI (294312) CAP1188: Sensor 4 touched[0m
+[0;32mI (294312) CAP1188: Sensor 7 touched[0m
+[0;32mI (294312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (295312) MPU6050: MPU6050 read error[0m
+[0;32mI (295312) CAP1188: Sensor 3 touched[0m
+[0;32mI (295312) CAP1188: Sensor 4 touched[0m
+[0;32mI (295312) CAP1188: Sensor 7 touched[0m
+[0;32mI (295312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (296812) CAP1188: Sensor 3 touched[0m
+[0;32mI (296812) CAP1188: Sensor 4 touched[0m
+[0;32mI (296812) CAP1188: Sensor 7 touched[0m
+[0;32mI (296812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (296812) MPU6050: MPU6050 read error[0m
+[0;32mI (297312) CAP1188: Sensor 3 touched[0m
+[0;32mI (297312) CAP1188: Sensor 4 touched[0m
+[0;32mI (297312) CAP1188: Sensor 7 touched[0m
+[0;32mI (297312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (298312) MPU6050: MPU6050 read error[0m
+[0;32mI (298312) CAP1188: Sensor 3 touched[0m
+[0;32mI (298312) CAP1188: Sensor 4 touched[0m
+[0;32mI (298312) CAP1188: Sensor 7 touched[0m
+[0;32mI (298312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (299812) CAP1188: Sensor 3 touched[0m
+[0;32mI (299812) CAP1188: Sensor 4 touched[0m
+[0;32mI (299812) CAP1188: Sensor 7 touched[0m
+[0;32mI (299812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (299812) MPU6050: MPU6050 read error[0m
+[0;32mI (300312) CAP1188: Sensor 3 touched[0m
+[0;32mI (300312) CAP1188: Sensor 4 touched[0m
+[0;32mI (300312) CAP1188: Sensor 7 touched[0m
+[0;32mI (300312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (301312) MPU6050: MPU6050 read error[0m
+[0;32mI (301312) CAP1188: Sensor 3 touched[0m
+[0;32mI (301312) CAP1188: Sensor 4 touched[0m
+[0;32mI (301312) CAP1188: Sensor 7 touched[0m
+[0;32mI (301312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (302812) CAP1188: Sensor 3 touched[0m
+[0;32mI (302812) CAP1188: Sensor 4 touched[0m
+[0;32mI (302812) CAP1188: Sensor 7 touched[0m
+[0;32mI (302812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (302812) MPU6050: MPU6050 read error[0m
+[0;32mI (303312) CAP1188: Sensor 3 touched[0m
+[0;32mI (303312) CAP1188: Sensor 4 touched[0m
+[0;32mI (303312) CAP1188: Sensor 7 touched[0m
+[0;32mI (303312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (304312) MPU6050: MPU6050 read error[0m
+[0;32mI (304312) CAP1188: Sensor 3 touched[0m
+[0;32mI (304312) CAP1188: Sensor 4 touched[0m
+[0;32mI (304312) CAP1188: Sensor 7 touched[0m
+[0;32mI (304312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (305812) CAP1188: Sensor 3 touched[0m
+[0;32mI (305812) CAP1188: Sensor 4 touched[0m
+[0;32mI (305812) CAP1188: Sensor 7 touched[0m
+[0;32mI (305812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (305812) MPU6050: MPU6050 read error[0m
+[0;32mI (306312) CAP1188: Sensor 3 touched[0m
+[0;32mI (306312) CAP1188: Sensor 4 touched[0m
+[0;32mI (306312) CAP1188: Sensor 7 touched[0m
+[0;32mI (306312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (307312) MPU6050: MPU6050 read error[0m
+[0;32mI (307312) CAP1188: Sensor 3 touched[0m
+[0;32mI (307312) CAP1188: Sensor 4 touched[0m
+[0;32mI (307312) CAP1188: Sensor 7 touched[0m
+[0;32mI (307312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (308812) CAP1188: Sensor 3 touched[0m
+[0;32mI (308812) CAP1188: Sensor 4 touched[0m
+[0;32mI (308812) CAP1188: Sensor 7 touched[0m
+[0;32mI (308812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (308812) MPU6050: MPU6050 read error[0m
+[0;32mI (309312) CAP1188: Sensor 3 touched[0m
+[0;32mI (309312) CAP1188: Sensor 4 touched[0m
+[0;32mI (309312) CAP1188: Sensor 7 touched[0m
+[0;32mI (309312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (310312) MPU6050: MPU6050 read error[0m
+[0;32mI (310312) CAP1188: Sensor 3 touched[0m
+[0;32mI (310312) CAP1188: Sensor 4 touched[0m
+[0;32mI (310312) CAP1188: Sensor 7 touched[0m
+[0;32mI (310312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (311812) CAP1188: Sensor 3 touched[0m
+[0;32mI (311812) CAP1188: Sensor 4 touched[0m
+[0;32mI (311812) CAP1188: Sensor 7 touched[0m
+[0;32mI (311812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (311812) MPU6050: MPU6050 read error[0m
+[0;32mI (312312) CAP1188: Sensor 3 touched[0m
+[0;32mI (312312) CAP1188: Sensor 4 touched[0m
+[0;32mI (312312) CAP1188: Sensor 7 touched[0m
+[0;32mI (312312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (313312) MPU6050: MPU6050 read error[0m
+[0;32mI (313312) CAP1188: Sensor 3 touched[0m
+[0;32mI (313312) CAP1188: Sensor 4 touched[0m
+[0;32mI (313312) CAP1188: Sensor 7 touched[0m
+[0;32mI (313312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (314812) CAP1188: Sensor 3 touched[0m
+[0;32mI (314812) CAP1188: Sensor 4 touched[0m
+[0;32mI (314812) CAP1188: Sensor 7 touched[0m
+[0;32mI (314812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (314812) MPU6050: MPU6050 read error[0m
+[0;32mI (315312) CAP1188: Sensor 3 touched[0m
+[0;32mI (315312) CAP1188: Sensor 4 touched[0m
+[0;32mI (315312) CAP1188: Sensor 7 touched[0m
+[0;32mI (315312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (316312) MPU6050: MPU6050 read error[0m
+[0;32mI (316312) CAP1188: Sensor 3 touched[0m
+[0;32mI (316312) CAP1188: Sensor 4 touched[0m
+[0;32mI (316312) CAP1188: Sensor 7 touched[0m
+[0;32mI (316312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (317812) CAP1188: Sensor 3 touched[0m
+[0;32mI (317812) CAP1188: Sensor 4 touched[0m
+[0;32mI (317812) CAP1188: Sensor 7 touched[0m
+[0;32mI (317812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (317812) MPU6050: MPU6050 read error[0m
+[0;32mI (318312) CAP1188: Sensor 3 touched[0m
+[0;32mI (318312) CAP1188: Sensor 4 touched[0m
+[0;32mI (318312) CAP1188: Sensor 7 touched[0m
+[0;32mI (318312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (319312) MPU6050: MPU6050 read error[0m
+[0;32mI (319312) CAP1188: Sensor 3 touched[0m
+[0;32mI (319312) CAP1188: Sensor 4 touched[0m
+[0;32mI (319312) CAP1188: Sensor 7 touched[0m
+[0;32mI (319312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (320812) CAP1188: Sensor 3 touched[0m
+[0;32mI (320812) CAP1188: Sensor 4 touched[0m
+[0;32mI (320812) CAP1188: Sensor 7 touched[0m
+[0;32mI (320812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (320812) MPU6050: MPU6050 read error[0m
+[0;32mI (321312) CAP1188: Sensor 3 touched[0m
+[0;32mI (321312) CAP1188: Sensor 4 touched[0m
+[0;32mI (321312) CAP1188: Sensor 7 touched[0m
+[0;32mI (321312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (322312) MPU6050: MPU6050 read error[0m
+[0;32mI (322312) CAP1188: Sensor 3 touched[0m
+[0;32mI (322312) CAP1188: Sensor 4 touched[0m
+[0;32mI (322312) CAP1188: Sensor 7 touched[0m
+[0;32mI (322312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (323812) CAP1188: Sensor 3 touched[0m
+[0;32mI (323812) CAP1188: Sensor 4 touched[0m
+[0;32mI (323812) CAP1188: Sensor 7 touched[0m
+[0;32mI (323812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (323812) MPU6050: MPU6050 read error[0m
+[0;32mI (324312) CAP1188: Sensor 3 touched[0m
+[0;32mI (324312) CAP1188: Sensor 4 touched[0m
+[0;32mI (324312) CAP1188: Sensor 7 touched[0m
+[0;32mI (324312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (325312) MPU6050: MPU6050 read error[0m
+[0;32mI (325312) CAP1188: Sensor 3 touched[0m
+[0;32mI (325312) CAP1188: Sensor 4 touched[0m
+[0;32mI (325312) CAP1188: Sensor 7 touched[0m
+[0;32mI (325312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (326812) CAP1188: Sensor 3 touched[0m
+[0;32mI (326812) CAP1188: Sensor 4 touched[0m
+[0;32mI (326812) CAP1188: Sensor 7 touched[0m
+[0;32mI (326812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (326812) MPU6050: MPU6050 read error[0m
+[0;32mI (327312) CAP1188: Sensor 3 touched[0m
+[0;32mI (327312) CAP1188: Sensor 4 touched[0m
+[0;32mI (327312) CAP1188: Sensor 7 touched[0m
+[0;32mI (327312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (328312) MPU6050: MPU6050 read error[0m
+[0;32mI (328312) CAP1188: Sensor 3 touched[0m
+[0;32mI (328312) CAP1188: Sensor 4 touched[0m
+[0;32mI (328312) CAP1188: Sensor 7 touched[0m
+[0;32mI (328312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (329812) CAP1188: Sensor 3 touched[0m
+[0;32mI (329812) CAP1188: Sensor 4 touched[0m
+[0;32mI (329812) CAP1188: Sensor 7 touched[0m
+[0;32mI (329812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (329812) MPU6050: MPU6050 read error[0m
+[0;32mI (330312) CAP1188: Sensor 3 touched[0m
+[0;32mI (330312) CAP1188: Sensor 4 touched[0m
+[0;32mI (330312) CAP1188: Sensor 7 touched[0m
+[0;32mI (330312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (331312) MPU6050: MPU6050 read error[0m
+[0;32mI (331312) CAP1188: Sensor 3 touched[0m
+[0;32mI (331312) CAP1188: Sensor 4 touched[0m
+[0;32mI (331312) CAP1188: Sensor 7 touched[0m
+[0;32mI (331312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (332812) CAP1188: Sensor 3 touched[0m
+[0;32mI (332812) CAP1188: Sensor 4 touched[0m
+[0;32mI (332812) CAP1188: Sensor 7 touched[0m
+[0;32mI (332812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (332812) MPU6050: MPU6050 read error[0m
+[0;32mI (333312) CAP1188: Sensor 3 touched[0m
+[0;32mI (333312) CAP1188: Sensor 4 touched[0m
+[0;32mI (333312) CAP1188: Sensor 7 touched[0m
+[0;32mI (333312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (334312) MPU6050: MPU6050 read error[0m
+[0;32mI (334312) CAP1188: Sensor 3 touched[0m
+[0;32mI (334312) CAP1188: Sensor 4 touched[0m
+[0;32mI (334312) CAP1188: Sensor 7 touched[0m
+[0;32mI (334312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (335812) CAP1188: Sensor 3 touched[0m
+[0;32mI (335812) CAP1188: Sensor 4 touched[0m
+[0;32mI (335812) CAP1188: Sensor 7 touched[0m
+[0;32mI (335812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (335812) MPU6050: MPU6050 read error[0m
+[0;32mI (336312) CAP1188: Sensor 3 touched[0m
+[0;32mI (336312) CAP1188: Sensor 4 touched[0m
+[0;32mI (336312) CAP1188: Sensor 7 touched[0m
+[0;32mI (336312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (337312) MPU6050: MPU6050 read error[0m
+[0;32mI (337312) CAP1188: Sensor 3 touched[0m
+[0;32mI (337312) CAP1188: Sensor 4 touched[0m
+[0;32mI (337312) CAP1188: Sensor 7 touched[0m
+[0;32mI (337312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (338812) CAP1188: Sensor 3 touched[0m
+[0;32mI (338812) CAP1188: Sensor 4 touched[0m
+[0;32mI (338812) CAP1188: Sensor 7 touched[0m
+[0;32mI (338812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (338812) MPU6050: MPU6050 read error[0m
+[0;32mI (339312) CAP1188: Sensor 3 touched[0m
+[0;32mI (339312) CAP1188: Sensor 4 touched[0m
+[0;32mI (339312) CAP1188: Sensor 7 touched[0m
+[0;32mI (339312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (340312) MPU6050: MPU6050 read error[0m
+[0;32mI (340312) CAP1188: Sensor 3 touched[0m
+[0;32mI (340312) CAP1188: Sensor 4 touched[0m
+[0;32mI (340312) CAP1188: Sensor 7 touched[0m
+[0;32mI (340312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (341812) CAP1188: Sensor 3 touched[0m
+[0;32mI (341812) CAP1188: Sensor 4 touched[0m
+[0;32mI (341812) CAP1188: Sensor 7 touched[0m
+[0;32mI (341812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (341812) MPU6050: MPU6050 read error[0m
+[0;32mI (342312) CAP1188: Sensor 3 touched[0m
+[0;32mI (342312) CAP1188: Sensor 4 touched[0m
+[0;32mI (342312) CAP1188: Sensor 7 touched[0m
+[0;32mI (342312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (343312) MPU6050: MPU6050 read error[0m
+[0;32mI (343312) CAP1188: Sensor 3 touched[0m
+[0;32mI (343312) CAP1188: Sensor 4 touched[0m
+[0;32mI (343312) CAP1188: Sensor 7 touched[0m
+[0;32mI (343312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (344812) CAP1188: Sensor 3 touched[0m
+[0;32mI (344812) CAP1188: Sensor 4 touched[0m
+[0;32mI (344812) CAP1188: Sensor 7 touched[0m
+[0;32mI (344812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (344812) MPU6050: MPU6050 read error[0m
+[0;32mI (345312) CAP1188: Sensor 3 touched[0m
+[0;32mI (345312) CAP1188: Sensor 4 touched[0m
+[0;32mI (345312) CAP1188: Sensor 7 touched[0m
+[0;32mI (345312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (346312) MPU6050: MPU6050 read error[0m
+[0;32mI (346312) CAP1188: Sensor 3 touched[0m
+[0;32mI (346312) CAP1188: Sensor 4 touched[0m
+[0;32mI (346312) CAP1188: Sensor 7 touched[0m
+[0;32mI (346312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (347812) CAP1188: Sensor 3 touched[0m
+[0;32mI (347812) CAP1188: Sensor 4 touched[0m
+[0;32mI (347812) CAP1188: Sensor 7 touched[0m
+[0;32mI (347812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (347812) MPU6050: MPU6050 read error[0m
+[0;32mI (348312) CAP1188: Sensor 3 touched[0m
+[0;32mI (348312) CAP1188: Sensor 4 touched[0m
+[0;32mI (348312) CAP1188: Sensor 7 touched[0m
+[0;32mI (348312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (349312) MPU6050: MPU6050 read error[0m
+[0;32mI (349312) CAP1188: Sensor 3 touched[0m
+[0;32mI (349312) CAP1188: Sensor 4 touched[0m
+[0;32mI (349312) CAP1188: Sensor 7 touched[0m
+[0;32mI (349312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (350812) CAP1188: Sensor 3 touched[0m
+[0;32mI (350812) CAP1188: Sensor 4 touched[0m
+[0;32mI (350812) CAP1188: Sensor 7 touched[0m
+[0;32mI (350812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (350812) MPU6050: MPU6050 read error[0m
+[0;32mI (351312) CAP1188: Sensor 3 touched[0m
+[0;32mI (351312) CAP1188: Sensor 4 touched[0m
+[0;32mI (351312) CAP1188: Sensor 7 touched[0m
+[0;32mI (351312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (352312) MPU6050: MPU6050 read error[0m
+[0;32mI (352312) CAP1188: Sensor 3 touched[0m
+[0;32mI (352312) CAP1188: Sensor 4 touched[0m
+[0;32mI (352312) CAP1188: Sensor 7 touched[0m
+[0;32mI (352312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (353812) CAP1188: Sensor 3 touched[0m
+[0;32mI (353812) CAP1188: Sensor 4 touched[0m
+[0;32mI (353812) CAP1188: Sensor 7 touched[0m
+[0;32mI (353812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (353812) MPU6050: MPU6050 read error[0m
+[0;32mI (354312) CAP1188: Sensor 3 touched[0m
+[0;32mI (354312) CAP1188: Sensor 4 touched[0m
+[0;32mI (354312) CAP1188: Sensor 7 touched[0m
+[0;32mI (354312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (355312) MPU6050: MPU6050 read error[0m
+[0;32mI (355312) CAP1188: Sensor 3 touched[0m
+[0;32mI (355312) CAP1188: Sensor 4 touched[0m
+[0;32mI (355312) CAP1188: Sensor 7 touched[0m
+[0;32mI (355312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (356812) CAP1188: Sensor 3 touched[0m
+[0;32mI (356812) CAP1188: Sensor 4 touched[0m
+[0;32mI (356812) CAP1188: Sensor 7 touched[0m
+[0;32mI (356812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (356812) MPU6050: MPU6050 read error[0m
+[0;32mI (357312) CAP1188: Sensor 3 touched[0m
+[0;32mI (357312) CAP1188: Sensor 4 touched[0m
+[0;32mI (357312) CAP1188: Sensor 7 touched[0m
+[0;32mI (357312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (358312) MPU6050: MPU6050 read error[0m
+[0;32mI (358312) CAP1188: Sensor 3 touched[0m
+[0;32mI (358312) CAP1188: Sensor 4 touched[0m
+[0;32mI (358312) CAP1188: Sensor 7 touched[0m
+[0;32mI (358312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (359812) CAP1188: Sensor 3 touched[0m
+[0;32mI (359812) CAP1188: Sensor 4 touched[0m
+[0;32mI (359812) CAP1188: Sensor 7 touched[0m
+[0;32mI (359812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (359812) MPU6050: MPU6050 read error[0m
+[0;32mI (360312) CAP1188: Sensor 3 touched[0m
+[0;32mI (360312) CAP1188: Sensor 4 touched[0m
+[0;32mI (360312) CAP1188: Sensor 7 touched[0m
+[0;32mI (360312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (361312) MPU6050: MPU6050 read error[0m
+[0;32mI (361312) CAP1188: Sensor 3 touched[0m
+[0;32mI (361312) CAP1188: Sensor 4 touched[0m
+[0;32mI (361312) CAP1188: Sensor 7 touched[0m
+[0;32mI (361312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (362812) CAP1188: Sensor 3 touched[0m
+[0;32mI (362812) CAP1188: Sensor 4 touched[0m
+[0;32mI (362812) CAP1188: Sensor 7 touched[0m
+[0;32mI (362812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (362812) MPU6050: MPU6050 read error[0m
+[0;32mI (363312) CAP1188: Sensor 3 touched[0m
+[0;32mI (363312) CAP1188: Sensor 4 touched[0m
+[0;32mI (363312) CAP1188: Sensor 7 touched[0m
+[0;32mI (363312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (364312) MPU6050: MPU6050 read error[0m
+[0;32mI (364312) CAP1188: Sensor 3 touched[0m
+[0;32mI (364312) CAP1188: Sensor 4 touched[0m
+[0;32mI (364312) CAP1188: Sensor 7 touched[0m
+[0;32mI (364312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (365812) CAP1188: Sensor 3 touched[0m
+[0;32mI (365812) CAP1188: Sensor 4 touched[0m
+[0;32mI (365812) CAP1188: Sensor 7 touched[0m
+[0;32mI (365812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (365812) MPU6050: MPU6050 read error[0m
+[0;32mI (366312) CAP1188: Sensor 3 touched[0m
+[0;32mI (366312) CAP1188: Sensor 4 touched[0m
+[0;32mI (366312) CAP1188: Sensor 7 touched[0m
+[0;32mI (366312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (367312) MPU6050: MPU6050 read error[0m
+[0;32mI (367312) CAP1188: Sensor 3 touched[0m
+[0;32mI (367312) CAP1188: Sensor 4 touched[0m
+[0;32mI (367312) CAP1188: Sensor 7 touched[0m
+[0;32mI (367312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (368812) CAP1188: Sensor 3 touched[0m
+[0;32mI (368812) CAP1188: Sensor 4 touched[0m
+[0;32mI (368812) CAP1188: Sensor 7 touched[0m
+[0;32mI (368812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (368812) MPU6050: MPU6050 read error[0m
+[0;32mI (369312) CAP1188: Sensor 3 touched[0m
+[0;32mI (369312) CAP1188: Sensor 4 touched[0m
+[0;32mI (369312) CAP1188: Sensor 7 touched[0m
+[0;32mI (369312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (370312) MPU6050: MPU6050 read error[0m
+[0;32mI (370312) CAP1188: Sensor 3 touched[0m
+[0;32mI (370312) CAP1188: Sensor 4 touched[0m
+[0;32mI (370312) CAP1188: Sensor 7 touched[0m
+[0;32mI (370312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (371812) CAP1188: Sensor 3 touched[0m
+[0;32mI (371812) CAP1188: Sensor 4 touched[0m
+[0;32mI (371812) CAP1188: Sensor 7 touched[0m
+[0;32mI (371812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (371812) MPU6050: MPU6050 read error[0m
+[0;32mI (372312) CAP1188: Sensor 3 touched[0m
+[0;32mI (372312) CAP1188: Sensor 4 touched[0m
+[0;32mI (372312) CAP1188: Sensor 7 touched[0m
+[0;32mI (372312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (373312) MPU6050: MPU6050 read error[0m
+[0;32mI (373312) CAP1188: Sensor 3 touched[0m
+[0;32mI (373312) CAP1188: Sensor 4 touched[0m
+[0;32mI (373312) CAP1188: Sensor 7 touched[0m
+[0;32mI (373312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (374812) CAP1188: Sensor 3 touched[0m
+[0;32mI (374812) CAP1188: Sensor 4 touched[0m
+[0;32mI (374812) CAP1188: Sensor 7 touched[0m
+[0;32mI (374812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (374812) MPU6050: MPU6050 read error[0m
+[0;32mI (375312) CAP1188: Sensor 3 touched[0m
+[0;32mI (375312) CAP1188: Sensor 4 touched[0m
+[0;32mI (375312) CAP1188: Sensor 7 touched[0m
+[0;32mI (375312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (376312) MPU6050: MPU6050 read error[0m
+[0;32mI (376312) CAP1188: Sensor 3 touched[0m
+[0;32mI (376312) CAP1188: Sensor 4 touched[0m
+[0;32mI (376312) CAP1188: Sensor 7 touched[0m
+[0;32mI (376312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (377812) CAP1188: Sensor 3 touched[0m
+[0;32mI (377812) CAP1188: Sensor 4 touched[0m
+[0;32mI (377812) CAP1188: Sensor 7 touched[0m
+[0;32mI (377812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (377812) MPU6050: MPU6050 read error[0m
+[0;32mI (378312) CAP1188: Sensor 3 touched[0m
+[0;32mI (378312) CAP1188: Sensor 4 touched[0m
+[0;32mI (378312) CAP1188: Sensor 7 touched[0m
+[0;32mI (378312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (379312) MPU6050: MPU6050 read error[0m
+[0;32mI (379312) CAP1188: Sensor 3 touched[0m
+[0;32mI (379312) CAP1188: Sensor 4 touched[0m
+[0;32mI (379312) CAP1188: Sensor 7 touched[0m
+[0;32mI (379312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (380812) CAP1188: Sensor 3 touched[0m
+[0;32mI (380812) CAP1188: Sensor 4 touched[0m
+[0;32mI (380812) CAP1188: Sensor 7 touched[0m
+[0;32mI (380812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (380812) MPU6050: MPU6050 read error[0m
+[0;32mI (381312) CAP1188: Sensor 3 touched[0m
+[0;32mI (381312) CAP1188: Sensor 4 touched[0m
+[0;32mI (381312) CAP1188: Sensor 7 touched[0m
+[0;32mI (381312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (382312) MPU6050: MPU6050 read error[0m
+[0;32mI (382312) CAP1188: Sensor 3 touched[0m
+[0;32mI (382312) CAP1188: Sensor 4 touched[0m
+[0;32mI (382312) CAP1188: Sensor 7 touched[0m
+[0;32mI (382312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (383812) CAP1188: Sensor 3 touched[0m
+[0;32mI (383812) CAP1188: Sensor 4 touched[0m
+[0;32mI (383812) CAP1188: Sensor 7 touched[0m
+[0;32mI (383812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (383812) MPU6050: MPU6050 read error[0m
+[0;32mI (384312) CAP1188: Sensor 3 touched[0m
+[0;32mI (384312) CAP1188: Sensor 4 touched[0m
+[0;32mI (384312) CAP1188: Sensor 7 touched[0m
+[0;32mI (384312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (385312) MPU6050: MPU6050 read error[0m
+[0;32mI (385312) CAP1188: Sensor 3 touched[0m
+[0;32mI (385312) CAP1188: Sensor 4 touched[0m
+[0;32mI (385312) CAP1188: Sensor 7 touched[0m
+[0;32mI (385312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (386812) CAP1188: Sensor 3 touched[0m
+[0;32mI (386812) CAP1188: Sensor 4 touched[0m
+[0;32mI (386812) CAP1188: Sensor 7 touched[0m
+[0;32mI (386812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (386812) MPU6050: MPU6050 read error[0m
+[0;32mI (387312) CAP1188: Sensor 3 touched[0m
+[0;32mI (387312) CAP1188: Sensor 4 touched[0m
+[0;32mI (387312) CAP1188: Sensor 7 touched[0m
+[0;32mI (387312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (388312) MPU6050: MPU6050 read error[0m
+[0;32mI (388312) CAP1188: Sensor 3 touched[0m
+[0;32mI (388312) CAP1188: Sensor 4 touched[0m
+[0;32mI (388312) CAP1188: Sensor 7 touched[0m
+[0;32mI (388312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (389812) CAP1188: Sensor 3 touched[0m
+[0;32mI (389812) CAP1188: Sensor 4 touched[0m
+[0;32mI (389812) CAP1188: Sensor 7 touched[0m
+[0;32mI (389812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (389812) MPU6050: MPU6050 read error[0m
+[0;32mI (390312) CAP1188: Sensor 3 touched[0m
+[0;32mI (390312) CAP1188: Sensor 4 touched[0m
+[0;32mI (390312) CAP1188: Sensor 7 touched[0m
+[0;32mI (390312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (391312) MPU6050: MPU6050 read error[0m
+[0;32mI (391312) CAP1188: Sensor 3 touched[0m
+[0;32mI (391312) CAP1188: Sensor 4 touched[0m
+[0;32mI (391312) CAP1188: Sensor 7 touched[0m
+[0;32mI (391312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (392812) CAP1188: Sensor 3 touched[0m
+[0;32mI (392812) CAP1188: Sensor 4 touched[0m
+[0;32mI (392812) CAP1188: Sensor 7 touched[0m
+[0;32mI (392812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (392812) MPU6050: MPU6050 read error[0m
+[0;32mI (393312) CAP1188: Sensor 3 touched[0m
+[0;32mI (393312) CAP1188: Sensor 4 touched[0m
+[0;32mI (393312) CAP1188: Sensor 7 touched[0m
+[0;32mI (393312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (394312) MPU6050: MPU6050 read error[0m
+[0;32mI (394312) CAP1188: Sensor 3 touched[0m
+[0;32mI (394312) CAP1188: Sensor 4 touched[0m
+[0;32mI (394312) CAP1188: Sensor 7 touched[0m
+[0;32mI (394312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (395812) CAP1188: Sensor 3 touched[0m
+[0;32mI (395812) CAP1188: Sensor 4 touched[0m
+[0;32mI (395812) CAP1188: Sensor 7 touched[0m
+[0;32mI (395812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (395812) MPU6050: MPU6050 read error[0m
+[0;32mI (396312) CAP1188: Sensor 3 touched[0m
+[0;32mI (396312) CAP1188: Sensor 4 touched[0m
+[0;32mI (396312) CAP1188: Sensor 7 touched[0m
+[0;32mI (396312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (397312) MPU6050: MPU6050 read error[0m
+[0;32mI (397312) CAP1188: Sensor 3 touched[0m
+[0;32mI (397312) CAP1188: Sensor 4 touched[0m
+[0;32mI (397312) CAP1188: Sensor 7 touched[0m
+[0;32mI (397312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (398812) CAP1188: Sensor 3 touched[0m
+[0;32mI (398812) CAP1188: Sensor 4 touched[0m
+[0;32mI (398812) CAP1188: Sensor 7 touched[0m
+[0;32mI (398812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (398812) MPU6050: MPU6050 read error[0m
+[0;32mI (399312) CAP1188: Sensor 3 touched[0m
+[0;32mI (399312) CAP1188: Sensor 4 touched[0m
+[0;32mI (399312) CAP1188: Sensor 7 touched[0m
+[0;32mI (399312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (400312) MPU6050: MPU6050 read error[0m
+[0;32mI (400312) CAP1188: Sensor 3 touched[0m
+[0;32mI (400312) CAP1188: Sensor 4 touched[0m
+[0;32mI (400312) CAP1188: Sensor 7 touched[0m
+[0;32mI (400312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (401812) CAP1188: Sensor 3 touched[0m
+[0;32mI (401812) CAP1188: Sensor 4 touched[0m
+[0;32mI (401812) CAP1188: Sensor 7 touched[0m
+[0;32mI (401812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (401812) MPU6050: MPU6050 read error[0m
+[0;32mI (402312) CAP1188: Sensor 3 touched[0m
+[0;32mI (402312) CAP1188: Sensor 4 touched[0m
+[0;32mI (402312) CAP1188: Sensor 7 touched[0m
+[0;32mI (402312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (403312) MPU6050: MPU6050 read error[0m
+[0;32mI (403312) CAP1188: Sensor 3 touched[0m
+[0;32mI (403312) CAP1188: Sensor 4 touched[0m
+[0;32mI (403312) CAP1188: Sensor 7 touched[0m
+[0;32mI (403312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (404812) CAP1188: Sensor 3 touched[0m
+[0;32mI (404812) CAP1188: Sensor 4 touched[0m
+[0;32mI (404812) CAP1188: Sensor 7 touched[0m
+[0;32mI (404812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (404812) MPU6050: MPU6050 read error[0m
+[0;32mI (405312) CAP1188: Sensor 3 touched[0m
+[0;32mI (405312) CAP1188: Sensor 4 touched[0m
+[0;32mI (405312) CAP1188: Sensor 7 touched[0m
+[0;32mI (405312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (406312) MPU6050: MPU6050 read error[0m
+[0;32mI (406312) CAP1188: Sensor 3 touched[0m
+[0;32mI (406312) CAP1188: Sensor 4 touched[0m
+[0;32mI (406312) CAP1188: Sensor 7 touched[0m
+[0;32mI (406312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (407812) CAP1188: Sensor 3 touched[0m
+[0;32mI (407812) CAP1188: Sensor 4 touched[0m
+[0;32mI (407812) CAP1188: Sensor 7 touched[0m
+[0;32mI (407812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (407812) MPU6050: MPU6050 read error[0m
+[0;32mI (408312) CAP1188: Sensor 3 touched[0m
+[0;32mI (408312) CAP1188: Sensor 4 touched[0m
+[0;32mI (408312) CAP1188: Sensor 7 touched[0m
+[0;32mI (408312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (409312) MPU6050: MPU6050 read error[0m
+[0;32mI (409312) CAP1188: Sensor 3 touched[0m
+[0;32mI (409312) CAP1188: Sensor 4 touched[0m
+[0;32mI (409312) CAP1188: Sensor 7 touched[0m
+[0;32mI (409312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (410812) CAP1188: Sensor 3 touched[0m
+[0;32mI (410812) CAP1188: Sensor 4 touched[0m
+[0;32mI (410812) CAP1188: Sensor 7 touched[0m
+[0;32mI (410812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (410812) MPU6050: MPU6050 read error[0m
+[0;32mI (411312) CAP1188: Sensor 3 touched[0m
+[0;32mI (411312) CAP1188: Sensor 4 touched[0m
+[0;32mI (411312) CAP1188: Sensor 7 touched[0m
+[0;32mI (411312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (412312) MPU6050: MPU6050 read error[0m
+[0;32mI (412312) CAP1188: Sensor 3 touched[0m
+[0;32mI (412312) CAP1188: Sensor 4 touched[0m
+[0;32mI (412312) CAP1188: Sensor 7 touched[0m
+[0;32mI (412312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (413812) CAP1188: Sensor 3 touched[0m
+[0;32mI (413812) CAP1188: Sensor 4 touched[0m
+[0;32mI (413812) CAP1188: Sensor 7 touched[0m
+[0;32mI (413812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (413812) MPU6050: MPU6050 read error[0m
+[0;32mI (414312) CAP1188: Sensor 3 touched[0m
+[0;32mI (414312) CAP1188: Sensor 4 touched[0m
+[0;32mI (414312) CAP1188: Sensor 7 touched[0m
+[0;32mI (414312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (415312) MPU6050: MPU6050 read error[0m
+[0;32mI (415312) CAP1188: Sensor 3 touched[0m
+[0;32mI (415312) CAP1188: Sensor 4 touched[0m
+[0;32mI (415312) CAP1188: Sensor 7 touched[0m
+[0;32mI (415312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (416812) CAP1188: Sensor 3 touched[0m
+[0;32mI (416812) CAP1188: Sensor 4 touched[0m
+[0;32mI (416812) CAP1188: Sensor 7 touched[0m
+[0;32mI (416812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (416812) MPU6050: MPU6050 read error[0m
+[0;32mI (417312) CAP1188: Sensor 3 touched[0m
+[0;32mI (417312) CAP1188: Sensor 4 touched[0m
+[0;32mI (417312) CAP1188: Sensor 7 touched[0m
+[0;32mI (417312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (418312) MPU6050: MPU6050 read error[0m
+[0;32mI (418312) CAP1188: Sensor 3 touched[0m
+[0;32mI (418312) CAP1188: Sensor 4 touched[0m
+[0;32mI (418312) CAP1188: Sensor 7 touched[0m
+[0;32mI (418312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (419812) CAP1188: Sensor 3 touched[0m
+[0;32mI (419812) CAP1188: Sensor 4 touched[0m
+[0;32mI (419812) CAP1188: Sensor 7 touched[0m
+[0;32mI (419812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (419812) MPU6050: MPU6050 read error[0m
+[0;32mI (420312) CAP1188: Sensor 3 touched[0m
+[0;32mI (420312) CAP1188: Sensor 4 touched[0m
+[0;32mI (420312) CAP1188: Sensor 7 touched[0m
+[0;32mI (420312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (421312) MPU6050: MPU6050 read error[0m
+[0;32mI (421312) CAP1188: Sensor 3 touched[0m
+[0;32mI (421312) CAP1188: Sensor 4 touched[0m
+[0;32mI (421312) CAP1188: Sensor 7 touched[0m
+[0;32mI (421312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (422812) CAP1188: Sensor 3 touched[0m
+[0;32mI (422812) CAP1188: Sensor 4 touched[0m
+[0;32mI (422812) CAP1188: Sensor 7 touched[0m
+[0;32mI (422812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (422812) MPU6050: MPU6050 read error[0m
+[0;32mI (423312) CAP1188: Sensor 3 touched[0m
+[0;32mI (423312) CAP1188: Sensor 4 touched[0m
+[0;32mI (423312) CAP1188: Sensor 7 touched[0m
+[0;32mI (423312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (424312) MPU6050: MPU6050 read error[0m
+[0;32mI (424312) CAP1188: Sensor 3 touched[0m
+[0;32mI (424312) CAP1188: Sensor 4 touched[0m
+[0;32mI (424312) CAP1188: Sensor 7 touched[0m
+[0;32mI (424312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (425812) CAP1188: Sensor 3 touched[0m
+[0;32mI (425812) CAP1188: Sensor 4 touched[0m
+[0;32mI (425812) CAP1188: Sensor 7 touched[0m
+[0;32mI (425812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (425812) MPU6050: MPU6050 read error[0m
+[0;32mI (426312) CAP1188: Sensor 3 touched[0m
+[0;32mI (426312) CAP1188: Sensor 4 touched[0m
+[0;32mI (426312) CAP1188: Sensor 7 touched[0m
+[0;32mI (426312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (427312) MPU6050: MPU6050 read error[0m
+[0;32mI (427312) CAP1188: Sensor 3 touched[0m
+[0;32mI (427312) CAP1188: Sensor 4 touched[0m
+[0;32mI (427312) CAP1188: Sensor 7 touched[0m
+[0;32mI (427312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (428812) CAP1188: Sensor 3 touched[0m
+[0;32mI (428812) CAP1188: Sensor 4 touched[0m
+[0;32mI (428812) CAP1188: Sensor 7 touched[0m
+[0;32mI (428812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (428812) MPU6050: MPU6050 read error[0m
+[0;32mI (429312) CAP1188: Sensor 3 touched[0m
+[0;32mI (429312) CAP1188: Sensor 4 touched[0m
+[0;32mI (429312) CAP1188: Sensor 7 touched[0m
+[0;32mI (429312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (430312) MPU6050: MPU6050 read error[0m
+[0;32mI (430312) CAP1188: Sensor 3 touched[0m
+[0;32mI (430312) CAP1188: Sensor 4 touched[0m
+[0;32mI (430312) CAP1188: Sensor 7 touched[0m
+[0;32mI (430312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (431812) CAP1188: Sensor 3 touched[0m
+[0;32mI (431812) CAP1188: Sensor 4 touched[0m
+[0;32mI (431812) CAP1188: Sensor 7 touched[0m
+[0;32mI (431812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (431812) MPU6050: MPU6050 read error[0m
+[0;32mI (432312) CAP1188: Sensor 3 touched[0m
+[0;32mI (432312) CAP1188: Sensor 4 touched[0m
+[0;32mI (432312) CAP1188: Sensor 7 touched[0m
+[0;32mI (432312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (433312) MPU6050: MPU6050 read error[0m
+[0;32mI (433312) CAP1188: Sensor 3 touched[0m
+[0;32mI (433312) CAP1188: Sensor 4 touched[0m
+[0;32mI (433312) CAP1188: Sensor 7 touched[0m
+[0;32mI (433312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (434812) CAP1188: Sensor 3 touched[0m
+[0;32mI (434812) CAP1188: Sensor 4 touched[0m
+[0;32mI (434812) CAP1188: Sensor 7 touched[0m
+[0;32mI (434812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (434812) MPU6050: MPU6050 read error[0m
+[0;32mI (435312) CAP1188: Sensor 3 touched[0m
+[0;32mI (435312) CAP1188: Sensor 4 touched[0m
+[0;32mI (435312) CAP1188: Sensor 7 touched[0m
+[0;32mI (435312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (436312) MPU6050: MPU6050 read error[0m
+[0;32mI (436312) CAP1188: Sensor 3 touched[0m
+[0;32mI (436312) CAP1188: Sensor 4 touched[0m
+[0;32mI (436312) CAP1188: Sensor 7 touched[0m
+[0;32mI (436312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (437812) CAP1188: Sensor 3 touched[0m
+[0;32mI (437812) CAP1188: Sensor 4 touched[0m
+[0;32mI (437812) CAP1188: Sensor 7 touched[0m
+[0;32mI (437812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (437812) MPU6050: MPU6050 read error[0m
+[0;32mI (438312) CAP1188: Sensor 3 touched[0m
+[0;32mI (438312) CAP1188: Sensor 4 touched[0m
+[0;32mI (438312) CAP1188: Sensor 7 touched[0m
+[0;32mI (438312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (439312) MPU6050: MPU6050 read error[0m
+[0;32mI (439312) CAP1188: Sensor 3 touched[0m
+[0;32mI (439312) CAP1188: Sensor 4 touched[0m
+[0;32mI (439312) CAP1188: Sensor 7 touched[0m
+[0;32mI (439312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (440812) CAP1188: Sensor 3 touched[0m
+[0;32mI (440812) CAP1188: Sensor 4 touched[0m
+[0;32mI (440812) CAP1188: Sensor 7 touched[0m
+[0;32mI (440812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (440812) MPU6050: MPU6050 read error[0m
+[0;32mI (441312) CAP1188: Sensor 3 touched[0m
+[0;32mI (441312) CAP1188: Sensor 4 touched[0m
+[0;32mI (441312) CAP1188: Sensor 7 touched[0m
+[0;32mI (441312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (442312) MPU6050: MPU6050 read error[0m
+[0;32mI (442312) CAP1188: Sensor 3 touched[0m
+[0;32mI (442312) CAP1188: Sensor 4 touched[0m
+[0;32mI (442312) CAP1188: Sensor 7 touched[0m
+[0;32mI (442312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (443812) CAP1188: Sensor 3 touched[0m
+[0;32mI (443812) CAP1188: Sensor 4 touched[0m
+[0;32mI (443812) CAP1188: Sensor 7 touched[0m
+[0;32mI (443812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (443812) MPU6050: MPU6050 read error[0m
+[0;32mI (444312) CAP1188: Sensor 3 touched[0m
+[0;32mI (444312) CAP1188: Sensor 4 touched[0m
+[0;32mI (444312) CAP1188: Sensor 7 touched[0m
+[0;32mI (444312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (445312) MPU6050: MPU6050 read error[0m
+[0;32mI (445312) CAP1188: Sensor 3 touched[0m
+[0;32mI (445312) CAP1188: Sensor 4 touched[0m
+[0;32mI (445312) CAP1188: Sensor 7 touched[0m
+[0;32mI (445312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (446812) CAP1188: Sensor 3 touched[0m
+[0;32mI (446812) CAP1188: Sensor 4 touched[0m
+[0;32mI (446812) CAP1188: Sensor 7 touched[0m
+[0;32mI (446812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (446812) MPU6050: MPU6050 read error[0m
+[0;32mI (447312) CAP1188: Sensor 3 touched[0m
+[0;32mI (447312) CAP1188: Sensor 4 touched[0m
+[0;32mI (447312) CAP1188: Sensor 7 touched[0m
+[0;32mI (447312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (448312) MPU6050: MPU6050 read error[0m
+[0;32mI (448312) CAP1188: Sensor 3 touched[0m
+[0;32mI (448312) CAP1188: Sensor 4 touched[0m
+[0;32mI (448312) CAP1188: Sensor 7 touched[0m
+[0;32mI (448312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (449812) CAP1188: Sensor 3 touched[0m
+[0;32mI (449812) CAP1188: Sensor 4 touched[0m
+[0;32mI (449812) CAP1188: Sensor 7 touched[0m
+[0;32mI (449812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (449812) MPU6050: MPU6050 read error[0m
+[0;32mI (450312) CAP1188: Sensor 3 touched[0m
+[0;32mI (450312) CAP1188: Sensor 4 touched[0m
+[0;32mI (450312) CAP1188: Sensor 7 touched[0m
+[0;32mI (450312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (451312) MPU6050: MPU6050 read error[0m
+[0;32mI (451312) CAP1188: Sensor 3 touched[0m
+[0;32mI (451312) CAP1188: Sensor 4 touched[0m
+[0;32mI (451312) CAP1188: Sensor 7 touched[0m
+[0;32mI (451312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (452812) CAP1188: Sensor 3 touched[0m
+[0;32mI (452812) CAP1188: Sensor 4 touched[0m
+[0;32mI (452812) CAP1188: Sensor 7 touched[0m
+[0;32mI (452812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (452812) MPU6050: MPU6050 read error[0m
+[0;32mI (453312) CAP1188: Sensor 3 touched[0m
+[0;32mI (453312) CAP1188: Sensor 4 touched[0m
+[0;32mI (453312) CAP1188: Sensor 7 touched[0m
+[0;32mI (453312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (454312) MPU6050: MPU6050 read error[0m
+[0;32mI (454312) CAP1188: Sensor 3 touched[0m
+[0;32mI (454312) CAP1188: Sensor 4 touched[0m
+[0;32mI (454312) CAP1188: Sensor 7 touched[0m
+[0;32mI (454312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (455812) CAP1188: Sensor 3 touched[0m
+[0;32mI (455812) CAP1188: Sensor 4 touched[0m
+[0;32mI (455812) CAP1188: Sensor 7 touched[0m
+[0;32mI (455812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (455812) MPU6050: MPU6050 read error[0m
+[0;32mI (456312) CAP1188: Sensor 3 touched[0m
+[0;32mI (456312) CAP1188: Sensor 4 touched[0m
+[0;32mI (456312) CAP1188: Sensor 7 touched[0m
+[0;32mI (456312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (457312) MPU6050: MPU6050 read error[0m
+[0;32mI (457312) CAP1188: Sensor 3 touched[0m
+[0;32mI (457312) CAP1188: Sensor 4 touched[0m
+[0;32mI (457312) CAP1188: Sensor 7 touched[0m
+[0;32mI (457312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (458812) CAP1188: Sensor 3 touched[0m
+[0;32mI (458812) CAP1188: Sensor 4 touched[0m
+[0;32mI (458812) CAP1188: Sensor 7 touched[0m
+[0;32mI (458812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (458812) MPU6050: MPU6050 read error[0m
+[0;32mI (459312) CAP1188: Sensor 3 touched[0m
+[0;32mI (459312) CAP1188: Sensor 4 touched[0m
+[0;32mI (459312) CAP1188: Sensor 7 touched[0m
+[0;32mI (459312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (460312) MPU6050: MPU6050 read error[0m
+[0;32mI (460312) CAP1188: Sensor 3 touched[0m
+[0;32mI (460312) CAP1188: Sensor 4 touched[0m
+[0;32mI (460312) CAP1188: Sensor 7 touched[0m
+[0;32mI (460312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (461812) CAP1188: Sensor 3 touched[0m
+[0;32mI (461812) CAP1188: Sensor 4 touched[0m
+[0;32mI (461812) CAP1188: Sensor 7 touched[0m
+[0;32mI (461812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (461812) MPU6050: MPU6050 read error[0m
+[0;32mI (462312) CAP1188: Sensor 3 touched[0m
+[0;32mI (462312) CAP1188: Sensor 4 touched[0m
+[0;32mI (462312) CAP1188: Sensor 7 touched[0m
+[0;32mI (462312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (463312) MPU6050: MPU6050 read error[0m
+[0;32mI (463312) CAP1188: Sensor 3 touched[0m
+[0;32mI (463312) CAP1188: Sensor 4 touched[0m
+[0;32mI (463312) CAP1188: Sensor 7 touched[0m
+[0;32mI (463312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (464812) CAP1188: Sensor 3 touched[0m
+[0;32mI (464812) CAP1188: Sensor 4 touched[0m
+[0;32mI (464812) CAP1188: Sensor 7 touched[0m
+[0;32mI (464812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (464812) MPU6050: MPU6050 read error[0m
+[0;32mI (465312) CAP1188: Sensor 3 touched[0m
+[0;32mI (465312) CAP1188: Sensor 4 touched[0m
+[0;32mI (465312) CAP1188: Sensor 7 touched[0m
+[0;32mI (465312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (466312) MPU6050: MPU6050 read error[0m
+[0;32mI (466312) CAP1188: Sensor 3 touched[0m
+[0;32mI (466312) CAP1188: Sensor 4 touched[0m
+[0;32mI (466312) CAP1188: Sensor 7 touched[0m
+[0;32mI (466312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (467812) CAP1188: Sensor 3 touched[0m
+[0;32mI (467812) CAP1188: Sensor 4 touched[0m
+[0;32mI (467812) CAP1188: Sensor 7 touched[0m
+[0;32mI (467812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (467812) MPU6050: MPU6050 read error[0m
+[0;32mI (468312) CAP1188: Sensor 3 touched[0m
+[0;32mI (468312) CAP1188: Sensor 4 touched[0m
+[0;32mI (468312) CAP1188: Sensor 7 touched[0m
+[0;32mI (468312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (469312) MPU6050: MPU6050 read error[0m
+[0;32mI (469312) CAP1188: Sensor 3 touched[0m
+[0;32mI (469312) CAP1188: Sensor 4 touched[0m
+[0;32mI (469312) CAP1188: Sensor 7 touched[0m
+[0;32mI (469312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (470812) CAP1188: Sensor 3 touched[0m
+[0;32mI (470812) CAP1188: Sensor 4 touched[0m
+[0;32mI (470812) CAP1188: Sensor 7 touched[0m
+[0;32mI (470812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (470812) MPU6050: MPU6050 read error[0m
+[0;32mI (471312) CAP1188: Sensor 3 touched[0m
+[0;32mI (471312) CAP1188: Sensor 4 touched[0m
+[0;32mI (471312) CAP1188: Sensor 7 touched[0m
+[0;32mI (471312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (472312) MPU6050: MPU6050 read error[0m
+[0;32mI (472312) CAP1188: Sensor 3 touched[0m
+[0;32mI (472312) CAP1188: Sensor 4 touched[0m
+[0;32mI (472312) CAP1188: Sensor 7 touched[0m
+[0;32mI (472312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (473812) CAP1188: Sensor 3 touched[0m
+[0;32mI (473812) CAP1188: Sensor 4 touched[0m
+[0;32mI (473812) CAP1188: Sensor 7 touched[0m
+[0;32mI (473812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (473812) MPU6050: MPU6050 read error[0m
+[0;32mI (474312) CAP1188: Sensor 3 touched[0m
+[0;32mI (474312) CAP1188: Sensor 4 touched[0m
+[0;32mI (474312) CAP1188: Sensor 7 touched[0m
+[0;32mI (474312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (475312) MPU6050: MPU6050 read error[0m
+[0;32mI (475312) CAP1188: Sensor 3 touched[0m
+[0;32mI (475312) CAP1188: Sensor 4 touched[0m
+[0;32mI (475312) CAP1188: Sensor 7 touched[0m
+[0;32mI (475312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (476812) CAP1188: Sensor 3 touched[0m
+[0;32mI (476812) CAP1188: Sensor 4 touched[0m
+[0;32mI (476812) CAP1188: Sensor 7 touched[0m
+[0;32mI (476812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (476812) MPU6050: MPU6050 read error[0m
+[0;32mI (477312) CAP1188: Sensor 3 touched[0m
+[0;32mI (477312) CAP1188: Sensor 4 touched[0m
+[0;32mI (477312) CAP1188: Sensor 7 touched[0m
+[0;32mI (477312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (478312) MPU6050: MPU6050 read error[0m
+[0;32mI (478312) CAP1188: Sensor 3 touched[0m
+[0;32mI (478312) CAP1188: Sensor 4 touched[0m
+[0;32mI (478312) CAP1188: Sensor 7 touched[0m
+[0;32mI (478312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (479812) CAP1188: Sensor 3 touched[0m
+[0;32mI (479812) CAP1188: Sensor 4 touched[0m
+[0;32mI (479812) CAP1188: Sensor 7 touched[0m
+[0;32mI (479812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (479812) MPU6050: MPU6050 read error[0m
+[0;32mI (480312) CAP1188: Sensor 3 touched[0m
+[0;32mI (480312) CAP1188: Sensor 4 touched[0m
+[0;32mI (480312) CAP1188: Sensor 7 touched[0m
+[0;32mI (480312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (481312) MPU6050: MPU6050 read error[0m
+[0;32mI (481312) CAP1188: Sensor 3 touched[0m
+[0;32mI (481312) CAP1188: Sensor 4 touched[0m
+[0;32mI (481312) CAP1188: Sensor 7 touched[0m
+[0;32mI (481312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (482812) CAP1188: Sensor 3 touched[0m
+[0;32mI (482812) CAP1188: Sensor 4 touched[0m
+[0;32mI (482812) CAP1188: Sensor 7 touched[0m
+[0;32mI (482812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (482812) MPU6050: MPU6050 read error[0m
+[0;32mI (483312) CAP1188: Sensor 3 touched[0m
+[0;32mI (483312) CAP1188: Sensor 4 touched[0m
+[0;32mI (483312) CAP1188: Sensor 7 touched[0m
+[0;32mI (483312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (484312) MPU6050: MPU6050 read error[0m
+[0;32mI (484312) CAP1188: Sensor 3 touched[0m
+[0;32mI (484312) CAP1188: Sensor 4 touched[0m
+[0;32mI (484312) CAP1188: Sensor 7 touched[0m
+[0;32mI (484312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (485812) CAP1188: Sensor 3 touched[0m
+[0;32mI (485812) CAP1188: Sensor 4 touched[0m
+[0;32mI (485812) CAP1188: Sensor 7 touched[0m
+[0;32mI (485812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (485812) MPU6050: MPU6050 read error[0m
+[0;32mI (486312) CAP1188: Sensor 3 touched[0m
+[0;32mI (486312) CAP1188: Sensor 4 touched[0m
+[0;32mI (486312) CAP1188: Sensor 7 touched[0m
+[0;32mI (486312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (487312) MPU6050: MPU6050 read error[0m
+[0;32mI (487312) CAP1188: Sensor 3 touched[0m
+[0;32mI (487312) CAP1188: Sensor 4 touched[0m
+[0;32mI (487312) CAP1188: Sensor 7 touched[0m
+[0;32mI (487312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (488812) CAP1188: Sensor 3 touched[0m
+[0;32mI (488812) CAP1188: Sensor 4 touched[0m
+[0;32mI (488812) CAP1188: Sensor 7 touched[0m
+[0;32mI (488812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (488812) MPU6050: MPU6050 read error[0m
+[0;32mI (489312) CAP1188: Sensor 3 touched[0m
+[0;32mI (489312) CAP1188: Sensor 4 touched[0m
+[0;32mI (489312) CAP1188: Sensor 7 touched[0m
+[0;32mI (489312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (490312) MPU6050: MPU6050 read error[0m
+[0;32mI (490312) CAP1188: Sensor 3 touched[0m
+[0;32mI (490312) CAP1188: Sensor 4 touched[0m
+[0;32mI (490312) CAP1188: Sensor 7 touched[0m
+[0;32mI (490312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (491812) CAP1188: Sensor 3 touched[0m
+[0;32mI (491812) CAP1188: Sensor 4 touched[0m
+[0;32mI (491812) CAP1188: Sensor 7 touched[0m
+[0;32mI (491812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (491812) MPU6050: MPU6050 read error[0m
+[0;32mI (492312) CAP1188: Sensor 3 touched[0m
+[0;32mI (492312) CAP1188: Sensor 4 touched[0m
+[0;32mI (492312) CAP1188: Sensor 7 touched[0m
+[0;32mI (492312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (493312) MPU6050: MPU6050 read error[0m
+[0;32mI (493312) CAP1188: Sensor 3 touched[0m
+[0;32mI (493312) CAP1188: Sensor 4 touched[0m
+[0;32mI (493312) CAP1188: Sensor 7 touched[0m
+[0;32mI (493312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (494812) CAP1188: Sensor 3 touched[0m
+[0;32mI (494812) CAP1188: Sensor 4 touched[0m
+[0;32mI (494812) CAP1188: Sensor 7 touched[0m
+[0;32mI (494812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (494812) MPU6050: MPU6050 read error[0m
+[0;32mI (495312) CAP1188: Sensor 3 touched[0m
+[0;32mI (495312) CAP1188: Sensor 4 touched[0m
+[0;32mI (495312) CAP1188: Sensor 7 touched[0m
+[0;32mI (495312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (496312) MPU6050: MPU6050 read error[0m
+[0;32mI (496312) CAP1188: Sensor 3 touched[0m
+[0;32mI (496312) CAP1188: Sensor 4 touched[0m
+[0;32mI (496312) CAP1188: Sensor 7 touched[0m
+[0;32mI (496312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (497812) CAP1188: Sensor 3 touched[0m
+[0;32mI (497812) CAP1188: Sensor 4 touched[0m
+[0;32mI (497812) CAP1188: Sensor 7 touched[0m
+[0;32mI (497812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (497812) MPU6050: MPU6050 read error[0m
+[0;32mI (498312) CAP1188: Sensor 3 touched[0m
+[0;32mI (498312) CAP1188: Sensor 4 touched[0m
+[0;32mI (498312) CAP1188: Sensor 7 touched[0m
+[0;32mI (498312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (499312) MPU6050: MPU6050 read error[0m
+[0;32mI (499312) CAP1188: Sensor 3 touched[0m
+[0;32mI (499312) CAP1188: Sensor 4 touched[0m
+[0;32mI (499312) CAP1188: Sensor 7 touched[0m
+[0;32mI (499312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (500812) CAP1188: Sensor 3 touched[0m
+[0;32mI (500812) CAP1188: Sensor 4 touched[0m
+[0;32mI (500812) CAP1188: Sensor 7 touched[0m
+[0;32mI (500812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (500812) MPU6050: MPU6050 read error[0m
+[0;32mI (501312) CAP1188: Sensor 3 touched[0m
+[0;32mI (501312) CAP1188: Sensor 4 touched[0m
+[0;32mI (501312) CAP1188: Sensor 7 touched[0m
+[0;32mI (501312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (502312) MPU6050: MPU6050 read error[0m
+[0;32mI (502312) CAP1188: Sensor 3 touched[0m
+[0;32mI (502312) CAP1188: Sensor 4 touched[0m
+[0;32mI (502312) CAP1188: Sensor 7 touched[0m
+[0;32mI (502312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (503812) CAP1188: Sensor 3 touched[0m
+[0;32mI (503812) CAP1188: Sensor 4 touched[0m
+[0;32mI (503812) CAP1188: Sensor 7 touched[0m
+[0;32mI (503812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (503812) MPU6050: MPU6050 read error[0m
+[0;32mI (504312) CAP1188: Sensor 3 touched[0m
+[0;32mI (504312) CAP1188: Sensor 4 touched[0m
+[0;32mI (504312) CAP1188: Sensor 7 touched[0m
+[0;32mI (504312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (505312) MPU6050: MPU6050 read error[0m
+[0;32mI (505312) CAP1188: Sensor 3 touched[0m
+[0;32mI (505312) CAP1188: Sensor 4 touched[0m
+[0;32mI (505312) CAP1188: Sensor 7 touched[0m
+[0;32mI (505312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (506812) CAP1188: Sensor 3 touched[0m
+[0;32mI (506812) CAP1188: Sensor 4 touched[0m
+[0;32mI (506812) CAP1188: Sensor 7 touched[0m
+[0;32mI (506812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (506812) MPU6050: MPU6050 read error[0m
+[0;32mI (507312) CAP1188: Sensor 3 touched[0m
+[0;32mI (507312) CAP1188: Sensor 4 touched[0m
+[0;32mI (507312) CAP1188: Sensor 7 touched[0m
+[0;32mI (507312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (508312) MPU6050: MPU6050 read error[0m
+[0;32mI (508312) CAP1188: Sensor 3 touched[0m
+[0;32mI (508312) CAP1188: Sensor 4 touched[0m
+[0;32mI (508312) CAP1188: Sensor 7 touched[0m
+[0;32mI (508312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (509812) CAP1188: Sensor 3 touched[0m
+[0;32mI (509812) CAP1188: Sensor 4 touched[0m
+[0;32mI (509812) CAP1188: Sensor 7 touched[0m
+[0;32mI (509812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (509812) MPU6050: MPU6050 read error[0m
+[0;32mI (510312) CAP1188: Sensor 3 touched[0m
+[0;32mI (510312) CAP1188: Sensor 4 touched[0m
+[0;32mI (510312) CAP1188: Sensor 7 touched[0m
+[0;32mI (510312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (511312) MPU6050: MPU6050 read error[0m
+[0;32mI (511312) CAP1188: Sensor 3 touched[0m
+[0;32mI (511312) CAP1188: Sensor 4 touched[0m
+[0;32mI (511312) CAP1188: Sensor 7 touched[0m
+[0;32mI (511312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (512812) CAP1188: Sensor 3 touched[0m
+[0;32mI (512812) CAP1188: Sensor 4 touched[0m
+[0;32mI (512812) CAP1188: Sensor 7 touched[0m
+[0;32mI (512812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (512812) MPU6050: MPU6050 read error[0m
+[0;32mI (513312) CAP1188: Sensor 3 touched[0m
+[0;32mI (513312) CAP1188: Sensor 4 touched[0m
+[0;32mI (513312) CAP1188: Sensor 7 touched[0m
+[0;32mI (513312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (514312) MPU6050: MPU6050 read error[0m
+[0;32mI (514312) CAP1188: Sensor 3 touched[0m
+[0;32mI (514312) CAP1188: Sensor 4 touched[0m
+[0;32mI (514312) CAP1188: Sensor 7 touched[0m
+[0;32mI (514312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (515812) CAP1188: Sensor 3 touched[0m
+[0;32mI (515812) CAP1188: Sensor 4 touched[0m
+[0;32mI (515812) CAP1188: Sensor 7 touched[0m
+[0;32mI (515812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (515812) MPU6050: MPU6050 read error[0m
+[0;32mI (516312) CAP1188: Sensor 3 touched[0m
+[0;32mI (516312) CAP1188: Sensor 4 touched[0m
+[0;32mI (516312) CAP1188: Sensor 7 touched[0m
+[0;32mI (516312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (517312) MPU6050: MPU6050 read error[0m
+[0;32mI (517312) CAP1188: Sensor 3 touched[0m
+[0;32mI (517312) CAP1188: Sensor 4 touched[0m
+[0;32mI (517312) CAP1188: Sensor 7 touched[0m
+[0;32mI (517312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (518812) CAP1188: Sensor 3 touched[0m
+[0;32mI (518812) CAP1188: Sensor 4 touched[0m
+[0;32mI (518812) CAP1188: Sensor 7 touched[0m
+[0;32mI (518812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (518812) MPU6050: MPU6050 read error[0m
+[0;32mI (519312) CAP1188: Sensor 3 touched[0m
+[0;32mI (519312) CAP1188: Sensor 4 touched[0m
+[0;32mI (519312) CAP1188: Sensor 7 touched[0m
+[0;32mI (519312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (520312) MPU6050: MPU6050 read error[0m
+[0;32mI (520312) CAP1188: Sensor 3 touched[0m
+[0;32mI (520312) CAP1188: Sensor 4 touched[0m
+[0;32mI (520312) CAP1188: Sensor 7 touched[0m
+[0;32mI (520312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (521812) CAP1188: Sensor 3 touched[0m
+[0;32mI (521812) CAP1188: Sensor 4 touched[0m
+[0;32mI (521812) CAP1188: Sensor 7 touched[0m
+[0;32mI (521812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (521812) MPU6050: MPU6050 read error[0m
+[0;32mI (522312) CAP1188: Sensor 3 touched[0m
+[0;32mI (522312) CAP1188: Sensor 4 touched[0m
+[0;32mI (522312) CAP1188: Sensor 7 touched[0m
+[0;32mI (522312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (523312) MPU6050: MPU6050 read error[0m
+[0;32mI (523312) CAP1188: Sensor 3 touched[0m
+[0;32mI (523312) CAP1188: Sensor 4 touched[0m
+[0;32mI (523312) CAP1188: Sensor 7 touched[0m
+[0;32mI (523312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (524812) CAP1188: Sensor 3 touched[0m
+[0;32mI (524812) CAP1188: Sensor 4 touched[0m
+[0;32mI (524812) CAP1188: Sensor 7 touched[0m
+[0;32mI (524812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (524812) MPU6050: MPU6050 read error[0m
+[0;32mI (525312) CAP1188: Sensor 3 touched[0m
+[0;32mI (525312) CAP1188: Sensor 4 touched[0m
+[0;32mI (525312) CAP1188: Sensor 7 touched[0m
+[0;32mI (525312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (526312) MPU6050: MPU6050 read error[0m
+[0;32mI (526312) CAP1188: Sensor 3 touched[0m
+[0;32mI (526312) CAP1188: Sensor 4 touched[0m
+[0;32mI (526312) CAP1188: Sensor 7 touched[0m
+[0;32mI (526312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (527812) CAP1188: Sensor 3 touched[0m
+[0;32mI (527812) CAP1188: Sensor 4 touched[0m
+[0;32mI (527812) CAP1188: Sensor 7 touched[0m
+[0;32mI (527812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (527812) MPU6050: MPU6050 read error[0m
+[0;32mI (528312) CAP1188: Sensor 3 touched[0m
+[0;32mI (528312) CAP1188: Sensor 4 touched[0m
+[0;32mI (528312) CAP1188: Sensor 7 touched[0m
+[0;32mI (528312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (529312) MPU6050: MPU6050 read error[0m
+[0;32mI (529312) CAP1188: Sensor 3 touched[0m
+[0;32mI (529312) CAP1188: Sensor 4 touched[0m
+[0;32mI (529312) CAP1188: Sensor 7 touched[0m
+[0;32mI (529312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (530812) CAP1188: Sensor 3 touched[0m
+[0;32mI (530812) CAP1188: Sensor 4 touched[0m
+[0;32mI (530812) CAP1188: Sensor 7 touched[0m
+[0;32mI (530812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (530812) MPU6050: MPU6050 read error[0m
+[0;32mI (531312) CAP1188: Sensor 3 touched[0m
+[0;32mI (531312) CAP1188: Sensor 4 touched[0m
+[0;32mI (531312) CAP1188: Sensor 7 touched[0m
+[0;32mI (531312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (532312) MPU6050: MPU6050 read error[0m
+[0;32mI (532312) CAP1188: Sensor 3 touched[0m
+[0;32mI (532312) CAP1188: Sensor 4 touched[0m
+[0;32mI (532312) CAP1188: Sensor 7 touched[0m
+[0;32mI (532312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (533812) CAP1188: Sensor 3 touched[0m
+[0;32mI (533812) CAP1188: Sensor 4 touched[0m
+[0;32mI (533812) CAP1188: Sensor 7 touched[0m
+[0;32mI (533812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (533812) MPU6050: MPU6050 read error[0m
+[0;32mI (534312) CAP1188: Sensor 3 touched[0m
+[0;32mI (534312) CAP1188: Sensor 4 touched[0m
+[0;32mI (534312) CAP1188: Sensor 7 touched[0m
+[0;32mI (534312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (535312) MPU6050: MPU6050 read error[0m
+[0;32mI (535312) CAP1188: Sensor 3 touched[0m
+[0;32mI (535312) CAP1188: Sensor 4 touched[0m
+[0;32mI (535312) CAP1188: Sensor 7 touched[0m
+[0;32mI (535312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (536812) CAP1188: Sensor 3 touched[0m
+[0;32mI (536812) CAP1188: Sensor 4 touched[0m
+[0;32mI (536812) CAP1188: Sensor 7 touched[0m
+[0;32mI (536812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (536812) MPU6050: MPU6050 read error[0m
+[0;32mI (537312) CAP1188: Sensor 3 touched[0m
+[0;32mI (537312) CAP1188: Sensor 4 touched[0m
+[0;32mI (537312) CAP1188: Sensor 7 touched[0m
+[0;32mI (537312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (538312) MPU6050: MPU6050 read error[0m
+[0;32mI (538312) CAP1188: Sensor 3 touched[0m
+[0;32mI (538312) CAP1188: Sensor 4 touched[0m
+[0;32mI (538312) CAP1188: Sensor 7 touched[0m
+[0;32mI (538312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (539812) CAP1188: Sensor 3 touched[0m
+[0;32mI (539812) CAP1188: Sensor 4 touched[0m
+[0;32mI (539812) CAP1188: Sensor 7 touched[0m
+[0;32mI (539812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (539812) MPU6050: MPU6050 read error[0m
+[0;32mI (540312) CAP1188: Sensor 3 touched[0m
+[0;32mI (540312) CAP1188: Sensor 4 touched[0m
+[0;32mI (540312) CAP1188: Sensor 7 touched[0m
+[0;32mI (540312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (541312) MPU6050: MPU6050 read error[0m
+[0;32mI (541312) CAP1188: Sensor 3 touched[0m
+[0;32mI (541312) CAP1188: Sensor 4 touched[0m
+[0;32mI (541312) CAP1188: Sensor 7 touched[0m
+[0;32mI (541312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (542812) CAP1188: Sensor 3 touched[0m
+[0;32mI (542812) CAP1188: Sensor 4 touched[0m
+[0;32mI (542812) CAP1188: Sensor 7 touched[0m
+[0;32mI (542812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (542812) MPU6050: MPU6050 read error[0m
+[0;32mI (543312) CAP1188: Sensor 3 touched[0m
+[0;32mI (543312) CAP1188: Sensor 4 touched[0m
+[0;32mI (543312) CAP1188: Sensor 7 touched[0m
+[0;32mI (543312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (544312) MPU6050: MPU6050 read error[0m
+[0;32mI (544312) CAP1188: Sensor 3 touched[0m
+[0;32mI (544312) CAP1188: Sensor 4 touched[0m
+[0;32mI (544312) CAP1188: Sensor 7 touched[0m
+[0;32mI (544312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (545812) CAP1188: Sensor 3 touched[0m
+[0;32mI (545812) CAP1188: Sensor 4 touched[0m
+[0;32mI (545812) CAP1188: Sensor 7 touched[0m
+[0;32mI (545812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (545812) MPU6050: MPU6050 read error[0m
+[0;32mI (546312) CAP1188: Sensor 3 touched[0m
+[0;32mI (546312) CAP1188: Sensor 4 touched[0m
+[0;32mI (546312) CAP1188: Sensor 7 touched[0m
+[0;32mI (546312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (547312) MPU6050: MPU6050 read error[0m
+[0;32mI (547312) CAP1188: Sensor 3 touched[0m
+[0;32mI (547312) CAP1188: Sensor 4 touched[0m
+[0;32mI (547312) CAP1188: Sensor 7 touched[0m
+[0;32mI (547312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (548812) CAP1188: Sensor 3 touched[0m
+[0;32mI (548812) CAP1188: Sensor 4 touched[0m
+[0;32mI (548812) CAP1188: Sensor 7 touched[0m
+[0;32mI (548812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (548812) MPU6050: MPU6050 read error[0m
+[0;32mI (549312) CAP1188: Sensor 3 touched[0m
+[0;32mI (549312) CAP1188: Sensor 4 touched[0m
+[0;32mI (549312) CAP1188: Sensor 7 touched[0m
+[0;32mI (549312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (550312) MPU6050: MPU6050 read error[0m
+[0;32mI (550312) CAP1188: Sensor 3 touched[0m
+[0;32mI (550312) CAP1188: Sensor 4 touched[0m
+[0;32mI (550312) CAP1188: Sensor 7 touched[0m
+[0;32mI (550312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (551812) CAP1188: Sensor 3 touched[0m
+[0;32mI (551812) CAP1188: Sensor 4 touched[0m
+[0;32mI (551812) CAP1188: Sensor 7 touched[0m
+[0;32mI (551812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (551812) MPU6050: MPU6050 read error[0m
+[0;32mI (552312) CAP1188: Sensor 3 touched[0m
+[0;32mI (552312) CAP1188: Sensor 4 touched[0m
+[0;32mI (552312) CAP1188: Sensor 7 touched[0m
+[0;32mI (552312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (553312) MPU6050: MPU6050 read error[0m
+[0;32mI (553312) CAP1188: Sensor 3 touched[0m
+[0;32mI (553312) CAP1188: Sensor 4 touched[0m
+[0;32mI (553312) CAP1188: Sensor 7 touched[0m
+[0;32mI (553312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (554812) CAP1188: Sensor 3 touched[0m
+[0;32mI (554812) CAP1188: Sensor 4 touched[0m
+[0;32mI (554812) CAP1188: Sensor 7 touched[0m
+[0;32mI (554812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (554812) MPU6050: MPU6050 read error[0m
+[0;32mI (555312) CAP1188: Sensor 3 touched[0m
+[0;32mI (555312) CAP1188: Sensor 4 touched[0m
+[0;32mI (555312) CAP1188: Sensor 7 touched[0m
+[0;32mI (555312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (556312) MPU6050: MPU6050 read error[0m
+[0;32mI (556312) CAP1188: Sensor 3 touched[0m
+[0;32mI (556312) CAP1188: Sensor 4 touched[0m
+[0;32mI (556312) CAP1188: Sensor 7 touched[0m
+[0;32mI (556312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (557812) CAP1188: Sensor 3 touched[0m
+[0;32mI (557812) CAP1188: Sensor 4 touched[0m
+[0;32mI (557812) CAP1188: Sensor 7 touched[0m
+[0;32mI (557812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (557812) MPU6050: MPU6050 read error[0m
+[0;32mI (558312) CAP1188: Sensor 3 touched[0m
+[0;32mI (558312) CAP1188: Sensor 4 touched[0m
+[0;32mI (558312) CAP1188: Sensor 7 touched[0m
+[0;32mI (558312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (559312) MPU6050: MPU6050 read error[0m
+[0;32mI (559312) CAP1188: Sensor 3 touched[0m
+[0;32mI (559312) CAP1188: Sensor 4 touched[0m
+[0;32mI (559312) CAP1188: Sensor 7 touched[0m
+[0;32mI (559312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (560812) CAP1188: Sensor 3 touched[0m
+[0;32mI (560812) CAP1188: Sensor 4 touched[0m
+[0;32mI (560812) CAP1188: Sensor 7 touched[0m
+[0;32mI (560812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (560812) MPU6050: MPU6050 read error[0m
+[0;32mI (561312) CAP1188: Sensor 3 touched[0m
+[0;32mI (561312) CAP1188: Sensor 4 touched[0m
+[0;32mI (561312) CAP1188: Sensor 7 touched[0m
+[0;32mI (561312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (562312) MPU6050: MPU6050 read error[0m
+[0;32mI (562312) CAP1188: Sensor 3 touched[0m
+[0;32mI (562312) CAP1188: Sensor 4 touched[0m
+[0;32mI (562312) CAP1188: Sensor 7 touched[0m
+[0;32mI (562312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (563812) CAP1188: Sensor 3 touched[0m
+[0;32mI (563812) CAP1188: Sensor 4 touched[0m
+[0;32mI (563812) CAP1188: Sensor 7 touched[0m
+[0;32mI (563812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (563812) MPU6050: MPU6050 read error[0m
+[0;32mI (564312) CAP1188: Sensor 3 touched[0m
+[0;32mI (564312) CAP1188: Sensor 4 touched[0m
+[0;32mI (564312) CAP1188: Sensor 7 touched[0m
+[0;32mI (564312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (565312) MPU6050: MPU6050 read error[0m
+[0;32mI (565312) CAP1188: Sensor 3 touched[0m
+[0;32mI (565312) CAP1188: Sensor 4 touched[0m
+[0;32mI (565312) CAP1188: Sensor 7 touched[0m
+[0;32mI (565312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (566812) CAP1188: Sensor 3 touched[0m
+[0;32mI (566812) CAP1188: Sensor 4 touched[0m
+[0;32mI (566812) CAP1188: Sensor 7 touched[0m
+[0;32mI (566812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (566812) MPU6050: MPU6050 read error[0m
+[0;32mI (567312) CAP1188: Sensor 3 touched[0m
+[0;32mI (567312) CAP1188: Sensor 4 touched[0m
+[0;32mI (567312) CAP1188: Sensor 7 touched[0m
+[0;32mI (567312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (568312) MPU6050: MPU6050 read error[0m
+[0;32mI (568312) CAP1188: Sensor 3 touched[0m
+[0;32mI (568312) CAP1188: Sensor 4 touched[0m
+[0;32mI (568312) CAP1188: Sensor 7 touched[0m
+[0;32mI (568312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (569812) CAP1188: Sensor 3 touched[0m
+[0;32mI (569812) CAP1188: Sensor 4 touched[0m
+[0;32mI (569812) CAP1188: Sensor 7 touched[0m
+[0;32mI (569812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (569812) MPU6050: MPU6050 read error[0m
+[0;32mI (570312) CAP1188: Sensor 3 touched[0m
+[0;32mI (570312) CAP1188: Sensor 4 touched[0m
+[0;32mI (570312) CAP1188: Sensor 7 touched[0m
+[0;32mI (570312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (571312) MPU6050: MPU6050 read error[0m
+[0;32mI (571312) CAP1188: Sensor 3 touched[0m
+[0;32mI (571312) CAP1188: Sensor 4 touched[0m
+[0;32mI (571312) CAP1188: Sensor 7 touched[0m
+[0;32mI (571312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (572812) CAP1188: Sensor 3 touched[0m
+[0;32mI (572812) CAP1188: Sensor 4 touched[0m
+[0;32mI (572812) CAP1188: Sensor 7 touched[0m
+[0;32mI (572812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (572812) MPU6050: MPU6050 read error[0m
+[0;32mI (573312) CAP1188: Sensor 3 touched[0m
+[0;32mI (573312) CAP1188: Sensor 4 touched[0m
+[0;32mI (573312) CAP1188: Sensor 7 touched[0m
+[0;32mI (573312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (574312) MPU6050: MPU6050 read error[0m
+[0;32mI (574312) CAP1188: Sensor 3 touched[0m
+[0;32mI (574312) CAP1188: Sensor 4 touched[0m
+[0;32mI (574312) CAP1188: Sensor 7 touched[0m
+[0;32mI (574312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (575812) CAP1188: Sensor 3 touched[0m
+[0;32mI (575812) CAP1188: Sensor 4 touched[0m
+[0;32mI (575812) CAP1188: Sensor 7 touched[0m
+[0;32mI (575812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (575812) MPU6050: MPU6050 read error[0m
+[0;32mI (576312) CAP1188: Sensor 3 touched[0m
+[0;32mI (576312) CAP1188: Sensor 4 touched[0m
+[0;32mI (576312) CAP1188: Sensor 7 touched[0m
+[0;32mI (576312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (577312) MPU6050: MPU6050 read error[0m
+[0;32mI (577312) CAP1188: Sensor 3 touched[0m
+[0;32mI (577312) CAP1188: Sensor 4 touched[0m
+[0;32mI (577312) CAP1188: Sensor 7 touched[0m
+[0;32mI (577312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (578812) CAP1188: Sensor 3 touched[0m
+[0;32mI (578812) CAP1188: Sensor 4 touched[0m
+[0;32mI (578812) CAP1188: Sensor 7 touched[0m
+[0;32mI (578812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (578812) MPU6050: MPU6050 read error[0m
+[0;32mI (579312) CAP1188: Sensor 3 touched[0m
+[0;32mI (579312) CAP1188: Sensor 4 touched[0m
+[0;32mI (579312) CAP1188: Sensor 7 touched[0m
+[0;32mI (579312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (580312) MPU6050: MPU6050 read error[0m
+[0;32mI (580312) CAP1188: Sensor 3 touched[0m
+[0;32mI (580312) CAP1188: Sensor 4 touched[0m
+[0;32mI (580312) CAP1188: Sensor 7 touched[0m
+[0;32mI (580312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (581812) CAP1188: Sensor 3 touched[0m
+[0;32mI (581812) CAP1188: Sensor 4 touched[0m
+[0;32mI (581812) CAP1188: Sensor 7 touched[0m
+[0;32mI (581812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (581812) MPU6050: MPU6050 read error[0m
+[0;32mI (582312) CAP1188: Sensor 3 touched[0m
+[0;32mI (582312) CAP1188: Sensor 4 touched[0m
+[0;32mI (582312) CAP1188: Sensor 7 touched[0m
+[0;32mI (582312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (583312) MPU6050: MPU6050 read error[0m
+[0;32mI (583312) CAP1188: Sensor 3 touched[0m
+[0;32mI (583312) CAP1188: Sensor 4 touched[0m
+[0;32mI (583312) CAP1188: Sensor 7 touched[0m
+[0;32mI (583312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (584812) CAP1188: Sensor 3 touched[0m
+[0;32mI (584812) CAP1188: Sensor 4 touched[0m
+[0;32mI (584812) CAP1188: Sensor 7 touched[0m
+[0;32mI (584812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (584812) MPU6050: MPU6050 read error[0m
+[0;32mI (585312) CAP1188: Sensor 3 touched[0m
+[0;32mI (585312) CAP1188: Sensor 4 touched[0m
+[0;32mI (585312) CAP1188: Sensor 7 touched[0m
+[0;32mI (585312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (586312) MPU6050: MPU6050 read error[0m
+[0;32mI (586312) CAP1188: Sensor 3 touched[0m
+[0;32mI (586312) CAP1188: Sensor 4 touched[0m
+[0;32mI (586312) CAP1188: Sensor 7 touched[0m
+[0;32mI (586312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (587812) CAP1188: Sensor 3 touched[0m
+[0;32mI (587812) CAP1188: Sensor 4 touched[0m
+[0;32mI (587812) CAP1188: Sensor 7 touched[0m
+[0;32mI (587812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (587812) MPU6050: MPU6050 read error[0m
+[0;32mI (588312) CAP1188: Sensor 3 touched[0m
+[0;32mI (588312) CAP1188: Sensor 4 touched[0m
+[0;32mI (588312) CAP1188: Sensor 7 touched[0m
+[0;32mI (588312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (589312) MPU6050: MPU6050 read error[0m
+[0;32mI (589312) CAP1188: Sensor 3 touched[0m
+[0;32mI (589312) CAP1188: Sensor 4 touched[0m
+[0;32mI (589312) CAP1188: Sensor 7 touched[0m
+[0;32mI (589312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (590812) CAP1188: Sensor 3 touched[0m
+[0;32mI (590812) CAP1188: Sensor 4 touched[0m
+[0;32mI (590812) CAP1188: Sensor 7 touched[0m
+[0;32mI (590812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (590812) MPU6050: MPU6050 read error[0m
+[0;32mI (591312) CAP1188: Sensor 3 touched[0m
+[0;32mI (591312) CAP1188: Sensor 4 touched[0m
+[0;32mI (591312) CAP1188: Sensor 7 touched[0m
+[0;32mI (591312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (592312) MPU6050: MPU6050 read error[0m
+[0;32mI (592312) CAP1188: Sensor 3 touched[0m
+[0;32mI (592312) CAP1188: Sensor 4 touched[0m
+[0;32mI (592312) CAP1188: Sensor 7 touched[0m
+[0;32mI (592312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (593812) CAP1188: Sensor 3 touched[0m
+[0;32mI (593812) CAP1188: Sensor 4 touched[0m
+[0;32mI (593812) CAP1188: Sensor 7 touched[0m
+[0;32mI (593812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (593812) MPU6050: MPU6050 read error[0m
+[0;32mI (594312) CAP1188: Sensor 3 touched[0m
+[0;32mI (594312) CAP1188: Sensor 4 touched[0m
+[0;32mI (594312) CAP1188: Sensor 7 touched[0m
+[0;32mI (594312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (595312) MPU6050: MPU6050 read error[0m
+[0;32mI (595312) CAP1188: Sensor 3 touched[0m
+[0;32mI (595312) CAP1188: Sensor 4 touched[0m
+[0;32mI (595312) CAP1188: Sensor 7 touched[0m
+[0;32mI (595312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (596812) CAP1188: Sensor 3 touched[0m
+[0;32mI (596812) CAP1188: Sensor 4 touched[0m
+[0;32mI (596812) CAP1188: Sensor 7 touched[0m
+[0;32mI (596812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (596812) MPU6050: MPU6050 read error[0m
+[0;32mI (597312) CAP1188: Sensor 3 touched[0m
+[0;32mI (597312) CAP1188: Sensor 4 touched[0m
+[0;32mI (597312) CAP1188: Sensor 7 touched[0m
+[0;32mI (597312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (598312) MPU6050: MPU6050 read error[0m
+[0;32mI (598312) CAP1188: Sensor 3 touched[0m
+[0;32mI (598312) CAP1188: Sensor 4 touched[0m
+[0;32mI (598312) CAP1188: Sensor 7 touched[0m
+[0;32mI (598312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (599812) CAP1188: Sensor 3 touched[0m
+[0;32mI (599812) CAP1188: Sensor 4 touched[0m
+[0;32mI (599812) CAP1188: Sensor 7 touched[0m
+[0;32mI (599812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (599812) MPU6050: MPU6050 read error[0m
+[0;32mI (600312) CAP1188: Sensor 3 touched[0m
+[0;32mI (600312) CAP1188: Sensor 4 touched[0m
+[0;32mI (600312) CAP1188: Sensor 7 touched[0m
+[0;32mI (600312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (601312) MPU6050: MPU6050 read error[0m
+[0;32mI (601312) CAP1188: Sensor 3 touched[0m
+[0;32mI (601312) CAP1188: Sensor 4 touched[0m
+[0;32mI (601312) CAP1188: Sensor 7 touched[0m
+[0;32mI (601312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (602812) CAP1188: Sensor 3 touched[0m
+[0;32mI (602812) CAP1188: Sensor 4 touched[0m
+[0;32mI (602812) CAP1188: Sensor 7 touched[0m
+[0;32mI (602812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (602812) MPU6050: MPU6050 read error[0m
+[0;32mI (603312) CAP1188: Sensor 3 touched[0m
+[0;32mI (603312) CAP1188: Sensor 4 touched[0m
+[0;32mI (603312) CAP1188: Sensor 7 touched[0m
+[0;32mI (603312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (604312) MPU6050: MPU6050 read error[0m
+[0;32mI (604312) CAP1188: Sensor 3 touched[0m
+[0;32mI (604312) CAP1188: Sensor 4 touched[0m
+[0;32mI (604312) CAP1188: Sensor 7 touched[0m
+[0;32mI (604312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (605812) CAP1188: Sensor 3 touched[0m
+[0;32mI (605812) CAP1188: Sensor 4 touched[0m
+[0;32mI (605812) CAP1188: Sensor 7 touched[0m
+[0;32mI (605812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (605812) MPU6050: MPU6050 read error[0m
+[0;32mI (606312) CAP1188: Sensor 3 touched[0m
+[0;32mI (606312) CAP1188: Sensor 4 touched[0m
+[0;32mI (606312) CAP1188: Sensor 7 touched[0m
+[0;32mI (606312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (607312) MPU6050: MPU6050 read error[0m
+[0;32mI (607312) CAP1188: Sensor 3 touched[0m
+[0;32mI (607312) CAP1188: Sensor 4 touched[0m
+[0;32mI (607312) CAP1188: Sensor 7 touched[0m
+[0;32mI (607312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (608812) CAP1188: Sensor 3 touched[0m
+[0;32mI (608812) CAP1188: Sensor 4 touched[0m
+[0;32mI (608812) CAP1188: Sensor 7 touched[0m
+[0;32mI (608812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (608812) MPU6050: MPU6050 read error[0m
+[0;32mI (609312) CAP1188: Sensor 3 touched[0m
+[0;32mI (609312) CAP1188: Sensor 4 touched[0m
+[0;32mI (609312) CAP1188: Sensor 7 touched[0m
+[0;32mI (609312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (610312) MPU6050: MPU6050 read error[0m
+[0;32mI (610312) CAP1188: Sensor 3 touched[0m
+[0;32mI (610312) CAP1188: Sensor 4 touched[0m
+[0;32mI (610312) CAP1188: Sensor 7 touched[0m
+[0;32mI (610312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (611812) CAP1188: Sensor 3 touched[0m
+[0;32mI (611812) CAP1188: Sensor 4 touched[0m
+[0;32mI (611812) CAP1188: Sensor 7 touched[0m
+[0;32mI (611812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (611812) MPU6050: MPU6050 read error[0m
+[0;32mI (612312) CAP1188: Sensor 3 touched[0m
+[0;32mI (612312) CAP1188: Sensor 4 touched[0m
+[0;32mI (612312) CAP1188: Sensor 7 touched[0m
+[0;32mI (612312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (613312) MPU6050: MPU6050 read error[0m
+[0;32mI (613312) CAP1188: Sensor 3 touched[0m
+[0;32mI (613312) CAP1188: Sensor 4 touched[0m
+[0;32mI (613312) CAP1188: Sensor 7 touched[0m
+[0;32mI (613312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (614812) CAP1188: Sensor 3 touched[0m
+[0;32mI (614812) CAP1188: Sensor 4 touched[0m
+[0;32mI (614812) CAP1188: Sensor 7 touched[0m
+[0;32mI (614812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (614812) MPU6050: MPU6050 read error[0m
+[0;32mI (615312) CAP1188: Sensor 3 touched[0m
+[0;32mI (615312) CAP1188: Sensor 4 touched[0m
+[0;32mI (615312) CAP1188: Sensor 7 touched[0m
+[0;32mI (615312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (616312) MPU6050: MPU6050 read error[0m
+[0;32mI (616312) CAP1188: Sensor 3 touched[0m
+[0;32mI (616312) CAP1188: Sensor 4 touched[0m
+[0;32mI (616312) CAP1188: Sensor 7 touched[0m
+[0;32mI (616312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (617812) CAP1188: Sensor 3 touched[0m
+[0;32mI (617812) CAP1188: Sensor 4 touched[0m
+[0;32mI (617812) CAP1188: Sensor 7 touched[0m
+[0;32mI (617812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (617812) MPU6050: MPU6050 read error[0m
+[0;32mI (618312) CAP1188: Sensor 3 touched[0m
+[0;32mI (618312) CAP1188: Sensor 4 touched[0m
+[0;32mI (618312) CAP1188: Sensor 7 touched[0m
+[0;32mI (618312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (619312) MPU6050: MPU6050 read error[0m
+[0;32mI (619312) CAP1188: Sensor 3 touched[0m
+[0;32mI (619312) CAP1188: Sensor 4 touched[0m
+[0;32mI (619312) CAP1188: Sensor 7 touched[0m
+[0;32mI (619312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (620812) CAP1188: Sensor 3 touched[0m
+[0;32mI (620812) CAP1188: Sensor 4 touched[0m
+[0;32mI (620812) CAP1188: Sensor 7 touched[0m
+[0;32mI (620812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (620812) MPU6050: MPU6050 read error[0m
+[0;32mI (621312) CAP1188: Sensor 3 touched[0m
+[0;32mI (621312) CAP1188: Sensor 4 touched[0m
+[0;32mI (621312) CAP1188: Sensor 7 touched[0m
+[0;32mI (621312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (622312) MPU6050: MPU6050 read error[0m
+[0;32mI (622312) CAP1188: Sensor 3 touched[0m
+[0;32mI (622312) CAP1188: Sensor 4 touched[0m
+[0;32mI (622312) CAP1188: Sensor 7 touched[0m
+[0;32mI (622312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (623812) CAP1188: Sensor 3 touched[0m
+[0;32mI (623812) CAP1188: Sensor 4 touched[0m
+[0;32mI (623812) CAP1188: Sensor 7 touched[0m
+[0;32mI (623812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (623812) MPU6050: MPU6050 read error[0m
+[0;32mI (624312) CAP1188: Sensor 3 touched[0m
+[0;32mI (624312) CAP1188: Sensor 4 touched[0m
+[0;32mI (624312) CAP1188: Sensor 7 touched[0m
+[0;32mI (624312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (625312) MPU6050: MPU6050 read error[0m
+[0;32mI (625312) CAP1188: Sensor 3 touched[0m
+[0;32mI (625312) CAP1188: Sensor 4 touched[0m
+[0;32mI (625312) CAP1188: Sensor 7 touched[0m
+[0;32mI (625312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (626812) CAP1188: Sensor 3 touched[0m
+[0;32mI (626812) CAP1188: Sensor 4 touched[0m
+[0;32mI (626812) CAP1188: Sensor 7 touched[0m
+[0;32mI (626812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (626812) MPU6050: MPU6050 read error[0m
+[0;32mI (627312) CAP1188: Sensor 3 touched[0m
+[0;32mI (627312) CAP1188: Sensor 4 touched[0m
+[0;32mI (627312) CAP1188: Sensor 7 touched[0m
+[0;32mI (627312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (628312) MPU6050: MPU6050 read error[0m
+[0;32mI (628312) CAP1188: Sensor 3 touched[0m
+[0;32mI (628312) CAP1188: Sensor 4 touched[0m
+[0;32mI (628312) CAP1188: Sensor 7 touched[0m
+[0;32mI (628312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (629812) CAP1188: Sensor 3 touched[0m
+[0;32mI (629812) CAP1188: Sensor 4 touched[0m
+[0;32mI (629812) CAP1188: Sensor 7 touched[0m
+[0;32mI (629812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (629812) MPU6050: MPU6050 read error[0m
+[0;32mI (630312) CAP1188: Sensor 3 touched[0m
+[0;32mI (630312) CAP1188: Sensor 4 touched[0m
+[0;32mI (630312) CAP1188: Sensor 7 touched[0m
+[0;32mI (630312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (631312) MPU6050: MPU6050 read error[0m
+[0;32mI (631312) CAP1188: Sensor 3 touched[0m
+[0;32mI (631312) CAP1188: Sensor 4 touched[0m
+[0;32mI (631312) CAP1188: Sensor 7 touched[0m
+[0;32mI (631312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (632812) CAP1188: Sensor 3 touched[0m
+[0;32mI (632812) CAP1188: Sensor 4 touched[0m
+[0;32mI (632812) CAP1188: Sensor 7 touched[0m
+[0;32mI (632812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (632812) MPU6050: MPU6050 read error[0m
+[0;32mI (633312) CAP1188: Sensor 3 touched[0m
+[0;32mI (633312) CAP1188: Sensor 4 touched[0m
+[0;32mI (633312) CAP1188: Sensor 7 touched[0m
+[0;32mI (633312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (634312) MPU6050: MPU6050 read error[0m
+[0;32mI (634312) CAP1188: Sensor 3 touched[0m
+[0;32mI (634312) CAP1188: Sensor 4 touched[0m
+[0;32mI (634312) CAP1188: Sensor 7 touched[0m
+[0;32mI (634312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (635812) CAP1188: Sensor 3 touched[0m
+[0;32mI (635812) CAP1188: Sensor 4 touched[0m
+[0;32mI (635812) CAP1188: Sensor 7 touched[0m
+[0;32mI (635812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (635812) MPU6050: MPU6050 read error[0m
+[0;32mI (636312) CAP1188: Sensor 3 touched[0m
+[0;32mI (636312) CAP1188: Sensor 4 touched[0m
+[0;32mI (636312) CAP1188: Sensor 7 touched[0m
+[0;32mI (636312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (637312) MPU6050: MPU6050 read error[0m
+[0;32mI (637312) CAP1188: Sensor 3 touched[0m
+[0;32mI (637312) CAP1188: Sensor 4 touched[0m
+[0;32mI (637312) CAP1188: Sensor 7 touched[0m
+[0;32mI (637312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (638812) CAP1188: Sensor 3 touched[0m
+[0;32mI (638812) CAP1188: Sensor 4 touched[0m
+[0;32mI (638812) CAP1188: Sensor 7 touched[0m
+[0;32mI (638812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (638812) MPU6050: MPU6050 read error[0m
+[0;32mI (639312) CAP1188: Sensor 3 touched[0m
+[0;32mI (639312) CAP1188: Sensor 4 touched[0m
+[0;32mI (639312) CAP1188: Sensor 7 touched[0m
+[0;32mI (639312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (640312) MPU6050: MPU6050 read error[0m
+[0;32mI (640312) CAP1188: Sensor 3 touched[0m
+[0;32mI (640312) CAP1188: Sensor 4 touched[0m
+[0;32mI (640312) CAP1188: Sensor 7 touched[0m
+[0;32mI (640312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (641812) CAP1188: Sensor 3 touched[0m
+[0;32mI (641812) CAP1188: Sensor 4 touched[0m
+[0;32mI (641812) CAP1188: Sensor 7 touched[0m
+[0;32mI (641812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (641812) MPU6050: MPU6050 read error[0m
+[0;32mI (642312) CAP1188: Sensor 3 touched[0m
+[0;32mI (642312) CAP1188: Sensor 4 touched[0m
+[0;32mI (642312) CAP1188: Sensor 7 touched[0m
+[0;32mI (642312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (643312) MPU6050: MPU6050 read error[0m
+[0;32mI (643312) CAP1188: Sensor 3 touched[0m
+[0;32mI (643312) CAP1188: Sensor 4 touched[0m
+[0;32mI (643312) CAP1188: Sensor 7 touched[0m
+[0;32mI (643312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (644812) CAP1188: Sensor 3 touched[0m
+[0;32mI (644812) CAP1188: Sensor 4 touched[0m
+[0;32mI (644812) CAP1188: Sensor 7 touched[0m
+[0;32mI (644812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (644812) MPU6050: MPU6050 read error[0m
+[0;32mI (645312) CAP1188: Sensor 3 touched[0m
+[0;32mI (645312) CAP1188: Sensor 4 touched[0m
+[0;32mI (645312) CAP1188: Sensor 7 touched[0m
+[0;32mI (645312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (646312) MPU6050: MPU6050 read error[0m
+[0;32mI (646312) CAP1188: Sensor 3 touched[0m
+[0;32mI (646312) CAP1188: Sensor 4 touched[0m
+[0;32mI (646312) CAP1188: Sensor 7 touched[0m
+[0;32mI (646312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (647812) CAP1188: Sensor 3 touched[0m
+[0;32mI (647812) CAP1188: Sensor 4 touched[0m
+[0;32mI (647812) CAP1188: Sensor 7 touched[0m
+[0;32mI (647812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (647812) MPU6050: MPU6050 read error[0m
+[0;32mI (648312) CAP1188: Sensor 3 touched[0m
+[0;32mI (648312) CAP1188: Sensor 4 touched[0m
+[0;32mI (648312) CAP1188: Sensor 7 touched[0m
+[0;32mI (648312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (649312) MPU6050: MPU6050 read error[0m
+[0;32mI (649312) CAP1188: Sensor 3 touched[0m
+[0;32mI (649312) CAP1188: Sensor 4 touched[0m
+[0;32mI (649312) CAP1188: Sensor 7 touched[0m
+[0;32mI (649312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (650812) CAP1188: Sensor 3 touched[0m
+[0;32mI (650812) CAP1188: Sensor 4 touched[0m
+[0;32mI (650812) CAP1188: Sensor 7 touched[0m
+[0;32mI (650812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (650812) MPU6050: MPU6050 read error[0m
+[0;32mI (651312) CAP1188: Sensor 3 touched[0m
+[0;32mI (651312) CAP1188: Sensor 4 touched[0m
+[0;32mI (651312) CAP1188: Sensor 7 touched[0m
+[0;32mI (651312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (652312) MPU6050: MPU6050 read error[0m
+[0;32mI (652312) CAP1188: Sensor 3 touched[0m
+[0;32mI (652312) CAP1188: Sensor 4 touched[0m
+[0;32mI (652312) CAP1188: Sensor 7 touched[0m
+[0;32mI (652312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (653812) CAP1188: Sensor 3 touched[0m
+[0;32mI (653812) CAP1188: Sensor 4 touched[0m
+[0;32mI (653812) CAP1188: Sensor 7 touched[0m
+[0;32mI (653812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (653812) MPU6050: MPU6050 read error[0m
+[0;32mI (654312) CAP1188: Sensor 3 touched[0m
+[0;32mI (654312) CAP1188: Sensor 4 touched[0m
+[0;32mI (654312) CAP1188: Sensor 7 touched[0m
+[0;32mI (654312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (655312) MPU6050: MPU6050 read error[0m
+[0;32mI (655312) CAP1188: Sensor 3 touched[0m
+[0;32mI (655312) CAP1188: Sensor 4 touched[0m
+[0;32mI (655312) CAP1188: Sensor 7 touched[0m
+[0;32mI (655312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (656812) CAP1188: Sensor 3 touched[0m
+[0;32mI (656812) CAP1188: Sensor 4 touched[0m
+[0;32mI (656812) CAP1188: Sensor 7 touched[0m
+[0;32mI (656812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (656812) MPU6050: MPU6050 read error[0m
+[0;32mI (657312) CAP1188: Sensor 3 touched[0m
+[0;32mI (657312) CAP1188: Sensor 4 touched[0m
+[0;32mI (657312) CAP1188: Sensor 7 touched[0m
+[0;32mI (657312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (658312) MPU6050: MPU6050 read error[0m
+[0;32mI (658312) CAP1188: Sensor 3 touched[0m
+[0;32mI (658312) CAP1188: Sensor 4 touched[0m
+[0;32mI (658312) CAP1188: Sensor 7 touched[0m
+[0;32mI (658312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (659812) CAP1188: Sensor 3 touched[0m
+[0;32mI (659812) CAP1188: Sensor 4 touched[0m
+[0;32mI (659812) CAP1188: Sensor 7 touched[0m
+[0;32mI (659812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (659812) MPU6050: MPU6050 read error[0m
+[0;32mI (660312) CAP1188: Sensor 3 touched[0m
+[0;32mI (660312) CAP1188: Sensor 4 touched[0m
+[0;32mI (660312) CAP1188: Sensor 7 touched[0m
+[0;32mI (660312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (661312) MPU6050: MPU6050 read error[0m
+[0;32mI (661312) CAP1188: Sensor 3 touched[0m
+[0;32mI (661312) CAP1188: Sensor 4 touched[0m
+[0;32mI (661312) CAP1188: Sensor 7 touched[0m
+[0;32mI (661312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (662812) CAP1188: Sensor 3 touched[0m
+[0;32mI (662812) CAP1188: Sensor 4 touched[0m
+[0;32mI (662812) CAP1188: Sensor 7 touched[0m
+[0;32mI (662812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (662812) MPU6050: MPU6050 read error[0m
+[0;32mI (663312) CAP1188: Sensor 3 touched[0m
+[0;32mI (663312) CAP1188: Sensor 4 touched[0m
+[0;32mI (663312) CAP1188: Sensor 7 touched[0m
+[0;32mI (663312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (664312) MPU6050: MPU6050 read error[0m
+[0;32mI (664312) CAP1188: Sensor 3 touched[0m
+[0;32mI (664312) CAP1188: Sensor 4 touched[0m
+[0;32mI (664312) CAP1188: Sensor 7 touched[0m
+[0;32mI (664312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (665812) CAP1188: Sensor 3 touched[0m
+[0;32mI (665812) CAP1188: Sensor 4 touched[0m
+[0;32mI (665812) CAP1188: Sensor 7 touched[0m
+[0;32mI (665812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (665812) MPU6050: MPU6050 read error[0m
+[0;32mI (666312) CAP1188: Sensor 3 touched[0m
+[0;32mI (666312) CAP1188: Sensor 4 touched[0m
+[0;32mI (666312) CAP1188: Sensor 7 touched[0m
+[0;32mI (666312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (667312) MPU6050: MPU6050 read error[0m
+[0;32mI (667312) CAP1188: Sensor 3 touched[0m
+[0;32mI (667312) CAP1188: Sensor 4 touched[0m
+[0;32mI (667312) CAP1188: Sensor 7 touched[0m
+[0;32mI (667312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (668812) CAP1188: Sensor 3 touched[0m
+[0;32mI (668812) CAP1188: Sensor 4 touched[0m
+[0;32mI (668812) CAP1188: Sensor 7 touched[0m
+[0;32mI (668812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (668812) MPU6050: MPU6050 read error[0m
+[0;32mI (669312) CAP1188: Sensor 3 touched[0m
+[0;32mI (669312) CAP1188: Sensor 4 touched[0m
+[0;32mI (669312) CAP1188: Sensor 7 touched[0m
+[0;32mI (669312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (670312) MPU6050: MPU6050 read error[0m
+[0;32mI (670312) CAP1188: Sensor 3 touched[0m
+[0;32mI (670312) CAP1188: Sensor 4 touched[0m
+[0;32mI (670312) CAP1188: Sensor 7 touched[0m
+[0;32mI (670312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (671812) CAP1188: Sensor 3 touched[0m
+[0;32mI (671812) CAP1188: Sensor 4 touched[0m
+[0;32mI (671812) CAP1188: Sensor 7 touched[0m
+[0;32mI (671812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (671812) MPU6050: MPU6050 read error[0m
+[0;32mI (672312) CAP1188: Sensor 3 touched[0m
+[0;32mI (672312) CAP1188: Sensor 4 touched[0m
+[0;32mI (672312) CAP1188: Sensor 7 touched[0m
+[0;32mI (672312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (673312) MPU6050: MPU6050 read error[0m
+[0;32mI (673312) CAP1188: Sensor 3 touched[0m
+[0;32mI (673312) CAP1188: Sensor 4 touched[0m
+[0;32mI (673312) CAP1188: Sensor 7 touched[0m
+[0;32mI (673312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (674812) CAP1188: Sensor 3 touched[0m
+[0;32mI (674812) CAP1188: Sensor 4 touched[0m
+[0;32mI (674812) CAP1188: Sensor 7 touched[0m
+[0;32mI (674812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (674812) MPU6050: MPU6050 read error[0m
+[0;32mI (675312) CAP1188: Sensor 3 touched[0m
+[0;32mI (675312) CAP1188: Sensor 4 touched[0m
+[0;32mI (675312) CAP1188: Sensor 7 touched[0m
+[0;32mI (675312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (676312) MPU6050: MPU6050 read error[0m
+[0;32mI (676312) CAP1188: Sensor 3 touched[0m
+[0;32mI (676312) CAP1188: Sensor 4 touched[0m
+[0;32mI (676312) CAP1188: Sensor 7 touched[0m
+[0;32mI (676312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (677812) CAP1188: Sensor 3 touched[0m
+[0;32mI (677812) CAP1188: Sensor 4 touched[0m
+[0;32mI (677812) CAP1188: Sensor 7 touched[0m
+[0;32mI (677812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (677812) MPU6050: MPU6050 read error[0m
+[0;32mI (678312) CAP1188: Sensor 3 touched[0m
+[0;32mI (678312) CAP1188: Sensor 4 touched[0m
+[0;32mI (678312) CAP1188: Sensor 7 touched[0m
+[0;32mI (678312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (679312) MPU6050: MPU6050 read error[0m
+[0;32mI (679312) CAP1188: Sensor 3 touched[0m
+[0;32mI (679312) CAP1188: Sensor 4 touched[0m
+[0;32mI (679312) CAP1188: Sensor 7 touched[0m
+[0;32mI (679312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (680812) CAP1188: Sensor 3 touched[0m
+[0;32mI (680812) CAP1188: Sensor 4 touched[0m
+[0;32mI (680812) CAP1188: Sensor 7 touched[0m
+[0;32mI (680812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (680812) MPU6050: MPU6050 read error[0m
+[0;32mI (681312) CAP1188: Sensor 3 touched[0m
+[0;32mI (681312) CAP1188: Sensor 4 touched[0m
+[0;32mI (681312) CAP1188: Sensor 7 touched[0m
+[0;32mI (681312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (682312) MPU6050: MPU6050 read error[0m
+[0;32mI (682312) CAP1188: Sensor 3 touched[0m
+[0;32mI (682312) CAP1188: Sensor 4 touched[0m
+[0;32mI (682312) CAP1188: Sensor 7 touched[0m
+[0;32mI (682312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (683812) CAP1188: Sensor 3 touched[0m
+[0;32mI (683812) CAP1188: Sensor 4 touched[0m
+[0;32mI (683812) CAP1188: Sensor 7 touched[0m
+[0;32mI (683812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (683812) MPU6050: MPU6050 read error[0m
+[0;32mI (684312) CAP1188: Sensor 3 touched[0m
+[0;32mI (684312) CAP1188: Sensor 4 touched[0m
+[0;32mI (684312) CAP1188: Sensor 7 touched[0m
+[0;32mI (684312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (685312) MPU6050: MPU6050 read error[0m
+[0;32mI (685312) CAP1188: Sensor 3 touched[0m
+[0;32mI (685312) CAP1188: Sensor 4 touched[0m
+[0;32mI (685312) CAP1188: Sensor 7 touched[0m
+[0;32mI (685312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (686812) CAP1188: Sensor 3 touched[0m
+[0;32mI (686812) CAP1188: Sensor 4 touched[0m
+[0;32mI (686812) CAP1188: Sensor 7 touched[0m
+[0;32mI (686812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (686812) MPU6050: MPU6050 read error[0m
+[0;32mI (687312) CAP1188: Sensor 3 touched[0m
+[0;32mI (687312) CAP1188: Sensor 4 touched[0m
+[0;32mI (687312) CAP1188: Sensor 7 touched[0m
+[0;32mI (687312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (688312) MPU6050: MPU6050 read error[0m
+[0;32mI (688312) CAP1188: Sensor 3 touched[0m
+[0;32mI (688312) CAP1188: Sensor 4 touched[0m
+[0;32mI (688312) CAP1188: Sensor 7 touched[0m
+[0;32mI (688312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (689812) CAP1188: Sensor 3 touched[0m
+[0;32mI (689812) CAP1188: Sensor 4 touched[0m
+[0;32mI (689812) CAP1188: Sensor 7 touched[0m
+[0;32mI (689812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (689812) MPU6050: MPU6050 read error[0m
+[0;32mI (690312) CAP1188: Sensor 3 touched[0m
+[0;32mI (690312) CAP1188: Sensor 4 touched[0m
+[0;32mI (690312) CAP1188: Sensor 7 touched[0m
+[0;32mI (690312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (691312) MPU6050: MPU6050 read error[0m
+[0;32mI (691312) CAP1188: Sensor 3 touched[0m
+[0;32mI (691312) CAP1188: Sensor 4 touched[0m
+[0;32mI (691312) CAP1188: Sensor 7 touched[0m
+[0;32mI (691312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (692812) CAP1188: Sensor 3 touched[0m
+[0;32mI (692812) CAP1188: Sensor 4 touched[0m
+[0;32mI (692812) CAP1188: Sensor 7 touched[0m
+[0;32mI (692812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (692812) MPU6050: MPU6050 read error[0m
+[0;32mI (693312) CAP1188: Sensor 3 touched[0m
+[0;32mI (693312) CAP1188: Sensor 4 touched[0m
+[0;32mI (693312) CAP1188: Sensor 7 touched[0m
+[0;32mI (693312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (694312) MPU6050: MPU6050 read error[0m
+[0;32mI (694312) CAP1188: Sensor 3 touched[0m
+[0;32mI (694312) CAP1188: Sensor 4 touched[0m
+[0;32mI (694312) CAP1188: Sensor 7 touched[0m
+[0;32mI (694312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (695812) CAP1188: Sensor 3 touched[0m
+[0;32mI (695812) CAP1188: Sensor 4 touched[0m
+[0;32mI (695812) CAP1188: Sensor 7 touched[0m
+[0;32mI (695812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (695812) MPU6050: MPU6050 read error[0m
+[0;32mI (696312) CAP1188: Sensor 3 touched[0m
+[0;32mI (696312) CAP1188: Sensor 4 touched[0m
+[0;32mI (696312) CAP1188: Sensor 7 touched[0m
+[0;32mI (696312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (697312) MPU6050: MPU6050 read error[0m
+[0;32mI (697312) CAP1188: Sensor 3 touched[0m
+[0;32mI (697312) CAP1188: Sensor 4 touched[0m
+[0;32mI (697312) CAP1188: Sensor 7 touched[0m
+[0;32mI (697312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (698812) CAP1188: Sensor 3 touched[0m
+[0;32mI (698812) CAP1188: Sensor 4 touched[0m
+[0;32mI (698812) CAP1188: Sensor 7 touched[0m
+[0;32mI (698812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (698812) MPU6050: MPU6050 read error[0m
+[0;32mI (699312) CAP1188: Sensor 3 touched[0m
+[0;32mI (699312) CAP1188: Sensor 4 touched[0m
+[0;32mI (699312) CAP1188: Sensor 7 touched[0m
+[0;32mI (699312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (700312) MPU6050: MPU6050 read error[0m
+[0;32mI (700312) CAP1188: Sensor 3 touched[0m
+[0;32mI (700312) CAP1188: Sensor 4 touched[0m
+[0;32mI (700312) CAP1188: Sensor 7 touched[0m
+[0;32mI (700312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (701812) CAP1188: Sensor 3 touched[0m
+[0;32mI (701812) CAP1188: Sensor 4 touched[0m
+[0;32mI (701812) CAP1188: Sensor 7 touched[0m
+[0;32mI (701812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (701812) MPU6050: MPU6050 read error[0m
+[0;32mI (702312) CAP1188: Sensor 3 touched[0m
+[0;32mI (702312) CAP1188: Sensor 4 touched[0m
+[0;32mI (702312) CAP1188: Sensor 7 touched[0m
+[0;32mI (702312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (703312) MPU6050: MPU6050 read error[0m
+[0;32mI (703312) CAP1188: Sensor 3 touched[0m
+[0;32mI (703312) CAP1188: Sensor 4 touched[0m
+[0;32mI (703312) CAP1188: Sensor 7 touched[0m
+[0;32mI (703312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (704812) CAP1188: Sensor 3 touched[0m
+[0;32mI (704812) CAP1188: Sensor 4 touched[0m
+[0;32mI (704812) CAP1188: Sensor 7 touched[0m
+[0;32mI (704812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (704812) MPU6050: MPU6050 read error[0m
+[0;32mI (705312) CAP1188: Sensor 3 touched[0m
+[0;32mI (705312) CAP1188: Sensor 4 touched[0m
+[0;32mI (705312) CAP1188: Sensor 7 touched[0m
+[0;32mI (705312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (706312) MPU6050: MPU6050 read error[0m
+[0;32mI (706312) CAP1188: Sensor 3 touched[0m
+[0;32mI (706312) CAP1188: Sensor 4 touched[0m
+[0;32mI (706312) CAP1188: Sensor 7 touched[0m
+[0;32mI (706312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (707812) CAP1188: Sensor 3 touched[0m
+[0;32mI (707812) CAP1188: Sensor 4 touched[0m
+[0;32mI (707812) CAP1188: Sensor 7 touched[0m
+[0;32mI (707812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (707812) MPU6050: MPU6050 read error[0m
+[0;32mI (708312) CAP1188: Sensor 3 touched[0m
+[0;32mI (708312) CAP1188: Sensor 4 touched[0m
+[0;32mI (708312) CAP1188: Sensor 7 touched[0m
+[0;32mI (708312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (709312) MPU6050: MPU6050 read error[0m
+[0;32mI (709312) CAP1188: Sensor 3 touched[0m
+[0;32mI (709312) CAP1188: Sensor 4 touched[0m
+[0;32mI (709312) CAP1188: Sensor 7 touched[0m
+[0;32mI (709312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (710812) CAP1188: Sensor 3 touched[0m
+[0;32mI (710812) CAP1188: Sensor 4 touched[0m
+[0;32mI (710812) CAP1188: Sensor 7 touched[0m
+[0;32mI (710812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (710812) MPU6050: MPU6050 read error[0m
+[0;32mI (711312) CAP1188: Sensor 3 touched[0m
+[0;32mI (711312) CAP1188: Sensor 4 touched[0m
+[0;32mI (711312) CAP1188: Sensor 7 touched[0m
+[0;32mI (711312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (712312) MPU6050: MPU6050 read error[0m
+[0;32mI (712312) CAP1188: Sensor 3 touched[0m
+[0;32mI (712312) CAP1188: Sensor 4 touched[0m
+[0;32mI (712312) CAP1188: Sensor 7 touched[0m
+[0;32mI (712312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (713812) CAP1188: Sensor 3 touched[0m
+[0;32mI (713812) CAP1188: Sensor 4 touched[0m
+[0;32mI (713812) CAP1188: Sensor 7 touched[0m
+[0;32mI (713812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (713812) MPU6050: MPU6050 read error[0m
+[0;32mI (714312) CAP1188: Sensor 3 touched[0m
+[0;32mI (714312) CAP1188: Sensor 4 touched[0m
+[0;32mI (714312) CAP1188: Sensor 7 touched[0m
+[0;32mI (714312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (715312) MPU6050: MPU6050 read error[0m
+[0;32mI (715312) CAP1188: Sensor 3 touched[0m
+[0;32mI (715312) CAP1188: Sensor 4 touched[0m
+[0;32mI (715312) CAP1188: Sensor 7 touched[0m
+[0;32mI (715312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (716812) CAP1188: Sensor 3 touched[0m
+[0;32mI (716812) CAP1188: Sensor 4 touched[0m
+[0;32mI (716812) CAP1188: Sensor 7 touched[0m
+[0;32mI (716812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (716812) MPU6050: MPU6050 read error[0m
+[0;32mI (717312) CAP1188: Sensor 3 touched[0m
+[0;32mI (717312) CAP1188: Sensor 4 touched[0m
+[0;32mI (717312) CAP1188: Sensor 7 touched[0m
+[0;32mI (717312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (718312) MPU6050: MPU6050 read error[0m
+[0;32mI (718312) CAP1188: Sensor 3 touched[0m
+[0;32mI (718312) CAP1188: Sensor 4 touched[0m
+[0;32mI (718312) CAP1188: Sensor 7 touched[0m
+[0;32mI (718312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (719812) CAP1188: Sensor 3 touched[0m
+[0;32mI (719812) CAP1188: Sensor 4 touched[0m
+[0;32mI (719812) CAP1188: Sensor 7 touched[0m
+[0;32mI (719812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (719812) MPU6050: MPU6050 read error[0m
+[0;32mI (720312) CAP1188: Sensor 3 touched[0m
+[0;32mI (720312) CAP1188: Sensor 4 touched[0m
+[0;32mI (720312) CAP1188: Sensor 7 touched[0m
+[0;32mI (720312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (721312) MPU6050: MPU6050 read error[0m
+[0;32mI (721312) CAP1188: Sensor 3 touched[0m
+[0;32mI (721312) CAP1188: Sensor 4 touched[0m
+[0;32mI (721312) CAP1188: Sensor 7 touched[0m
+[0;32mI (721312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (722812) CAP1188: Sensor 3 touched[0m
+[0;32mI (722812) CAP1188: Sensor 4 touched[0m
+[0;32mI (722812) CAP1188: Sensor 7 touched[0m
+[0;32mI (722812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (722812) MPU6050: MPU6050 read error[0m
+[0;32mI (723312) CAP1188: Sensor 3 touched[0m
+[0;32mI (723312) CAP1188: Sensor 4 touched[0m
+[0;32mI (723312) CAP1188: Sensor 7 touched[0m
+[0;32mI (723312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (724312) MPU6050: MPU6050 read error[0m
+[0;32mI (724312) CAP1188: Sensor 3 touched[0m
+[0;32mI (724312) CAP1188: Sensor 4 touched[0m
+[0;32mI (724312) CAP1188: Sensor 7 touched[0m
+[0;32mI (724312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (725812) CAP1188: Sensor 3 touched[0m
+[0;32mI (725812) CAP1188: Sensor 4 touched[0m
+[0;32mI (725812) CAP1188: Sensor 7 touched[0m
+[0;32mI (725812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (725812) MPU6050: MPU6050 read error[0m
+[0;32mI (726312) CAP1188: Sensor 3 touched[0m
+[0;32mI (726312) CAP1188: Sensor 4 touched[0m
+[0;32mI (726312) CAP1188: Sensor 7 touched[0m
+[0;32mI (726312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (727312) MPU6050: MPU6050 read error[0m
+[0;32mI (727312) CAP1188: Sensor 3 touched[0m
+[0;32mI (727312) CAP1188: Sensor 4 touched[0m
+[0;32mI (727312) CAP1188: Sensor 7 touched[0m
+[0;32mI (727312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (728812) CAP1188: Sensor 3 touched[0m
+[0;32mI (728812) CAP1188: Sensor 4 touched[0m
+[0;32mI (728812) CAP1188: Sensor 7 touched[0m
+[0;32mI (728812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (728812) MPU6050: MPU6050 read error[0m
+[0;32mI (729312) CAP1188: Sensor 3 touched[0m
+[0;32mI (729312) CAP1188: Sensor 4 touched[0m
+[0;32mI (729312) CAP1188: Sensor 7 touched[0m
+[0;32mI (729312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (730312) MPU6050: MPU6050 read error[0m
+[0;32mI (730312) CAP1188: Sensor 3 touched[0m
+[0;32mI (730312) CAP1188: Sensor 4 touched[0m
+[0;32mI (730312) CAP1188: Sensor 7 touched[0m
+[0;32mI (730312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (731812) CAP1188: Sensor 3 touched[0m
+[0;32mI (731812) CAP1188: Sensor 4 touched[0m
+[0;32mI (731812) CAP1188: Sensor 7 touched[0m
+[0;32mI (731812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (731812) MPU6050: MPU6050 read error[0m
+[0;32mI (732312) CAP1188: Sensor 3 touched[0m
+[0;32mI (732312) CAP1188: Sensor 4 touched[0m
+[0;32mI (732312) CAP1188: Sensor 7 touched[0m
+[0;32mI (732312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (733312) MPU6050: MPU6050 read error[0m
+[0;32mI (733312) CAP1188: Sensor 3 touched[0m
+[0;32mI (733312) CAP1188: Sensor 4 touched[0m
+[0;32mI (733312) CAP1188: Sensor 7 touched[0m
+[0;32mI (733312) CAP1188: Sensor 8 touched[0m
+
+[0;32mI (734812) CAP1188: Sensor 3 touched[0m
+[0;32mI (734812) CAP1188: Sensor 4 touched[0m
+[0;32mI (734812) CAP1188: Sensor 7 touched[0m
+[0;32mI (734812) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (734812) MPU6050: MPU6050 read error[0m
+[0;32mI (735312) CAP1188: Sensor 3 touched[0m
+[0;32mI (735312) CAP1188: Sensor 4 touched[0m
+[0;32mI (735312) CAP1188: Sensor 7 touched[0m
+[0;32mI (735312) CAP1188: Sensor 8 touched[0m
+
+[1;31mE (736312) MPU6050: MPU6050 read error[0m
+[0;32mI (736312) CAP1188: Sensor 3 touched[0m
+[0;32mI (736312) CAP1188: Sensor 4 touched[0m
+[0;32mI (736312) CAP1188: Sensor 7 touched[0m
+[0;32mI (736312) CAP1188: Sensor 8 touched[0m
+
