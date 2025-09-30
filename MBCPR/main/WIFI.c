@@ -1,6 +1,9 @@
 #include "wifi.h"
+#include "URL.h"
+
 #include <string.h>
 #include <stdbool.h>
+#include "esp_wifi_default.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
@@ -13,7 +16,7 @@
 #include "lwip/sys.h"
 
 #ifndef CONFIG_ESP_MAXIMUM_RETRY
-#define CONFIG_ESP_MAXIMUM_RETRY 5
+#define CONFIG_ESP_MAXIMUM_RETRY 2
 #endif
 
 #define WIFI_CONNECTED_BIT BIT0
@@ -28,31 +31,39 @@ static EventGroupHandle_t s_wifi_event_group;
 static int s_retry_num = 0;
 static esp_ip4_addr_t s_ip_addr;
 
-// softAP 전용 변수
+// softAP
 static char g_ssid[32];
 static char g_password[32];
 static bool check_ssid = false;
 static bool check_password = false;
 
+// STA(임시)
+static bool UDP_on = false;
+
+
 static void wifi_event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
-    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+    }
+    else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
+        ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
+        s_retry_num = 0;
+        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
+    }
+    else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
         if (s_retry_num < CONFIG_ESP_MAXIMUM_RETRY) {
             esp_wifi_connect();
             s_retry_num++;
             ESP_LOGI(TAG, "retry to connect to the AP");
-        } else {
+        }
+        else {
             xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-        ESP_LOGI(TAG, "connect to the AP fail");
-    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
-        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
-        s_ip_addr = event->ip_info.ip;
-        ESP_LOGI(TAG, "got ip: " IPSTR, IP2STR(&s_ip_addr));
-        s_retry_num = 0;
-        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
+
+        wifi_event_sta_disconnected_t* event_info = (wifi_event_sta_disconnected_t*) event_data;
+        ESP_LOGE(TAG, "Wi-Fi disconnected, reason: %d", event_info->reason);
     }
 }
 
@@ -65,7 +76,8 @@ static void softap_event_handler(void* arg, esp_event_base_t event_base,
         ESP_LOGI(TAG, "station %02x:%02x:%02x:%02x:%02x:%02x join, AID=%u",
                  event->mac[0], event->mac[1], event->mac[2],
                  event->mac[3], event->mac[4], event->mac[5], event->aid);
-    } else if (event_id == WIFI_EVENT_AP_STADISCONNECTED) {
+    }
+    else if (event_id == WIFI_EVENT_AP_STADISCONNECTED) {
         wifi_event_ap_stadisconnected_t* event = (wifi_event_ap_stadisconnected_t*) event_data;
         ESP_LOGI(TAG, "station %02x:%02x:%02x:%02x:%02x:%02x leave, AID=%u",
                  event->mac[0], event->mac[1], event->mac[2],
@@ -85,17 +97,21 @@ static esp_err_t get_handler(httpd_req_t *req)
         if (httpd_req_get_url_query_str(req, buf, buf_len) == ESP_OK) {
             char param[32];
             if (httpd_query_key_value(buf, "ssid", param, sizeof(param)) == ESP_OK) {
+				
 				strcpy(g_ssid, param);
+				url_decode(g_ssid);
 				check_ssid = true;
-                ESP_LOGI(TAG, "SSID: %s", param);
+                ESP_LOGI(TAG, "SSID: %s", g_ssid);
             } else {
 				check_ssid = false;
 			}
 			
             if (httpd_query_key_value(buf, "password", param, sizeof(param)) == ESP_OK) {
+				
 				strcpy(g_password, param);
+				url_decode(g_password);
 				check_password = true;
-                ESP_LOGI(TAG, "Password: %s", param);
+                ESP_LOGI(TAG, "Password: %s", g_password);
             } else {
 				check_password = false;
 			}
@@ -107,6 +123,32 @@ static esp_err_t get_handler(httpd_req_t *req)
     httpd_resp_send(req, resp_str, HTTPD_RESP_USE_STRLEN);
 
     return ESP_OK;
+}
+
+static esp_err_t status_get_handler(httpd_req_t *req)
+{
+	const char* resp_str = "OK";
+	httpd_resp_send(req, resp_str, HTTPD_RESP_USE_STRLEN);
+	
+	return ESP_OK;
+}
+                                
+static esp_err_t start_get_handler(httpd_req_t *req)
+{
+	UDP_on = true;
+	const char* resp_str = "OK";
+	httpd_resp_send(req, resp_str, HTTPD_RESP_USE_STRLEN);
+	
+	return ESP_OK;
+}
+
+static esp_err_t stop_get_handler(httpd_req_t *req)
+{
+	UDP_on = false;
+	const char* resp_str = "OK";
+	httpd_resp_send(req, resp_str, HTTPD_RESP_USE_STRLEN);
+	
+	return ESP_OK;
 }
 
 // HTTP 서버 시작
@@ -121,9 +163,33 @@ static httpd_handle_t start_webserver(void)
         .handler  = get_handler,
         .user_ctx = NULL
     };
+    
+    httpd_uri_t get_uri_status = {
+        .uri      = "/esp32/connect",
+        .method   = HTTP_GET,
+        .handler  = status_get_handler,
+        .user_ctx = NULL
+    };
+    
+    httpd_uri_t get_uri_start = {
+        .uri      = "/esp32/RealTime/start",
+        .method   = HTTP_GET,
+        .handler  = start_get_handler,
+        .user_ctx = NULL
+    };
+    
+    httpd_uri_t get_uri_stop = {
+        .uri      = "/esp32/RealTime/stop",
+        .method   = HTTP_GET,
+        .handler  = stop_get_handler,
+        .user_ctx = NULL
+    };
 
     if (httpd_start(&server, &config) == ESP_OK) {
         httpd_register_uri_handler(server, &get_uri);
+        httpd_register_uri_handler(server, &get_uri_status);
+        httpd_register_uri_handler(server, &get_uri_start);
+        httpd_register_uri_handler(server, &get_uri_stop);
         return server;
     }
 
@@ -165,7 +231,7 @@ esp_err_t wifi_init(void) {
     return ESP_OK;
 }
 
-// 2. STA 연결 함수 (모드 변경 로직 포함)
+// 2. STA 연결 함수
 esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
     // 기존 모드 정지
     esp_wifi_stop();
@@ -194,15 +260,22 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
 
     if (bits & WIFI_CONNECTED_BIT) {
         ESP_LOGI(TAG, "connected to ap SSID:%s", ssid);
+        // Wi-Fi 연결 성공 후 웹 서버 시작
+        httpd_handle_t server = start_webserver();
+        if (server == NULL) {
+            ESP_LOGE(TAG, "Failed to start web server after STA connection");
+            return ESP_FAIL;
+        }
         return ESP_OK;
-    } else {
+    }
+    else {
         ESP_LOGE(TAG, "Failed to connect to SSID:%s", ssid);
-        esp_wifi_stop(); // 연결 실패 시 STA 모드 비활성화
+        esp_wifi_stop();
         return ESP_FAIL;
     }
 }
 
-// 3. SoftAP 모드 함수 (모드 변경 로직 포함)
+// 3. SoftAP 모드 함수
 esp_err_t softap_get_config(char* ssid, char* password)
 {
     esp_wifi_stop();
