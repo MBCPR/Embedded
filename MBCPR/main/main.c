@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <unistd.h>
 
+<<<<<<< HEAD
 #include "HX711.h"
 #include "wifi.h"
 #include "esp_err.h"
@@ -97,3 +95,5 @@ void app_main(void)
     hx711_init();
     
 }
+=======
+>>>>>>> origin/main
