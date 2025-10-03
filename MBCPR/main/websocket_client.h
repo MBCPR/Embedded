@@ -15,6 +15,7 @@ extern int16_t mpuValueY;
 extern int16_t mpuValueZ;
 extern int64_t last_connect_time;
 extern const char *WS;
+extern int HX711Value;
 
 void start_websocket_client(void *arg);
 void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
