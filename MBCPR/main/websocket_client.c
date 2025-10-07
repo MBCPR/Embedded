@@ -7,7 +7,7 @@
 #include "esp_event.h"
 #include "websocket_client.h"
 
-#define WEB_SERVER_ADDR           "ws://192.168.219.106:5000" 
+#define WEB_SERVER_ADDR           "ws:///43.201.32.8:8080/" 
 #define CHECK_CONNECT_TIME         10000
 
 #define pdMS_TO_TICKS(xTimeInMs) ( ( TickType_t ) ( ( ( TickType_t ) ( xTimeInMs ) * ( TickType_t ) configTICK_RATE_HZ ) / ( TickType_t ) 1000U ) )
