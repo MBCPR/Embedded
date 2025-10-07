@@ -16,7 +16,10 @@ extern int16_t g_mpuValueY;
 extern int16_t g_mpuValueZ;
 extern int64_t g_last_connect_time;
 extern int g_HX711Value;
+extern int64_t g_timestamp_ms; 
+extern bool g_timer_running; 
 
+extern SemaphoreHandle_t s_hx711_mutex;
 
 extern bool g_check_ssid;
 extern bool g_check_password;

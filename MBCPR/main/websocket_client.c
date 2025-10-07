@@ -7,7 +7,7 @@
 #include "esp_event.h"
 #include "websocket_client.h"
 
-#define WEB_SERVER_ADDR           "ws:///43.201.32.8:8080/" 
+#define WEB_SERVER_ADDR           "ws://13.209.6.11:8080/board?serial=BOARD123" 
 #define CHECK_CONNECT_TIME         10000
 
 #define pdMS_TO_TICKS(xTimeInMs) ( ( TickType_t ) ( ( ( TickType_t ) ( xTimeInMs ) * ( TickType_t ) configTICK_RATE_HZ ) / ( TickType_t ) 1000U ) )
@@ -16,7 +16,7 @@ const char *WS = "ws_client";
 const char *g_WS = "ws_client";
 
 // 전역 변수 정의 및 초기화 (사용하지 않는 센서 변수는 초기화 값 유지)
-bool g_finished = false;
+bool g_finished = true;
 esp_websocket_client_handle_t g_client = NULL;
 uint8_t g_CapValue = 0;
 int16_t g_mpuValueX = 0;
@@ -24,7 +24,8 @@ int16_t g_mpuValueY = 0;
 int16_t g_mpuValueZ = 0;
 int64_t g_last_connect_time = 0;
 int g_HX711Value = 0;
-
+int64_t g_timestamp_ms = 0; 
+bool g_timer_running = false; 
 
 //웹소켓 이벤트 핸들러
 void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) {
@@ -32,12 +33,16 @@ void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t 
     switch(event_id) {
         case WEBSOCKET_EVENT_CONNECTED:
             ESP_LOGI(WS, "WEBSOCKET 연결 성공");
+            
             g_last_connect_time = esp_log_timestamp();
-            g_finished = false; 
+            g_finished = true;
             break;
+            
         case WEBSOCKET_EVENT_DISCONNECTED:
             ESP_LOGI(WS, "WEBSOCKET 연결 끊김");
+            
             break;
+            
         case WEBSOCKET_EVENT_DATA:
             ESP_LOGI(WS, "Received=%.*s\n", data->data_len, (char*)data->data_ptr);
 
@@ -51,6 +56,8 @@ void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t 
 
             if(data->data_len == 5 && strncmp((char*)data->data_ptr, "START", 5) == 0) { 
                 g_last_connect_time = esp_log_timestamp();
+                g_timestamp_ms = 0;     
+        		g_timer_running = true;
                 g_finished = false; 
 
                 const char *start_msg = "ACCEPTED";
@@ -58,6 +65,7 @@ void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t 
                 ESP_LOGI(WS, "데이터 전송 시작");
             }
             if(data->data_len == 4 && strncmp((char*)data->data_ptr, "STOP", 4) == 0) { 
+                g_timer_running = false;
                 g_finished = true; 
 
                 const char *stop_msg = "STOPPED";
@@ -92,20 +100,45 @@ void start_websocket_client(void *arg) {
     esp_websocket_client_start(g_client); 
 
     while(1) { 
-        if(esp_websocket_client_is_connected(g_client)) { 
+		
+        if(esp_websocket_client_is_connected(g_client)) {
+			 
             if(!g_finished) { 
+				
                 char message[100];
-                // HX711 데이터만 전송
-                snprintf(message, sizeof(message), "{\"HX\": %d}", g_HX711Value); 
+                double hx711;
+                int64_t timestamp_safe;
                 
-                esp_websocket_client_send_text(g_client, message, strlen(message), portMAX_DELAY); 
-            } else {
+                if (xSemaphoreTake(s_hx711_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
+            		hx711 = (double)g_HX711Value;
+            		timestamp_safe = g_timestamp_ms;
+            		xSemaphoreGive(s_hx711_mutex);
+            
+            		snprintf(message, sizeof(message), "{\"pressure\": %lf, \"timestamp\": %lld}", hx711, timestamp_safe); 
+            	
+            		esp_websocket_client_send_text(g_client, message, strlen(message), portMAX_DELAY);
+            		ESP_LOGW(WS, "hx711: %lf/timestamp: %lld/파싱했습니다.", hx711, timestamp_safe); 
+        		}
+        		else {
+					
+        		    ESP_LOGW(WS, "뮤텍스 획득 실패, HX711 데이터 전송 건너뜀.");
+        		}
+            }
+            else {
+				
                  ESP_LOGI(WS, "데이터 전송 중지 상태. 연결은 유지됨.");
             }
-        } else {
-            ESP_LOGW(WS, "웹소켓 서버 연결 대기중...");
+	        vTaskDelay(pdMS_TO_TICKS(100));
+	        
         }
-        vTaskDelay(pdMS_TO_TICKS(100));
+        else {
+			
+            ESP_LOGW(WS, "웹소켓 서버 연결 대기중...");
+            
+            esp_websocket_client_start(g_client);
+            
+            vTaskDelay(pdMS_TO_TICKS(5000));
+        }
     }
 }
 
@@ -115,6 +148,7 @@ void check_server_message(void *arg) {
         int64_t current_time = esp_log_timestamp(); 
         if(esp_websocket_client_is_connected(g_client) && (current_time - g_last_connect_time > CHECK_CONNECT_TIME)) {
             ESP_LOGW(WS, "서버와의 연결 끊김. 재연결 시도중...");
+            
             if(g_client != NULL) {
                 esp_websocket_client_stop(g_client); 
             }

@@ -24,6 +24,7 @@ static const char* TAG = "ESP_MAIN_LOGIC";
 static char main_ssid[MAX_SSID_LEN];
 static char main_password[MAX_PASSWORD_LEN];
 static SemaphoreHandle_t s_wifi_config_mutex = NULL; // 공유 변수 보호 Mutex
+SemaphoreHandle_t s_hx711_mutex = NULL;
 
 // --- 태스크 핸들 (종료를 위해) ---
 TaskHandle_t ap_task_handle = NULL;
@@ -170,14 +171,25 @@ void wifi_setting(){
 
 // 무게센서 태스크
 void hx711_task(void* arg) {
+	int hx711;
+    
+    const int delay_ms = 100;
     
     while(!g_finished) {
-        g_HX711Value = hx711_read();
-        // 값 가공 부분
+		
+        hx711 = hx711_read();
+        hx711 += 200000;
+    	hx711 *= 0.0001;
+    	hx711 /= 2;
+    	if (xSemaphoreTake(s_hx711_mutex, portMAX_DELAY) == pdTRUE) {
+			if (g_timer_running) {
+            	g_timestamp_ms += delay_ms;
+        	}
+            g_HX711Value = hx711;
+            xSemaphoreGive(s_hx711_mutex);
+        }
         vTaskDelay(pdMS_TO_TICKS(100));
     }
-    // finished = true 일 때 데이터 수집 중단됨 (태스크 종료)
-    vTaskDelete(NULL); 
 }
 
 /*
@@ -237,13 +249,20 @@ void app_main(void) {
     
     ESP_LOGI(TAG, "Wi-Fi 연결에 성공했습니다. STA 모드로 전환합니다.");
     
-    esp_err_t wifi_mode_crush_ap(void);
+    wifi_mode_crush_ap();
     
     esp_ip4_addr_t ip;
     ESP_ERROR_CHECK(wifi_get_ip_addr(&ip));
     ESP_LOGI(TAG, "시스템이 네트워크에 연결되었습니다. IP: " IPSTR, IP2STR(&ip));
     
     /*--센서 및 웹소켓 초기화 및 태스크--*/
+    
+    s_hx711_mutex = xSemaphoreCreateMutex();
+    if (s_hx711_mutex == NULL) {
+    	ESP_LOGE(TAG, "HX711 Mutex 생성 실패! 재시작.");
+    	vTaskDelay(pdMS_TO_TICKS(5000));
+    	esp_restart();
+	}
     
     hx711_init();
     // mpu6050_init(); // MPU6050 초기화 주석 처리
