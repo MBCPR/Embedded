@@ -35,12 +35,16 @@ void websocket_event_handler(void *handler_args, esp_event_base_t base, int32_t 
             ESP_LOGI(WS, "WEBSOCKET 연결 성공");
             
             g_last_connect_time = esp_log_timestamp();
-            g_finished = true;
+            g_finished = false;
+            g_timer_running = true;
             break;
             
         case WEBSOCKET_EVENT_DISCONNECTED:
             ESP_LOGI(WS, "WEBSOCKET 연결 끊김");
-            
+            if (g_client != NULL) {
+                esp_websocket_client_start(g_client);
+                vTaskDelay(pdMS_TO_TICKS(5000));
+            }
             break;
             
         case WEBSOCKET_EVENT_DATA:
@@ -107,7 +111,7 @@ void start_websocket_client(void *arg) {
 				
                 char message[100];
                 double hx711;
-                int64_t timestamp_safe;
+                int64_t timestamp_safe = 0;
                 
                 if (xSemaphoreTake(s_hx711_mutex, pdMS_TO_TICKS(100)) == pdTRUE) {
             		hx711 = (double)g_HX711Value;
