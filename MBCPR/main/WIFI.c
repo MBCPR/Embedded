@@ -1,5 +1,6 @@
 #include "wifi.h"
 #include "URL.h"
+#include "esp_err.h"
 #include "websocket_client.h"
 
 #include <string.h>
@@ -32,6 +33,7 @@ static const char *TAG = "WIFI_CORE";
 static const char *WEB = "WIFI_WEB_SERVER";
 static const char *STA = "WIFI_STA_MODE";
 static const char *APSTA = "WIFI_APSTA_MODE";
+static const char *De = "Debug";
 
 
 static EventGroupHandle_t s_wifi_event_group;
@@ -54,6 +56,7 @@ static esp_err_t stop_webserver(httpd_handle_t server);
 
 // wifi 설정 삭제(초기화)
 static void destroy_all_netifs() {
+	ESP_LOGE(De, "destroy_all_netifs 실행");
     if (s_sta_netif) {
         esp_netif_destroy(s_sta_netif);
         s_sta_netif = NULL;
@@ -74,6 +77,8 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
 	// STA 모드로 wifi에 연결 성공해 ip 주소를 받았을 경우
     if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
 		
+		ESP_LOGE(De, "event_id == IP_EVENT_STA_GOT_IP 실행");
+		
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(STA, "IP 주소 획득:" IPSTR, IP2STR(&event->ip_info.ip));
         s_ip_addr = event->ip_info.ip;
@@ -84,31 +89,25 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
             esp_websocket_client_start(g_client);
             ESP_LOGI(g_WS, "웹소켓 재연결 시도중...");
         }
+        
     }// wifi 연결이 해제되었을 경우(접속 단절)
     else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-		
-        if (s_retry_num < CONFIG_ESP_MAXIMUM_RETRY) {
-            esp_wifi_connect();
-            s_retry_num++;
-            ESP_LOGI(STA, "Wi-Fi 재연결 시도 중... (%d/%d)", s_retry_num, CONFIG_ESP_MAXIMUM_RETRY);
-        }
-        else {
-            xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
-            ESP_LOGE(STA, "Wi-Fi 재연결 시도 횟수 초과. 연결 실패.");
+	
+		ESP_LOGE(De, "event_id == WIFI_EVENT_STA_DISCONNECTED 실행");
+        xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
             
-            // STA모드에서 재연결 최종 실패 시 시스템 재시작 (app_main의 SoftAP 로직으로 복귀)
-            if(s_ap_netif == NULL){
-				ESP_LOGW(STA, "5초 후 시스템을 재시작하여 SoftAP 모드로 복구합니다.");
-            	vTaskDelay(pdMS_TO_TICKS(5000));
-            	esp_restart();
-			}
-			else {
-				ESP_LOGW(APSTA, "해당 데이터로 연결에 실패했습니다. 다른 와이파이 데이터를 대기합니다.");
-			}
-        }
-
         wifi_event_sta_disconnected_t* event_info = (wifi_event_sta_disconnected_t*) event_data;
         ESP_LOGE(STA, "Wi-Fi 연결에 실패했습니다, 이유: %d", event_info->reason);
+            
+        // STA모드에서 재연결 최종 실패 시 시스템 재시작
+        if(s_ap_netif == NULL){
+			ESP_LOGW(STA, "5초 후 시스템을 재시작하여 SoftAP 모드로 복구합니다.");
+          	vTaskDelay(pdMS_TO_TICKS(5000));
+           	esp_restart();
+		}
+		else {
+			ESP_LOGW(APSTA, "해당 데이터로 연결에 실패했습니다. 다른 와이파이 데이터를 대기합니다.");
+		}
     }
 }
 
@@ -145,6 +144,8 @@ static esp_err_t get_handler(httpd_req_t *req) {
         // 요청 URL이 유효할 경우
         if (httpd_req_get_url_query_str(req, buf, buf_len) == ESP_OK) {
             char param[64];
+            
+            ESP_LOGE(De, "get 핸들러 실행");
             
             // ssid 데이터가 있다면 실행
             if (httpd_query_key_value(buf, "ssid", param, sizeof(param)) == ESP_OK) {
@@ -183,6 +184,8 @@ static esp_err_t get_handler(httpd_req_t *req) {
 static httpd_handle_t start_webserver(void) {
     httpd_handle_t server = NULL;
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
+    
+    ESP_LOGE(De, "start_webserver 실행");
 
     httpd_uri_t get_uri = {
         .uri      = "/connect",
@@ -203,6 +206,9 @@ static httpd_handle_t start_webserver(void) {
 
 // HTTP 서버 정지
 static esp_err_t stop_webserver(httpd_handle_t server) {
+	
+	ESP_LOGE(De, "stop_webserver 실행");
+	
     if (server == NULL && s_server != NULL) {
         server = s_server;
         s_server = NULL;
@@ -216,6 +222,9 @@ static esp_err_t stop_webserver(httpd_handle_t server) {
 
 // 1. 공용 wifi 초기화 함수
 esp_err_t wifi_init(void) {
+	
+	ESP_LOGE(De, "wifi_init 실행");
+	
     static bool initialized = false;
     if (initialized) {
         ESP_LOGW(TAG, "이미 초기화되었습니다");
@@ -242,6 +251,8 @@ esp_err_t wifi_init(void) {
 
 // 2. STA 모드 활성화 함수(연결 유지 상태)
 esp_err_t wifi_mode_set_sta(const char *ssid, const char *password){
+	
+	ESP_LOGE(De, "wifi_mode_set_sta 실행");
 	// 기존 모드 정지
     esp_wifi_stop();
     
@@ -280,6 +291,9 @@ esp_err_t wifi_mode_set_sta(const char *ssid, const char *password){
 
 // 3. APSTA 모드 활성화 함수(연결 끊김 상태)
 esp_err_t wifi_mode_set_apsta(void){
+	
+	ESP_LOGE(De, "wifi_mode_set_apsta 실행");
+	
 	// 기존 모드 정지
     esp_wifi_stop();
     
@@ -326,6 +340,9 @@ esp_err_t wifi_mode_set_apsta(void){
 }
 
 esp_err_t wifi_mode_crush_ap(void){
+	
+	ESP_LOGE(De, "wifi_mode_crush_ap 실행");
+	
 	esp_wifi_set_mode(WIFI_MODE_STA);
 	
 	if (s_ap_netif) {
@@ -339,6 +356,12 @@ esp_err_t wifi_mode_crush_ap(void){
 
 // 4. STA 연결 함수(연결 시도)
 esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
+	
+	ESP_LOGE(De, "wifi_connect_sta 실행");
+	
+	xEventGroupClearBits(s_wifi_event_group, WIFI_CONNECTED_BIT | WIFI_FAIL_BIT);
+	
+	esp_err_t ret;
 	
 	if (s_sta_netif == NULL){
 		ESP_LOGE(TAG, "STA 모드가 활성화되지 않았습니다");
@@ -362,7 +385,9 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
 	
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     
-    esp_wifi_connect();
+    ret = esp_wifi_connect();
+	
+	ESP_LOGI(TAG, "WiFi 연결 결과 로그: %s", esp_err_to_name(ret));
 	
     EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
             WIFI_CONNECTED_BIT | WIFI_FAIL_BIT, pdFALSE, pdFALSE, portMAX_DELAY);
@@ -382,6 +407,8 @@ esp_err_t wifi_connect_sta(const char *ssid, const char *password) {
 // 5. wifi 데이터를 받아올 서버 시작
 esp_err_t start_get_wifi(void) {
 	
+	ESP_LOGE(De, "start_get_wifi 실행");
+	
     httpd_handle_t server = start_webserver();
     if (server == NULL) {
         ESP_LOGE(TAG, "웹 서버를 여는데 실패했습니다");
@@ -393,6 +420,9 @@ esp_err_t start_get_wifi(void) {
 
 // 6. wifi 데이터가 들어왔는지 확인하고 들어왔다면 저장
 esp_err_t check_get_wifi(char *ssid, char *password){
+	
+	ESP_LOGE(De, "check_get_wifi 실행");
+	
 	if(g_check_ssid && g_check_password){
 		strcpy(ssid, g_ssid);
 		strcpy(password, g_password);
@@ -407,6 +437,9 @@ esp_err_t check_get_wifi(char *ssid, char *password){
 
 // 7. wifi 데이터를 받아올 서버를 정지(받아오기 성공)
 esp_err_t stop_get_wifi(void){
+	
+	ESP_LOGE(De, "stop_get_wifi 실행");
+	
 	if(s_server != NULL){
 		stop_webserver(s_server);
 		s_server = NULL;
